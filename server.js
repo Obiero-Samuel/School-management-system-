@@ -312,6 +312,8 @@ app.post('/api/register', async (req, res) => {
         console.error('Registration error:', error);
         res.status(500).json({ success: false, message: 'Registration failed' });
     }
+});
+
 // Email verification endpoint
 app.get('/api/verify', async (req, res) => {
     const { token } = req.query;
@@ -327,7 +329,6 @@ app.get('/api/verify', async (req, res) => {
     } catch (error) {
         res.status(400).send('Invalid or expired verification token');
     }
-});
 });
 
 // Get all students
