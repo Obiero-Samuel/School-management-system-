@@ -12,25 +12,29 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
+
         .login-card {
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .nav-pills .nav-link.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
         .stats-card {
             border-radius: 10px;
             transition: transform 0.3s;
         }
+
         .stats-card:hover {
             transform: translateY(-5px);
         }
+
         .user-type-icon {
             font-size: 2rem;
         }
-        .hidden-section { display: none !important; }
     </style>
 </head>
 
@@ -47,26 +51,33 @@
 
     <!-- Main Content -->
     <div class="container mt-5">
-        <!-- Login Section -->
-        <div id="loginSection">
+        <!-- User Type Selection -->
+        <div id="userTypeSection">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="login-card p-5 text-center">
+                        <h1 class="mb-4">Welcome to St Monica School Portal</h1>
+                        <p class="mb-4">Select your user type to continue:</p>
+                        <div class="d-flex justify-content-center gap-4 mb-4">
+                            <button class="btn btn-lg btn-outline-danger" onclick="showLogin('admin')"><i class="bi bi-person-fill-lock"></i> Admin Login</button>
+                            <button class="btn btn-lg btn-outline-primary" onclick="showLogin('staff')"><i class="bi bi-person-badge"></i> Staff</button>
+                            <button class="btn btn-lg btn-outline-success" onclick="showLogin('parent')"><i class="bi bi-people"></i> Parent</button>
+                        </div>
+                        <div class="mt-3 text-muted">Only staff and parents can register. Admins are added by the system.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Section (dynamic) -->
+        <div id="loginSection" style="display: none;">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="login-card p-5">
-                        <h2 class="text-center mb-4">🔐 Login</h2>
-                        <div class="mb-3">
-                            <label class="form-label" for="loginEmail">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" value="admin@school.com" placeholder="Enter email" title="Email">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="loginPassword">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" value="Admin123!" placeholder="Enter password" title="Password">
-                        </div>
+                        <h2 class="text-center mb-4" id="loginTitle">🔐 Login</h2>
+                        <div id="loginFields"></div>
                         <button class="btn btn-primary w-100 mb-3" onclick="login()">Login</button>
-
-                        <div class="text-center">
-                            <a href="#" onclick="showRegister()">Register as Staff/Parent</a>
-                        </div>
-
+                        <div class="text-center" id="registerLink"></div>
                         <div id="loginMessage" class="mt-3"></div>
                     </div>
                 </div>
@@ -74,7 +85,7 @@
         </div>
 
         <!-- Register Section -->
-        <div id="registerSection" class="hidden-section">
+        <div id="registerSection" style="display: none;">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="login-card p-5">
@@ -98,12 +109,16 @@
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" id="registerEmail">
                         </div>
+                        <div class="mb-3" id="admissionField" style="display:none;">
+                            <label class="form-label">Student Admission Number</label>
+                            <input type="text" class="form-control" id="registerAdmission">
+                        </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
                             <input type="password" class="form-control" id="registerPassword">
                         </div>
                         <div class="d-flex gap-2">
-                            <button class="btn btn-secondary flex-grow-1" onclick="showLogin()">Back to Login</button>
+                            <button class="btn btn-secondary flex-grow-1" onclick="showUserTypeSection()">Back</button>
                             <button class="btn btn-success flex-grow-1" onclick="register()">Register</button>
                         </div>
                         <div id="registerMessage" class="mt-3"></div>
@@ -113,10 +128,7 @@
         </div>
 
         <!-- Dashboard Section -->
-        <div id="dashboardSection" class="hidden-section">
-            <div class="d-flex justify-content-end mb-2">
-                <button class="btn btn-outline-danger" onclick="logout()"><i class="bi bi-box-arrow-right"></i> Logout</button>
-            </div>
+        <div id="dashboardSection" style="display: none;">
             <!-- Tabs Navigation -->
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -176,25 +188,88 @@
     <script>
         let currentUser = null;
         let currentToken = null;
-        let userType = 'staff'; // Default for registration
+        let userType = null; // Set on user selection
+        let loginUserType = null;
 
-        // Show/Hide sections
-        function showLogin() {
-            document.getElementById('loginSection').classList.remove('hidden-section');
-            document.getElementById('registerSection').classList.add('hidden-section');
-            document.getElementById('dashboardSection').classList.add('hidden-section');
+        function showUserTypeSection() {
+            document.getElementById('userTypeSection').style.display = 'block';
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('registerSection').style.display = 'none';
+            document.getElementById('dashboardSection').style.display = 'none';
+        }
+
+        function showLogin(type) {
+            loginUserType = type;
+            // Dynamically render login fields
+            let html = '';
+            let title = '';
+            let registerLink = '';
+            if (type === 'admin') {
+                title = '🔐 Admin Login';
+                html = `
+                    <div class="mb-3">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter admin email" title="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+                    </div>`;
+                registerLink = '';
+            } else if (type === 'staff') {
+                title = '🔐 Staff Login';
+                html = `
+                    <div class="mb-3">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter staff email" title="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+                    </div>`;
+                registerLink = '<a href="#" onclick="showRegister()">Register as Staff</a>';
+            } else if (type === 'parent') {
+                title = '🔐 Parent Login';
+                html = `
+                    <div class="mb-3">
+                        <label class="form-label" for="loginAdmission">Student Admission Number</label>
+                        <input type="text" class="form-control" id="loginAdmission" placeholder="Enter admission number" title="Admission Number">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+                    </div>`;
+                registerLink = '<a href="#" onclick="showRegister()">Register as Parent</a>';
+            }
+            document.getElementById('loginFields').innerHTML = html;
+            document.getElementById('loginTitle').innerHTML = title;
+            document.getElementById('registerLink').innerHTML = registerLink;
+            document.getElementById('loginMessage').innerHTML = '';
+            document.getElementById('userTypeSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('registerSection').style.display = 'none';
+            document.getElementById('dashboardSection').style.display = 'none';
         }
 
         function showRegister() {
-            document.getElementById('loginSection').classList.add('hidden-section');
-            document.getElementById('registerSection').classList.remove('hidden-section');
-            document.getElementById('dashboardSection').classList.add('hidden-section');
+            // Reset fields
+            document.getElementById('registerUsername').value = '';
+            document.getElementById('registerEmail').value = '';
+            document.getElementById('registerPassword').value = '';
+            document.getElementById('registerAdmission').value = '';
+            userType = null;
+            setUserType('staff'); // Default
+            document.getElementById('userTypeSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('registerSection').style.display = 'block';
+            document.getElementById('dashboardSection').style.display = 'none';
         }
 
         function showDashboard() {
-            document.getElementById('loginSection').classList.add('hidden-section');
-            document.getElementById('registerSection').classList.add('hidden-section');
-            document.getElementById('dashboardSection').classList.remove('hidden-section');
+            document.getElementById('userTypeSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('registerSection').style.display = 'none';
+            document.getElementById('dashboardSection').style.display = 'block';
             updateDashboard();
         }
 
@@ -202,63 +277,46 @@
             userType = type;
             const buttons = document.querySelectorAll('#registerSection .btn-outline-primary');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (type === 'staff') {
+                document.getElementById('admissionField').style.display = 'none';
+            } else if (type === 'parent') {
+                document.getElementById('admissionField').style.display = 'block';
+            }
+            // Highlight selected
+            if (event && event.target) event.target.classList.add('active');
         }
 
         // LOGIN FUNCTION - GUARANTEED TO WORK
         async function login() {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            console.log('Attempting login with:', email);
-
-            // Show loading message
-            document.getElementById('loginMessage').innerHTML =
-                '<div class="alert alert-info">🔄 Logging in...</div>';
-
+            let loginData = {};
+            if (loginUserType === 'admin' || loginUserType === 'staff') {
+                loginData.email = document.getElementById('loginEmail').value;
+                loginData.password = document.getElementById('loginPassword').value;
+            } else if (loginUserType === 'parent') {
+                loginData.admission_number = document.getElementById('loginAdmission').value;
+                loginData.password = document.getElementById('loginPassword').value;
+            }
+            document.getElementById('loginMessage').innerHTML = '<div class="alert alert-info">🔄 Logging in...</div>';
             try {
                 const response = await fetch('/api/login', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, password })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(loginData)
                 });
-
-                console.log('Response status:', response.status);
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`);
-                }
-
+                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
                 const data = await response.json();
-                console.log('Login response:', data);
-
                 if (data.success) {
                     currentToken = data.token;
                     currentUser = data.user;
-
-                    // Store for later use
                     localStorage.setItem('school_token', data.token);
                     localStorage.setItem('school_user', JSON.stringify(data.user));
-
-                    document.getElementById('loginMessage').innerHTML =
-                        '<div class="alert alert-success">✅ Login successful! Loading dashboard...</div>';
-
-                    // Switch to dashboard
-                    setTimeout(() => {
-                        showDashboard();
-                    }, 1000);
-
+                    document.getElementById('loginMessage').innerHTML = '<div class="alert alert-success">✅ Login successful! Loading dashboard...</div>';
+                    setTimeout(() => { showDashboard(); }, 1000);
                 } else {
-                    document.getElementById('loginMessage').innerHTML =
-                        `<div class="alert alert-danger">❌ ${data.message || 'Login failed'}</div>`;
+                    document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger">❌ ${data.message || 'Login failed'}</div>`;
                 }
-
             } catch (error) {
-                console.error('Login error details:', error);
-                document.getElementById('loginMessage').innerHTML =
-                    `<div class="alert alert-danger">❌ Connection error: ${error.message}</div>`;
+                document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger">❌ Connection error: ${error.message}</div>`;
             }
         }
 
@@ -267,33 +325,28 @@
             const username = document.getElementById('registerUsername').value;
             const email = document.getElementById('registerEmail').value;
             const password = document.getElementById('registerPassword').value;
-
+            const admission_number = document.getElementById('registerAdmission').value;
             if (!userType) {
-                document.getElementById('registerMessage').innerHTML =
-                    '<div class="alert alert-warning">Please select user type</div>';
+                document.getElementById('registerMessage').innerHTML = '<div class="alert alert-warning">Please select user type</div>';
                 return;
             }
-
+            let regData = { username, email, password, user_type: userType };
+            if (userType === 'parent') regData.admission_number = admission_number;
             try {
                 const response = await fetch('/api/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, email, password, user_type: userType })
+                    body: JSON.stringify(regData)
                 });
-
                 const data = await response.json();
-
                 if (data.success) {
-                    document.getElementById('registerMessage').innerHTML =
-                        '<div class="alert alert-success">✅ Registration successful! You can now login.</div>';
-                    setTimeout(() => showLogin(), 2000);
+                    document.getElementById('registerMessage').innerHTML = '<div class="alert alert-success">✅ Registration successful! Please check your email to verify your account.</div>';
+                    setTimeout(() => showLogin(userType), 2000);
                 } else {
-                    document.getElementById('registerMessage').innerHTML =
-                        `<div class="alert alert-danger">❌ ${data.message}</div>`;
+                    document.getElementById('registerMessage').innerHTML = `<div class="alert alert-danger">❌ ${data.message}</div>`;
                 }
             } catch (error) {
-                document.getElementById('registerMessage').innerHTML =
-                    '<div class="alert alert-danger">❌ Connection error</div>';
+                document.getElementById('registerMessage').innerHTML = '<div class="alert alert-danger">❌ Connection error</div>';
             }
         }
 
@@ -481,21 +534,12 @@
                     localStorage.removeItem('school_token');
                     localStorage.removeItem('school_user');
                 }
-            } else {
-                showLogin();
             }
-        };
 
-        // LOGOUT FUNCTION
-        function logout() {
-            localStorage.removeItem('school_token');
-            localStorage.removeItem('school_user');
-            currentToken = null;
-            currentUser = null;
-            document.getElementById('loginEmail').value = '';
-            document.getElementById('loginPassword').value = '';
-            showLogin();
-        }
+            // Auto-fill login for testing
+            document.getElementById('loginEmail').value = 'admin@school.com';
+            document.getElementById('loginPassword').value = 'Admin123!';
+        };
     </script>
 </body>
 

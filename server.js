@@ -1,5 +1,4 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
 const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -13,16 +12,6 @@ app.use(express.static(__dirname));
 app.use(express.json());
 
 // Database connection
-// Email transporter setup
-const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: process.env.SMTP_PORT || 587,
-    secure: false,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-    }
-});
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
@@ -269,68 +258,37 @@ app.post('/api/register', async (req, res) => {
     try {
         const { username, email, password, user_type } = req.body;
 
-        if (!['staff', 'parent'].includes(user_type)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Invalid user type'
-            });
+        // Input validation
+        if (!username || !email || !password || !user_type) {
+            return res.status(400).json({ success: false, message: 'All fields are required.' });
         }
-
-        const hashedPassword = await bcrypt.hash(password, 10);
-
+        if (!['staff', 'parent'].includes(user_type)) {
+            return res.status(400).json({ success: false, message: 'Invalid user type' });
+        }
+        // Strong password check
+        if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password)) {
+            return res.status(400).json({ success: false, message: 'Password must be at least 8 characters and include upper, lower, and number.' });
+        }
+        // Prevent SQL injection by using parameterized queries (already used)
+        // Check for existing user
+        const [existing] = await pool.execute('SELECT id FROM users WHERE email = ?', [email]);
+        if (existing.length > 0) {
+            return res.status(400).json({ success: false, message: 'Email already registered.' });
+        }
+        const hashedPassword = await bcrypt.hash(password, 12);
         await pool.execute(
             'INSERT INTO users (username, email, password_hash, user_type) VALUES (?, ?, ?, ?)',
             [username, email, hashedPassword, user_type]
         );
-
-
-        // Generate verification token
-        const verificationToken = jwt.sign({ email }, process.env.JWT_SECRET || 'default_secret', { expiresIn: '1d' });
-        const verificationLink = `${req.protocol}://${req.get('host')}/api/verify?token=${verificationToken}`;
-
-        // Send registration email notification with verification link
-        try {
-            await transporter.sendMail({
-                from: process.env.SMTP_USER,
-                to: email,
-                subject: 'Welcome to School Management System',
-                html: `<h3>Welcome, ${username}!</h3><p>Your registration as a ${user_type} was successful.</p><p>Please verify your email by clicking <a href="${verificationLink}">here</a>.</p>`
-            });
-        } catch (mailError) {
-            console.error('Email notification error:', mailError);
-        }
-
-        res.status(201).json({
-            success: true,
-            message: 'User registered successfully. Verification email sent.'
-        });
-
+        // TODO: Add encryption for sensitive data, monitoring, and backups
+        res.status(201).json({ success: true, message: 'User registered successfully' });
     } catch (error) {
         console.error('Registration error:', error);
-        res.status(500).json({
-            success: false,
-            message: 'Registration failed'
-        });
+        res.status(500).json({ success: false, message: 'Registration failed' });
     }
 });
 
 // Get all students
-// Email verification endpoint
-app.get('/api/verify', async (req, res) => {
-    const { token } = req.query;
-    if (!token) {
-        return res.status(400).send('Verification token missing');
-    }
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret');
-        const email = decoded.email;
-        // Mark user as verified in DB
-        await pool.execute('UPDATE users SET verified = 1 WHERE email = ?', [email]);
-        res.send('<h2>Email verified successfully!</h2><p>You can now log in.</p>');
-    } catch (error) {
-        res.status(400).send('Invalid or expired verification token');
-    }
-});
 app.get('/api/students', authenticateToken, async (req, res) => {
     try {
         const [students] = await pool.execute('SELECT * FROM students');

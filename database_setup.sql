@@ -16,8 +16,7 @@ CREATE TABLE users (
     user_type ENUM('admin', 'staff', 'parent') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_active BOOLEAN DEFAULT TRUE,
-    last_login TIMESTAMP NULL,
-    verified BOOLEAN DEFAULT FALSE
+    last_login TIMESTAMP NULL
 );
 
 -- 2. Students Table
