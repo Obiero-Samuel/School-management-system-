@@ -1,4 +1,5 @@
 const express = require('express');
+const nodemailer = require('nodemailer');
 const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -12,6 +13,16 @@ app.use(express.static(__dirname));
 app.use(express.json());
 
 // Database connection
+// Email transporter setup
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: false,
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+    }
+});
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
@@ -276,16 +287,47 @@ app.post('/api/register', async (req, res) => {
             return res.status(400).json({ success: false, message: 'Email already registered.' });
         }
         const hashedPassword = await bcrypt.hash(password, 12);
-        await pool.execute(
-            'INSERT INTO users (username, email, password_hash, user_type) VALUES (?, ?, ?, ?)',
-            [username, email, hashedPassword, user_type]
+        // Insert user with verified = 0
+        const [result] = await pool.execute(
+            'INSERT INTO users (username, email, password_hash, user_type, is_active, verified) VALUES (?, ?, ?, ?, ?, ?)',
+            [username, email, hashedPassword, user_type, true, false]
         );
-        // TODO: Add encryption for sensitive data, monitoring, and backups
-        res.status(201).json({ success: true, message: 'User registered successfully' });
+        // Generate verification token
+        const jwtSecret = process.env.JWT_SECRET || 'default_secret';
+        const verificationToken = jwt.sign({ email }, jwtSecret, { expiresIn: '1d' });
+        const verificationLink = `${req.protocol}://${req.get('host')}/api/verify?token=${verificationToken}`;
+        // Send verification email
+        try {
+            await transporter.sendMail({
+                from: process.env.SMTP_USER,
+                to: email,
+                subject: 'Verify your email - School Management System',
+                html: `<h3>Welcome, ${username}!</h3><p>Please verify your email by clicking <a href="${verificationLink}">here</a>.</p>`
+            });
+        } catch (mailError) {
+            console.error('Email notification error:', mailError);
+        }
+        res.status(201).json({ success: true, message: 'Registration successful! Please check your email to verify your account.' });
     } catch (error) {
         console.error('Registration error:', error);
         res.status(500).json({ success: false, message: 'Registration failed' });
     }
+// Email verification endpoint
+app.get('/api/verify', async (req, res) => {
+    const { token } = req.query;
+    if (!token) {
+        return res.status(400).send('Verification token missing');
+    }
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret');
+        const email = decoded.email;
+        // Mark user as verified in DB
+        await pool.execute('UPDATE users SET verified = 1 WHERE email = ?', [email]);
+        res.send('<h2>Email verified successfully!</h2><p>You can now log in.</p>');
+    } catch (error) {
+        res.status(400).send('Invalid or expired verification token');
+    }
+});
 });
 
 // Get all students

@@ -129,6 +129,10 @@
 
         <!-- Dashboard Section -->
         <div id="dashboardSection" style="display: none;">
+            <!-- Logout Button -->
+            <div class="d-flex justify-content-end mb-3">
+                <button class="btn btn-outline-danger" onclick="logout()"><i class="bi bi-box-arrow-right"></i> Logout</button>
+            </div>
             <!-- Tabs Navigation -->
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -520,8 +524,23 @@
         }
 
         // Initialize
+        // LOGOUT FUNCTION (global)
+        function logout() {
+            localStorage.removeItem('school_token');
+            localStorage.removeItem('school_user');
+            currentToken = null;
+            currentUser = null;
+            // Hide all sections and show user type selection
+            document.getElementById('dashboardSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('registerSection').style.display = 'none';
+            showUserTypeSection();
+            // Optionally clear dashboard content
+            document.getElementById('dashboardStats').innerHTML = '';
+        }
+
         window.onload = function () {
-            // Check if already logged in
+            // Always start from user type selection unless logged in
             const savedToken = localStorage.getItem('school_token');
             const savedUser = localStorage.getItem('school_user');
 
@@ -533,12 +552,11 @@
                 } catch (e) {
                     localStorage.removeItem('school_token');
                     localStorage.removeItem('school_user');
+                    showUserTypeSection();
                 }
+            } else {
+                showUserTypeSection();
             }
-
-            // Auto-fill login for testing
-            document.getElementById('loginEmail').value = 'admin@school.com';
-            document.getElementById('loginPassword').value = 'Admin123!';
         };
     </script>
 </body>
