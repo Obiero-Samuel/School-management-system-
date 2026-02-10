@@ -255,11 +255,11 @@ app.post('/api/login', async (req, res) => {
                     return res.status(400).json({ success: false, message: 'Admission number required for parent login.' });
                 }
                 // Find student by admission number
-                const [students] = await pool.execute('SELECT id FROM students WHERE student_id = ?', [admission_number]);
+                const [students] = await pool.execute('SELECT student_id FROM students WHERE student_id = ?', [admission_number]);
                 if (students.length === 0) {
                     return res.status(401).json({ success: false, message: 'Invalid admission number.' });
                 }
-                const studentId = students[0].id;
+                const studentId = students[0].student_id;
                 // Check parent-student link
                 const [links] = await pool.execute('SELECT * FROM parent_students WHERE parent_id = ? AND student_id = ?', [user.id, studentId]);
                 if (links.length === 0) {
@@ -399,11 +399,11 @@ app.post('/api/register', async (req, res) => {
                 return res.status(400).json({ success: false, message: 'Admission number required for parent registration.' });
             }
             // Find student by admission number
-            const [students] = await pool.execute('SELECT id FROM students WHERE student_id = ?', [admission_number]);
+            const [students] = await pool.execute('SELECT student_id FROM students WHERE student_id = ?', [admission_number]);
             if (students.length === 0) {
                 return res.status(400).json({ success: false, message: 'Invalid admission number.' });
             }
-            const studentId = students[0].id;
+            const studentId = students[0].student_id;
             // Enforce max 2 parents per student
             const [parentLinks] = await pool.execute('SELECT COUNT(*) as count FROM parent_students WHERE student_id = ?', [studentId]);
             if (parentLinks[0].count >= 2) {
@@ -417,7 +417,7 @@ app.post('/api/register', async (req, res) => {
         newUserId = result.insertId;
         // If parent, link to student
         if (user_type === 'parent') {
-            await pool.execute('INSERT INTO parent_students (parent_id, student_id, relationship) VALUES (?, ?, ?)', [newUserId, students[0].id, 'parent']);
+            await pool.execute('INSERT INTO parent_students (parent_id, student_id, relationship) VALUES (?, ?, ?)', [newUserId, students[0].student_id, 'parent']);
         }
         // Generate verification token
         const jwtSecret = process.env.JWT_SECRET || 'default_secret';
@@ -524,12 +524,12 @@ app.get('/api/parent/student-info/:admission_number', authenticateToken, async (
         }
         const student = students[0];
         // Check parent-student link
-        const [links] = await pool.execute('SELECT * FROM parent_students WHERE parent_id = ? AND student_id = ?', [req.user.id, student.id]);
+        const [links] = await pool.execute('SELECT * FROM parent_students WHERE parent_id = ? AND student_id = ?', [req.user.id, student.student_id]);
         if (links.length === 0) {
             return res.status(403).json({ success: false, message: 'You are not authorized to view this student.' });
         }
         // Check fee status for this student (latest term/year)
-        const [fees] = await pool.execute('SELECT * FROM fees WHERE student_id = ? ORDER BY due_date DESC LIMIT 1', [student.id]);
+        const [fees] = await pool.execute('SELECT * FROM fees WHERE student_id = ? ORDER BY due_date DESC LIMIT 1', [student.student_id]);
         if (fees.length > 0) {
             const fee = fees[0];
             if (fee.status !== 'paid') {
