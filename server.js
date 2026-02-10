@@ -528,6 +528,14 @@ app.get('/api/parent/student-info/:admission_number', authenticateToken, async (
         if (links.length === 0) {
             return res.status(403).json({ success: false, message: 'You are not authorized to view this student.' });
         }
+        // Check fee status for this student (latest term/year)
+        const [fees] = await pool.execute('SELECT * FROM fees WHERE student_id = ? ORDER BY due_date DESC LIMIT 1', [student.id]);
+        if (fees.length > 0) {
+            const fee = fees[0];
+            if (fee.status !== 'paid') {
+                return res.status(403).json({ success: false, message: 'Account suspended: Outstanding fees. Please clear all fees to access student info.' });
+            }
+        }
         res.json({ success: true, data: student });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Server error' });

@@ -1,0 +1,1032 @@
+student_id,national_index_no,first_name,middle_name,surname,admission_date,sex,status,"study_type,",sponsor_type,religion,nationality,recent_stream,grand_fee_charged,grand_fee_adjusted,grand_fee_paid,grand_balance
+'0273','',Lemuel,Okonyo,Ongaya,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"645,058.00","1,418.00","643,640.00",0
+'0657','',Christine,,Mutheu,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"621,465.00","20,150.00","601,315.00",0
+'0702','',Fiona,,Aluoch,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"735,316.00","19,080.00","716,236.00",0
+'0704','',Albertus,,Sande,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"693,426.00","-36,390.00","729,816.00",0
+'0705','',Adrian,,Muraguri,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"573,766.00","6,250.00","567,516.00",0
+'0713','',Alvin,,Mburu,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"710,381.00","16,000.00","694,381.00",0
+'0716','',Faustina,,Nduku,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"415,101.00","21,800.00","393,301.00",0
+'0717','',Austin,,Katumo,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"599,801.00","29,775.00","570,026.00",0
+'0745','',Ritah,Millicent,Wanjiru,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"727,021.00","3,300.00","723,721.00",0
+'0756','',Promise,,Edmond,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"709,106.00",0,"707,931.00","1,175.00"
+'0768','',Ruby,Anne,Akinyi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"670,876.00","14,250.00","656,626.00",0
+'0778','',Zita,,Kwamboka,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"736,136.00","-8,915.00","745,051.00",0
+'0785','',Laura,Mukami,Murithi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"669,454.00","3,245.00","666,209.00",0
+'0813','',Vennesa,Anne,Mtesa,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"614,705.00",0,"588,705.00","26,000.00"
+'0820','',Angel,,Ndanu,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"565,252.00",0,"565,252.00",0
+'0822','',Marie,Naitore,Jepchirchir,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"729,707.00","28,000.00","701,707.00",0
+'0826','',Shannon,,Mwaniki,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"565,252.00","7,040.00","546,227.00","11,985.00"
+'0830','',Grace,,Mutindi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"700,176.00","2,308.00","697,868.00",0
+'0852','',Michelle,,Mwikali,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"624,626.00",25,"624,601.00",0
+'0866','',Josely,,Njoroge,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"609,002.00","25,975.00","561,272.00","21,755.00"
+'0872','',Victoria,Alice,Anyango,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"737,567.00","12,500.00","688,367.00","36,700.00"
+'0887','',Vonwicks,,Baraka,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"699,800.00","-4,900.00","704,700.00",0
+'0889','',Stephanie,Lyndsey,Narotso,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"684,382.00","36,725.00","638,672.00","8,985.00"
+'0892','',Lisette,,Njoni,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"694,352.00",0,"670,451.00","23,901.00"
+'0895','',Gabriel,,Kiprono,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"641,779.00",0,"641,779.00",0
+'0898','',Daisy,Nanyama,Wanjala,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"730,003.25","3,066.00","726,937.25",0
+'0908','',Kieran,,Yiapan,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"734,062.00",500,"706,862.00","26,700.00"
+'0929','',Basil,,Omuko,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"754,337.00",-800,"718,437.00","36,700.00"
+'0956','',Faith,,Kasi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"553,102.00",0,"553,102.00",0
+'0957','',Beatrice,,Njeri,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"605,580.00",0,"586,680.00","18,900.00"
+'0961','',Ritah,,Nduku,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"667,302.00",0,"640,602.00","26,700.00"
+'0986','',Shaniez,Auma,Teng,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"536,902.00","-11,400.00","522,602.00","25,700.00"
+'1003','',Adrian,,Githinji,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"531,152.00",0,"515,452.00","15,700.00"
+'1004','',Adrian,,Kimeu,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"740,412.00",-380,"739,792.00","1,000.00"
+'1016','',Roman,,Ingavi,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"679,830.00",10,"679,820.00",0
+'1025','',Mirriam,,Naserian,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"653,032.00","10,280.00","626,052.00","16,700.00"
+'1026','',Hope,,Mutheu,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"631,651.00",0,"631,651.00",0
+'1027','',Blessed,,Monique,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"656,057.00","5,345.00","650,712.00",0
+'1041','',Joan,,Sintoyia,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"614,632.00","12,170.00","586,762.00","15,700.00"
+'1047','',Fidel,,Kemboi,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"530,652.00","2,000.00","484,002.00","44,650.00"
+'1049','',Sheila,,Tuitoek,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"706,512.00","4,725.00","679,812.00","21,975.00"
+'1051','',Ignatius,,Musyoki,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"704,162.00","20,045.00","684,117.00",0
+'1058','',Blaise,,Otieno,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"529,402.00","7,400.00","512,002.00","10,000.00"
+'1061','',Shadrack,,Nzila,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"717,530.00",800,"698,081.00","18,649.00"
+'1063','',Sylvia,,Mukuhi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"687,126.00","2,000.00","685,126.00",0
+'1096','',Humphrey,Ochola,Odera,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"584,076.00","2,700.00","581,376.00",0
+'1105','',Josphine,,Atieno,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"636,702.00","12,475.00","618,877.00","5,350.00"
+'1106','',Zakiya,,Wangui,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"317,476.00",-545,"318,021.00",0
+'1107','',Mirriam,,Mukeli,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"667,457.00",5,"632,610.00","34,842.00"
+'1108','',Sarah,,Wambui,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"560,877.00",0,"560,877.00",0
+'1110','',Terry,,Musenya,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"670,457.00",300,"635,370.00","34,787.00"
+'1112','',Tyler,Muema,Mutunga,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"556,552.00","4,750.00","540,302.00","11,500.00"
+'1113','',Nelson,,Kanuvi,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"618,330.00","16,675.00","564,580.00","37,075.00"
+'1116','',Dennis,,Nyasaka,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"487,652.00","2,693.00","464,259.00","20,700.00"
+'1118','',Joshua,,Muli,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"487,652.00",0,"462,952.00","24,700.00"
+'1120','',Lawrence,Kipkor,Chelagat,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"643,237.00",0,"608,162.00","35,075.00"
+'1121','',Prince,Ryan,Wambua,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"691,442.00","11,310.00","680,132.00",0
+'1125','',Mary,Joy,Amondi,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"652,942.00","-9,750.00","662,692.00",0
+'1139','',Salome,Nduku,Kiamba,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"738,312.00",0,"737,312.00","1,000.00"
+'1143','',Samuel,,Kimeu,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"620,651.00","12,375.00","608,276.00",0
+'1147','',Collins,,Otieno,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"317,276.00","18,000.00","240,231.00","59,045.00"
+'1149','',Peter,Gikanga,Wanyeki,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"649,906.00",0,"649,906.00",0
+'1198','',Lucy,,Waithera,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"490,152.00",0,"381,132.00","109,020.00"
+'1206','',Arnold,,Presly,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"763,760.00","28,500.00","735,260.00",0
+'1216','',Tyron,Rodney,Tonkei,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"459,752.00","11,800.00","430,215.00","17,737.00"
+'1217','',Abigael,,Wanjiku,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"500,627.00","20,975.00","429,227.00","50,425.00"
+'1222','',Zander,,Owino,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"462,252.00",0,"456,202.00","6,050.00"
+'1224','',Robert,,Mungai,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"461,752.00",0,"441,952.00","19,800.00"
+'1225','',George,Njuguna,Kamau,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"516,752.00","13,000.00","490,952.00","12,800.00"
+'1226','',Theodora,,Wanjiru,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"651,607.00","1,000.00","633,307.00","17,300.00"
+'1227','',John,,Kamau,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"581,877.00","1,875.00","580,002.00",0
+'1229','',Christine,,Karema,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"686,957.00","10,000.00","676,957.00",0
+'1233','',Clemencia,,Mesi,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"532,552.00","2,545.00","529,307.00",700
+'1234','',Ethan,Paul,Mutinda,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"485,952.00","2,725.00","483,227.00",0
+'1237','',Elvis,,Mutinda,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"530,652.00","7,095.00","507,857.00","15,700.00"
+'1239','',Bianca,,Wambui,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"565,552.00","20,000.00","527,192.00","18,360.00"
+'1240','',Ezekiel,Peter,Odongo,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"712,157.00",0,"692,457.00","19,700.00"
+'1243','',Peris,Teresa,Akinyi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"690,107.00","17,800.00","636,307.00","36,000.00"
+'1244','',Dellah,Rose,Gathoni,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"721,382.00",0,"719,682.00","1,700.00"
+'1247','',Elly,,Muli,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"529,402.00","9,500.00","504,202.00","15,700.00"
+'1249','',Noel,,Kimiti,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"674,352.00","22,700.00","634,952.00","16,700.00"
+'1251','',Valentine,,Mutunge,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"717,586.00","1,910.00","715,676.00",0
+'1252','',Leon,,Mambo,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"557,576.00",0,"557,576.00",0
+'1255','',Angel,,Wacoro,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"545,576.00",-40,"545,616.00",0
+'1260','',Nigel,,Nguyo,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"690,376.00","26,000.00","664,376.00",0
+'1293','',Shanice,Njeri,Gichuki,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"578,153.00","17,050.00","560,303.00",800
+'1294','',Shanice,,Tuya,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"489,002.00",-50,"464,252.00","24,800.00"
+'1299','',Emmanuel,,Ong'ang'a,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"583,927.00",0,"566,502.00","17,425.00"
+'1300','',Mwenda,,Kituku,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"559,605.00","1,000.00","558,605.00",0
+'1303','',Elvis,Charles, Muturi,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"656,662.00",-50,"627,522.00","29,190.00"
+'1305','',Arlene,Chelagat,Keter,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"614,402.00",-400,"597,076.00","17,726.00"
+'1307','',Nathan,Joel,Oloo,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"644,782.00","5,250.00","620,532.00","19,000.00"
+'1310','',Raphael,Mittau,Paul,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"608,857.00",0,"588,302.00","20,555.00"
+'1311','',Ann,,Atieno,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"554,052.00",0,"539,977.00","14,075.00"
+'1317','',Aurele,Isaiah,Andiwo,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"778,692.00","32,620.00","733,037.00","13,035.00"
+'1319','',Barack,Collins,Mutisya,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"597,302.00",0,"570,602.00","26,700.00"
+'1327','',Leticia,,Kerubo,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"582,626.00","4,520.00","578,106.00",0
+'1331','',Lindsey,,Ayuma,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"589,486.00",0,"589,486.00",0
+'1361','',Grayson,,Gatama,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"627,257.00",-550,"617,657.00","10,150.00"
+'1362','',Virginia,,Akinyi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"459,752.00","-9,300.00","431,550.00","37,502.00"
+'1366','',Liam,,Mwongela,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"593,427.00",-309,"582,786.00","10,950.00"
+'1367','',Yestine,Jepkorir,Kipchumba,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"711,031.00","3,525.00","707,506.00",0
+'1369','',Neema,,Wairimu,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"462,465.00",0,"462,465.00",0
+'1374','',Xavier,,Ochieng,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"667,708.00","7,272.00","660,436.00",0
+'1376','',Amani,,Mueni,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"570,167.00",990,"569,077.00",100
+'1379','',Catherine,,Njeri,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"490,002.00","25,950.00","464,052.00",0
+'1381','',Lawrence,,Baraka,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"638,029.00",-170,"638,199.00",0
+'1388','',Betty,,Achieng,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"736,422.00","29,980.00","706,442.00",0
+'1399','',Melisa,,Nyaboe,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"703,903.00","34,372.00","669,531.00",0
+'1438','',Angel,Clemence,Ndanu,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"794,557.00","28,805.00","765,752.00",0
+'1441','',Sharleen,Ng'ang'a,Wanjiru,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"665,432.00","13,644.00","650,788.00","1,000.00"
+'1444','',Peter,,Katana,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"557,502.00","15,529.00","541,973.00",0
+'1445','',Ignatius,,Rigoro,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"619,407.00","4,500.00","594,107.00","20,800.00"
+'1451','',Benlincoln,,Sande,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"646,502.00","-30,900.00","677,402.00",0
+'1454','',Nanette,,Martha,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"663,742.00",705,"646,012.00","17,025.00"
+'1461','',Bassanio,Kepha,Barasa,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"566,877.00","20,800.00","520,452.00","25,625.00"
+'1462','',Mary,Andrea,Ndunge,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"614,657.00","11,300.00","566,661.00","36,696.00"
+'1463','',Patrice,,Keli,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"517,027.00","8,867.00","508,160.00",0
+'1466','',Marie,Curie,Waithera,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"558,507.00","32,610.00","525,897.00",0
+'1468','',Agnes,,Akinyi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"587,302.00","5,200.00","577,852.00","4,250.00"
+'1470','',Emily,,Nkirote,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"439,352.00",500,"433,852.00","5,000.00"
+'1473','',Mary,,Wanjiru,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"567,202.00",500,"547,402.00","19,300.00"
+'1475','',Elsie,,Kendi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"471,952.00",550,"471,402.00",0
+'1480','',Cedric,,Mwendwa,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"580,857.00",500,"554,232.00","26,125.00"
+'1482','',Stephanie,,Mwikali,19/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"535,752.00","18,866.00","516,886.00",0
+'1487','',Myles,,Mwangi,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"633,512.00","32,610.00","600,902.00",0
+'1488','',Ian,,Asiago,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"541,527.00",500,"535,737.00","5,290.00"
+'1492','',Joan,Muriithi,Wambui,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"671,257.00","25,500.00","636,757.00","9,000.00"
+'1495','',Maria,,Kitang'asi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"697,482.00","5,637.00","691,845.00",0
+'1498','',Ryan,Soitanae,Kenana,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"758,722.00","33,800.00","709,842.00","15,080.00"
+'1499','',Ethan,,Njeru,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"764,022.00","33,900.00","730,122.00",0
+'1503','',Waridi,,Njira,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"549,152.00",300,"548,852.00",0
+'1508','',Ariana,Maria,Bwire,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"586,502.00","6,250.00","566,452.00","13,800.00"
+'1510','',Anthea,,Nzisa,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"653,257.00","3,550.00","648,707.00","1,000.00"
+'1512','',Jayden,,Wainaina,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"575,802.00","4,700.00","540,102.00","31,000.00"
+'1513','',Angel,,Gabriella,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"735,907.00","-1,700.00","736,607.00","1,000.00"
+'1514','',Lorna,,Muthoni,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"572,252.00",200,"555,052.00","17,000.00"
+'1521','',Sherleen,,Wambui,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"594,452.00",750,"568,592.00","25,110.00"
+'1523','',Maxwel,,Juma,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"578,816.00","2,025.00","576,791.00",0
+'1526','',Naomi,,Wanjiku,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"588,576.00","2,625.00","585,951.00",0
+'1529','',Leticia,,Kavale,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"659,056.00","25,500.00","633,556.00",0
+'1532','',Celine,,Mwikali,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"657,681.00","7,475.00","650,206.00",0
+'1533','',Isreal,,Makau,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"746,286.00","2,500.00","743,786.00",0
+'1574','',Cherryl,Chebet,Some,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"604,602.00","30,450.00","574,152.00",0
+'1575','',Nadine,,Yiapan,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"619,537.00",500,"593,412.00","25,625.00"
+'1576','',Zara,,Wamaitha,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"646,017.00","31,650.00","614,367.00",0
+'1581','',Leon,,Mutisya,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"445,752.00","11,100.00","434,652.00",0
+'1586','',Arthur,Kiteng'e,Murithi,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"601,980.00","7,020.00","594,060.00",900
+'1587','',David,,Gatuku,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"441,352.00",0,"327,152.00","114,200.00"
+'1590','',Wallace,,Russel,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"503,552.00",0,"463,556.00","39,996.00"
+'1591','',Barrack,,Kikech,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"675,907.00",500,"674,607.00",800
+'1592','',Fredrick,,Maroa,19/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"503,352.00","8,500.00","494,852.00",0
+'1613','',Naioth,,Kakenya,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"484,752.00",0,"484,752.00",0
+'1616','',Maria,,Musyimi,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"477,852.00","34,250.00","428,326.00","15,276.00"
+'1617','',Shannel,,Wambui,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"436,652.00","3,675.00","427,352.00","5,625.00"
+'1618','',George,,Mwangi,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"737,767.00","34,200.00","703,567.00",0
+'1619','',Christian,,Mutua,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"690,081.00",500,"689,581.00",0
+'1620','',Zedrick,,Korir,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"528,602.00","20,000.00","499,602.00","9,000.00"
+'1621','',Adrian,Kiptoo,Koech,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"706,602.00","32,700.00","673,902.00",0
+'1624','',Xavier,,Munene,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"597,412.00",300,"597,112.00",0
+'1625','',Nathan,,Mumo,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"574,657.00",0,"569,657.00","5,000.00"
+'1631','',Louis,Kimemia,Maitai,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"258,452.00","18,750.00","210,655.00","29,047.00"
+'1635','',Osteen,Israel ,Shamala,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"728,886.00",-400,"729,286.00",0
+'1643','',Mukire,,Sans-tache,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"575,257.00","71,950.00","479,247.00","24,060.00"
+'1644','',Joh,Casper,Michael,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"701,072.00","8,325.00","675,347.00","17,400.00"
+'1649','',Immaculate,,Wangari,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"295,476.00",916,"277,235.00","17,325.00"
+'1656','',Stephanie,Joan,Warigia,18/07/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"551,932.00","6,944.00","544,988.00",0
+'1659','',Derrick,Gikanga,Gachoka,18/07/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"589,360.00",950,"588,410.00",0
+'1678','',Lemuel,Mwakio,Makonge,03/09/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"559,202.00","-1,200.00","560,402.00",0
+'1680','',William,Ombongi,Georgemoti,03/09/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"432,087.00",0,"427,190.00","4,897.00"
+'1686','',Joy,Ndanu,Mumo,08/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"411,277.00",0,"400,452.00","10,825.00"
+'1687','',Joan,Mutanu,Mumo,08/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"409,277.00",0,"398,452.00","10,825.00"
+'1692','',Fabian,Naam,Wanjala,11/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"514,617.00","5,141.00","509,476.00",0
+'1694','',Philip,Kisonde,Kanini,13/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"420,152.00",-200,"410,552.00","9,800.00"
+'1696','',Conrad,Kimathi,Kobia,13/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"523,412.00",0,"523,412.00",0
+'1699','',Ryan,Mwaniki,Maina,15/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"392,827.00",0,"361,152.00","31,675.00"
+'1701','',Leon,Gitonga,Nyaga,18/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"370,093.00","86,952.00","283,141.00",0
+'1702','',Keyller,Mutheu,Muli,18/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"512,402.00",0,"500,802.00","11,600.00"
+'1705','',Joy,Wanjiku,Mwangi,23/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"501,676.00","4,225.00","497,451.00",0
+'1706','',Emmy,Wanjiku,Mwangi,23/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"499,576.00","2,125.00","497,451.00",0
+'1707','',Tamara,Kendi,Mwiti,25/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"567,102.00",0,"559,603.00","7,499.00"
+'1709','',Ethan,Maina,Ndung'u,25/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"527,052.00",0,"527,052.00",0
+'1710','',Rafiq,Desire,Ashiembi,25/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"666,377.00",875,"665,502.00",0
+'1714','',Abigael,Mutindi,Mutuku,25/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"426,977.00",0,"426,977.00",0
+'1715','',Bruno,Maxwel,Adundo,25/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"615,032.00","5,000.00","595,032.00","15,000.00"
+'1717','',Daphine,Koki,Mule,26/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"641,107.00","2,500.00","638,607.00",0
+'1722','',Itanya,Bisanda,Moindi,27/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"496,502.00",0,"496,502.00",0
+'1724','',Bradley,Abonyo,Tom,27/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"521,552.00","37,158.00","447,699.00","36,695.00"
+'1725','',Blessing,Mwikali,Kimonyi,27/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"507,576.00","2,100.00","505,476.00",0
+'1726','',Marie,,Kimonyi,27/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"375,952.00",0,"347,852.00","28,100.00"
+'1731','',Tansy,Kinsley,Obong'o,28/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"569,467.00","2,500.00","533,655.00","33,312.00"
+'1733','',Moffat,Muuo,Kioko,28/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"659,336.00","3,245.00","656,091.00",0
+'1735','',Shanice,Amani,King'ori,28/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"398,556.00",0,"398,556.00",0
+'1737','',Arnold,Odida,Odera,28/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"458,652.00",0,"458,652.00",0
+'1739','',Francis,Beja,Nzuwa,28/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"423,002.00","1,162.00","406,415.00","15,425.00"
+'1741','',Afra,Wambui,Maina,29/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"230,576.00",0,"230,576.00",0
+'1742','',Darlene,Imani,Okoko,29/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"656,362.00",0,"656,362.00",0
+'1743','',Shantel,Njeri,Kuria,29/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"375,952.00",0,"375,952.00",0
+'1745','',Renita,Cecilia,Mumo,06/08/2016,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"437,127.00",0,"437,127.00",0
+'1749','',Shannon,Jeff,Orwa,29/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"495,355.00",0,"495,355.00",0
+'1751','',Wilma,Kiambi,Mwangi,29/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"375,952.00",0,"375,932.00",20
+'1753','',Noella,Chemutai,Lagat,29/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"448,652.00","6,000.00","441,363.00","1,289.00"
+'1754','',Chrispine,Kiplagat,Ng'etich,29/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"484,152.00","3,225.00","475,737.00","5,190.00"
+'1758','',Caycee,Chari,Wacharo,29/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"650,081.00","2,273.00","647,808.00",0
+'1763','',Beatrice,Mwende,Mutua,29/11/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"627,102.00",0,"610,402.00","16,700.00"
+'1765','',Ray,Mutisya,Kyanui,30/11/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"564,162.00",0,"541,950.00","22,212.00"
+'1768','',Jane,Wangechi,Njogo,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"456,742.00",0,"456,742.00",0
+'1769','',Albanus,Peter,Mutua,02/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"499,202.00",0,"499,202.00",0
+'1770','',Janice,Nyambura,Kigo,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"537,172.00","2,500.00","533,672.00","1,000.00"
+'1771','',Emmanuel,Paul,Omondi,02/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"526,957.00",0,"526,957.00",0
+'1772','',Grace,Neema,Wambui,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"535,152.00","2,500.00","518,452.00","14,200.00"
+'1774','',Keith,Musyimi,Mwalwa,02/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"596,052.00",0,"596,052.00",0
+'1775','',Lucky,Mutembei,Mwendwa,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"658,936.00","6,493.00","652,443.00",0
+'1776','',Kelia,Mokobi,Nyakengiri,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"520,207.00","2,400.00","517,807.00",0
+'1777','',Michael,Mwendwa,Wambua,02/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"641,986.00",0,"641,986.00",0
+'1778','',Alvin,Kitonyi,Musembi,02/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"628,816.00","3,775.00","625,041.00",0
+'1781','',Peter,Njuguna,John,02/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"424,627.00",0,"424,627.00",0
+'1782','',Shania,Brynn,Jaber,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"428,327.00",0,"408,602.00","19,725.00"
+'1783','',Janice,Amani,Kyalo,02/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"510,912.00",0,"510,912.00",0
+'1786','',Jiwell,Saani,Kivindo,03/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"483,502.00",0,"459,602.00","23,900.00"
+'1788','',Ella,Kendi,Mtesa,03/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"406,205.00",0,"362,167.00","44,038.00"
+'1789','',Chloe,Adelle,Gakahu,03/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"666,457.00",0,"666,457.00",0
+'1793','',Kenny,Allen,Mutua,03/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"588,152.00",0,"588,152.00",0
+'1797','',Jayden,Mzalendo,Kyalo,03/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"658,986.00","7,525.00","651,461.00",0
+'1798','',Victor,Kiilu,Kyalo,03/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"614,012.00",0,"614,012.00",0
+'1799','',Yuri,K'otieno,Ngesa,03/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"567,557.00",300,"553,647.00","13,610.00"
+'1802','',Francis,Kamau,Karanja,04/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"476,387.00","10,951.00","425,436.00","40,000.00"
+'1807','',Belden,Ogega,Ondieki,04/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"489,239.00","11,000.00","466,587.00","11,652.00"
+'1808','',Rita,Kwamboka,Ondieki,04/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"459,414.00","3,675.00","449,587.00","6,152.00"
+'1813','',Sasha,Nyambura,Njenga,04/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"627,044.00",546,"611,907.00","14,591.00"
+'1815','',Joylyne,Chebet,Kirui,04/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"580,707.00",0,"580,707.00",0
+'1820','',Mary,Kaburi,Nyaga,06/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"403,452.00",0,"379,385.00","24,067.00"
+'1821','',Adrian,Mwanza,Matata,06/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"572,718.00",0,"572,718.00",0
+'1822','',Joy,Myra,Mutinda,09/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"512,885.00","15,410.00","496,150.00","1,325.00"
+'1830','',Xavier,Murunga,Anduvate,17/12/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"498,152.00",0,"469,052.00","29,100.00"
+'1835','',Samantha,Caren,Namisi,03/01/2020,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"693,306.00",-300,"692,606.00","1,000.00"
+'1840','',Naomi,Nyokabi,Nganju,06/01/2020,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"379,252.00",300,"359,852.00","19,100.00"
+'1844','',Melcy,Joannah,Lovemore,06/01/2020,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"593,362.00",660,"570,852.00","21,850.00"
+'1846','',Eddie,Gitonga,Wachira,06/01/2020,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"526,557.00","-2,230.00","514,537.00","14,250.00"
+'1852','',Enoch,Mumo,Munguti,06/01/2020,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"431,202.00",0,"410,052.00","21,150.00"
+'1853','',Jesse,Mwang'ombe,Makonge,07/01/2020,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"406,252.00",0,"406,252.00",0
+'1866','',Phil,Colymore,Ochieng,16/10/2020,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"559,306.00","8,250.00","551,056.00",0
+'1867','',Kylie,Jepchumba,Kibet,05/11/2020,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"637,146.00","4,650.00","632,496.00",0
+'1869','',Victoria,Muthoni,Mutuma,05/11/2020,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"502,304.00","3,750.00","498,554.00",0
+'1870','',Benard,Kitti,Ngombo,05/11/2020,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"470,676.00",0,"470,676.00",0
+'1871','',Melissa,Akinyi,Makori,10/11/2020,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"613,681.00","2,100.00","611,581.00",0
+'1872','',Walcott,Karoki,Njoroge,19/11/2020,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"576,481.00","5,057.00","571,424.00",0
+'1875','',Lycette,Angela Mwikali,Mumo,04/01/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"186,708.00","18,750.00","163,308.00","4,650.00"
+'1878','',Bravin,Kipkemboi,Maiyo,18/01/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"608,100.00","1,375.00","606,725.00",0
+'1881','',Alban,Muriuki,Gikandi,18/01/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"513,802.00",0,"506,715.00","7,087.00"
+'1885','',Lyndah,Chemutai,Kipkoech,18/01/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"496,810.00",0,"457,500.00","39,310.00"
+'1888','',Vincent,Muema,Mutunga,18/01/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"429,902.00",0,"429,902.00",0
+'1891','',Jayden,Omondi,Otieno,18/01/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"459,357.00",0,"413,858.00","45,499.00"
+'1892','',Marley,Nathan,Mosi,18/01/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"488,852.00",0,"479,402.00","9,450.00"
+'1905','',Martin,Mwadime,Mwakisha,18/01/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"575,862.00","3,000.00","567,462.00","5,400.00"
+'1909','',Tessie,Nduku,Jepkoech,18/01/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"482,552.00",0,"482,552.00",0
+'1911','',Liana,Marisol,Ochieng,18/01/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"580,032.00","2,350.00","565,662.00","12,020.00"
+'1921','',Ashley,,Chumgen,21/01/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"432,402.00",0,"432,402.00",0
+'1925','',Ryan,,Waswa,02/02/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"568,869.00",0,"558,869.00","10,000.00"
+'1926','',Michelle,Mwikali,Mutinda,04/02/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"442,752.00",0,"422,952.00","19,800.00"
+'1928','',Ayce,Ndung'u,Munyiri,02/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"492,785.00","-90,264.00","583,049.00",0
+'1929','',Russell,Mshindi,Nthiana,05/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"316,702.00",0,"316,702.00",0
+'1931','',Darlene,Nyaboke,Ganane,06/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"299,632.00","15,270.00"
+'1932','',Israeljoseph,Maina,Wachihi,06/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"455,412.00",0,"430,192.00","25,220.00"
+'1933','',Liana,Jane,Mirindo,06/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"429,902.00","8,131.00","408,000.00","13,771.00"
+'1934','',Joyprudence,Atieno,Malawi,06/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"1,061,855.00","4,255.00","1,057,600.00",0
+'1935','',Jason,Ndiritu,Maina,06/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"348,177.00",0,"348,177.00",0
+'1936','',Nikkijepkoech,,Koskey,06/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"416,252.00",-200,"403,952.00","12,500.00"
+'1939','',Zanelle,Imani,Tengi,08/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"352,727.00",0,"327,502.00","25,225.00"
+'1940','',Victor,Theodore,Murage,08/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"429,602.00",0,"429,602.00",0
+'1941','',Angel,Sibia,Ondieki,08/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"376,064.00",0,"361,207.00","14,857.00"
+'1942','',Levi,Kimeu,Mutunga,08/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"339,452.00",550,"329,302.00","9,600.00"
+'1943','',Adley,Mirioyo,Mwita,09/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"314,902.00",0,"314,902.00",0
+'1945','',Kelvin,Jeremy,Owidi,09/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"353,902.00",0,"338,352.00","15,550.00"
+'1947','',Elsie,Wangui,Mungai,09/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"314,902.00",0
+'1949','',Britney,Wambui,Njunge,09/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"305,303.00","9,599.00"
+'1951','',Noah,Mutuku,Muli,09/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"314,902.00",0
+'1952','',Simon,Nzioki,Mutuku,09/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"358,802.00",0,"358,802.00",0
+'1953','',Malia,Angel,Moses,09/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"417,852.00",0,"417,852.00",0
+'1954','',Dominic,Maingi,Mbuvi,09/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"342,462.00",0,"342,462.00",0
+'1955','',Shane,Jabari,Otieno,10/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"448,035.00","3,800.00","444,235.00",0
+'1956','',Bryden,,Havi,10/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"346,777.00",0,"331,552.00","15,225.00"
+'1957','',Maria,Ariana,Mutinda,10/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"378,010.00","8,735.00","367,950.00","1,325.00"
+'1960','',Walcott,Elegwa,Odiala,12/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"434,357.00",0,"426,857.00","7,500.00"
+'1963','',Danstone,Betti,Omollo,12/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"296,482.00","18,420.00"
+'1964','',Laureen,Nzembi,Mumbua,12/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"314,902.00",0
+'1965','',Lucy,Chloe,Odhiambo,13/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"443,907.00","1,000.00","418,032.00","24,875.00"
+'1966','',Lilian,Adhiambo,Onyango,13/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"416,702.00",0,"413,652.00","3,050.00"
+'1967','',Claudia,,Wanjiru,13/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"314,902.00",0,"295,325.00","19,577.00"
+'1968','',Joy,Wambui,Masinde,13/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"407,012.00",0,"390,912.00","16,100.00"
+'1969','',Shanice,Magdalene,Kirigo,13/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"426,452.00",0,"416,352.00","10,100.00"
+'1971','',Larry,Wambua,Mutiso,13/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"421,755.00",0,"412,005.00","9,750.00"
+'1972','',Daisy,Nyanchama,Mayaka,13/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"276,048.00","38,854.00"
+'1973','',Nevins,Kipkoech,Bartera,14/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"310,902.00",0,"310,902.00",0
+'1974','',Simon,Raymond,Otieno,20/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"359,207.00",0,"319,306.00","39,901.00"
+'1975','',Emmanuel,Mwangi,Kimani,20/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"442,412.00",-352,"425,014.00","17,750.00"
+'1977','',Giovanni,,Kipkirui,20/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"314,902.00",0,"310,482.00","4,420.00"
+'1982','',Jabali,Amir,Ngoka,23/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"541,357.00",0,"531,207.00","10,150.00"
+'1985','',Celine,Nderitu,Wairimu,23/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"440,351.00",0,"440,351.00",0
+'1986','',Vivian,Jepchumba,Kiptoo,23/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"549,931.00",0,"549,931.00",0
+'1989','',Azaria,Agnesceline,Okello,23/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"379,402.00",0,"379,402.00",0
+'1991','',Reagan,Mutunga,Musyoka,23/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"541,262.00",0,"541,262.00",0
+'1993','',Aiden,,Owino,26/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"508,407.00",0,"493,457.00","14,950.00"
+'1999','',Jamal,Ethan,Barasa,26/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"423,327.00",300,"397,402.00","25,625.00"
+'2001','',Ashlyne,Achieng,Gor,26/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"556,406.00",0,"556,406.00",0
+'2002','',Levi,Mocha,Orendo,26/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"501,376.00",0,"501,376.00",0
+'2003','',Ryan,Kiprotich,Kipsang,26/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"548,517.00",0,"528,617.00","19,900.00"
+'2004','',Fredrick,Mwangi,Kombo,26/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"413,752.00",0,"399,152.00","14,600.00"
+'2005','',Elly,,Odhiambo,26/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"484,656.00","22,550.00","462,106.00",0
+'2006','',Samuel,Wainanina,Chege,27/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"440,351.00",0,"440,351.00",0
+'2007','',Beckie,Mueni,Kieti,27/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"503,808.00",1,"469,857.00","33,950.00"
+'2009','',Peregrine,Obae,Nyabera,27/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"455,012.00",0,"426,037.00","28,975.00"
+'2012','',Hope,Wambui,Miano,29/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"426,452.00",0,"413,352.00","13,100.00"
+'2013','',Stephanie,Mutheu,Kieti,29/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"558,807.00","4,725.00","528,797.00","25,285.00"
+'2014','',Angel,Wangari,Makau,29/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"505,582.00",0,"472,507.00","33,075.00"
+'2015','',Robert,Abong'o,Mayaka,29/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"455,352.00",0,"409,652.00","45,700.00"
+'2018','',Ashley,Nang'iro,Mutinda,29/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"490,587.00",300,"490,287.00",0
+'2019','',Vallary,Mulele,Mutinda,29/07/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"599,587.00","2,500.00","596,087.00","1,000.00"
+'2020','',Garrard,Rossouw,Omondi,30/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"500,727.00",0,"500,727.00",0
+'2022','',Fidel,Omondi,Oduor,30/07/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"315,402.00","15,000.00","162,852.00","137,550.00"
+'2023','',Dylan,Claybourne,Ochieng,01/08/2021,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"426,257.00",300,"425,957.00",0
+'2027','',Veronicah,Mutanu,Makola,13/10/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"202,608.00","18,750.00","160,131.00","23,727.00"
+'2028','',Jesmine,Katheu,Mbithi,15/10/2021,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"211,974.00","18,750.00","167,172.00","26,052.00"
+'2031','',Prince,,Musyoka,11/01/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"173,102.00","15,000.00","136,724.00","21,378.00"
+'2032','',Philip,Kioko,Kenedy,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"331,552.00",0,"320,552.00","11,000.00"
+'2034','',Kayle,Rivah,Lusalia,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"259,652.00",0,"259,652.00",0
+'2035','',Jayden,Ngugi,Hinga,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"287,677.00",0,"243,552.00","44,125.00"
+'2038','',Kevin,Junior,Oganga,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"272,715.00",0,"272,715.00",0
+'2039','',James,Kimari,Kamau,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"301,052.00",0,"290,552.00","10,500.00"
+'2041','',Precious,Kemunto,Mauti,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"259,552.00",0,"259,552.00",0
+'2043','',Dmitri,Oduor,Ngesa,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"365,402.00",0,"353,542.00","11,860.00"
+'2044','',Esther,Nakiwala,Mosi,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"363,302.00",0,"353,652.00","9,650.00"
+'2046','',Leonliam,Gitonga,Mutinda,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"330,602.00",0,"330,602.00",0
+'2047','',Baracktitus,Mugo,Gachoka,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"317,489.00",0,"301,137.00","16,352.00"
+'2048','',Lakeisha,Ngina Wema,Wambua,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"259,552.00",0,"259,552.00",0
+'2049','',Stephanie,Nguhi,Muchuga,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"301,602.00",0,"301,602.00",0
+'2050','',Edrick,Ochieng,Odhiambo,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"314,902.00",0,"283,902.00","31,000.00"
+'2051','',Tauren,Kiragu,Njeri,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"365,402.00",0,"355,902.00","9,500.00"
+'2052','',Manuel,Mwaura,Kiboro,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"259,552.00",0,"259,552.00",0
+'2060','',Tiana,Nduku,Nzomo,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"259,552.00",0,"236,000.00","23,552.00"
+'2062','',France,Chelangat,Soy,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"319,052.00","8,032.00","290,680.00","20,340.00"
+'2063','',Ella,Amani,Otieno,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"363,902.00",0,"360,252.00","3,650.00"
+'2064','',Jayden,Jaoko,Oyolla,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"396,752.00",0,"396,752.00",0
+'2065','',Lewis,Muli,Mule,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"352,900.00",0,"352,900.00",0
+'2066','',Astrid,Moraa,Omwenga,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"325,777.00",0,"287,277.00","38,500.00"
+'2068','',Kylian,Musyimi,James,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"350,052.00",0,"350,052.00",0
+'2069','',Samantha,Muthikwa,Musinga,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"428,976.00",0,"428,976.00",0
+'2070','',Elsie,Wairimu,Irungu,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"445,426.00","4,650.00","440,716.00",60
+'2071','',Dyllan,Mwendwa,Mutuku,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"322,177.00","-1,072.00","319,424.00","3,825.00"
+'2072','',Imani,Waweru,Ashiembi,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"405,997.00","3,000.00","402,997.00",0
+'2074','',Ali,Mbulu,Mwamba,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"420,702.00",0,"420,702.00",0
+'2075','',Peter,,Quincy,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"444,252.00",0,"414,852.00","29,400.00"
+'2076','',Mark-quinn,Muraya,Nyoro,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"427,902.00",700,"422,102.00","5,100.00"
+'2078','',Stephanie,Maganja,Joseph,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"311,852.00",0,"307,552.00","4,300.00"
+'2081','',Dennisjunior,Nyambane,Magara,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"446,602.00",0,"417,202.00","29,400.00"
+'2082','',Darren,Austin,Ochieng,15/03/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"291,769.00",0,"287,379.00","4,390.00"
+'2083','',Sunday,Bridget,Akello,15/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"311,852.00",-200,"312,052.00",0
+'2088','',Victoria,Kariro,Iddy,17/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"415,302.00","3,675.00","407,127.00","4,500.00"
+'2089','',Ariel,Priscilla Rose,Orwenyo,24/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"324,789.00","4,925.00","290,752.00","29,112.00"
+'2092','',Evamegan,Nyambura,Mburu,29/03/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"434,451.00","3,030.00","431,421.00",0
+'2093','',Leon,Mwendwa,Maingi,11/04/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"259,552.00",0,"241,052.00","18,500.00"
+'2094','',Renee,Mmachi,Mmakwa,22/04/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"463,551.00","5,561.00","457,990.00",0
+'2096','',Meghan,Pilanoi,Samanya,05/05/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"333,177.00","1,900.00","331,277.00",0
+'2097','',Eurelia,Asunta,Okello,05/05/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"141,001.00","15,000.00","102,508.00","23,493.00"
+'2098','',Henry,Muuo,Mutunga,06/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"351,302.00","218,058.00","132,944.00",300
+'2100','',Claude,Wasandra,Maoro,07/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"418,902.00","5,475.00","387,827.00","25,600.00"
+'2101','',Fanuel,Odhiambo,Were,07/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"452,302.00",0,"452,302.00",0
+'2103','',Ian,Betti,Omollo,07/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"382,952.00",546,"358,202.00","24,204.00"
+'2104','',Hannah,Naliaka,Lukorito,07/05/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"423,377.00","5,475.00","365,600.00","52,302.00"
+'2105','',Liam,Njukia,Gachonde,07/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"506,252.00",0,"506,252.00",0
+'2108','',Tahan,Taha,Wanyonyi,07/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"398,602.00",0,"398,602.00",0
+'2109','',Kai,Francis,Okere,07/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"447,002.00",0,"447,002.00",0
+'2113','',Ignatius,Dennis,Omare,09/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"199,652.00","18,750.00","139,963.00","40,939.00"
+'2114','',Polly,Amani,Okoth,10/05/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"452,053.00","4,850.00","430,303.00","16,900.00"
+'2115','',Silvano,Mayaka,Nyambati,10/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"466,052.00",0,"466,052.00",0
+'2118','',Chrispinus,Mwendwa,Makenzi,11/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"380,802.00",0,"335,103.00","45,699.00"
+'2119','',Jeremy,Changalwa,Lukorito,19/05/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"386,627.00",0,"331,510.00","55,117.00"
+'2120','',Tatenda,Nabwire,Wanyonyi,30/05/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"446,002.00","19,600.00","426,402.00",0
+'2121','',Hope,Jennifer,Wavinya,02/06/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"188,852.00","22,125.00","141,187.00","25,540.00"
+'2122','',Lemuel,Muriuki,Muriira,13/06/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"425,052.00","21,710.00","356,142.00","47,200.00"
+'2123','',Jared,Kiptum,Kandie,11/07/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"344,369.00",0,"344,369.00",0
+'2124','',Jayden,Michael,Eriesa,12/07/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"367,490.00",0,"367,490.00",0
+'2125','',Shanice,Oyiera,Owino,26/07/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"474,269.00",300,"438,169.00","35,800.00"
+'2126','',Gift,Kanyoi,Ngare,01/08/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"429,769.00","4,725.00","423,069.00","1,975.00"
+'2127','',Joachim,Muuo,Musinga,22/09/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"353,989.00",-300,"354,289.00",0
+'2128','',Blessing,Wanja,Ngare,03/10/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"331,809.00","3,675.00","318,134.00","10,000.00"
+'2129','',Granton,Simanto,Camillos,11/10/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"398,834.00","1,017.00","371,867.00","25,950.00"
+'2130','',Lyla,Lucy,Orwenyo,26/10/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"355,071.00","16,052.00","331,407.00","7,612.00"
+'2131','',Ian,Ndolo,Musyoki,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"199,501.00",0,"198,951.00",550
+'2132','',Gavins,Jones,Manoti,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"200,201.00",0,"200,201.00",0
+'2133','',Liana,Wanjiku,Maina,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"261,526.00",-804,"243,000.00","19,330.00"
+'2134','',Esteban,,Muuo,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"219,001.00",0,"194,001.00","25,000.00"
+'2136','',Samuel,Wanyonyi,Masinde,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"283,901.00",0,"270,401.00","13,500.00"
+'2137','',Bryson,Njoroge,Mbuthia,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"199,501.00",0,"189,451.00","10,050.00"
+'2142','',Tessy,Moginda,Omare,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"284,201.00",0,"279,051.00","5,150.00"
+'2143','',Fabian,Ombati,Obara,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"351,701.00",0,"344,411.00","7,290.00"
+'2144','',Akecruz,,Tuyisingize,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"221,001.00",0,"211,001.00","10,000.00"
+'2145','',Palmer,Murugi,Maina,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"271,501.00",0,"271,501.00",0
+'2146','',Javier,Zerah,Francis,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"271,501.00",0,"271,501.00",0
+'2147','',Keylan,Mwikali,Ayunga,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"248,101.00",0,"233,101.00","15,000.00"
+'2148','',Hawi,,Omondi,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"244,651.00",0,"229,651.00","15,000.00"
+'2149','',Antony,Maithya,Kavutha,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"200,201.00",0,"200,201.00",0
+'2150','',Hellen,Wairimu,Kimani,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"277,951.00",-352,"265,153.00","13,150.00"
+'2151','',Rakhel,Laboga,Walusala,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"226,101.00","8,600.00","217,501.00",0
+'2152','',Blessing,Issabela,Kioko,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"199,501.00",0,"174,501.00","25,000.00"
+'2153','',Sean,Ndugi,Nduru,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"199,501.00",0,"189,501.00","10,000.00"
+'2154','',Fiona,Mutanu,Mutua,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"284,201.00",0,"254,151.00","30,050.00"
+'2155','',Davian,Lwangu,Dali,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"199,501.00",0,"199,501.00",0
+'2158','',Wendy,Zawadi,Muinde,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"288,851.00",0,"269,476.00","19,375.00"
+'2159','',Griffins,Mbugua,Mburu,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"127,501.00","15,000.00","97,501.00","15,000.00"
+'2160','',Angus,Steven,Odhiambo,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"322,451.00",0,"317,451.00","5,000.00"
+'2161','',Maya,Jebet,Kandie,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"244,776.00",0,"244,776.00",0
+'2162','',Emmanuel,Xavier,Owidi,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"234,651.00",0,"220,251.00","14,400.00"
+'2163','',Jesse,Mwendwa,Lukorito,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"265,976.00",0,"219,910.00","46,066.00"
+'2165','',Joan,Mwihaki,Gakobo,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"324,410.00",0,"324,410.00",0
+'2166','',Adea,Cheptoo,Maiywa,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"291,463.00",0,"279,251.00","12,212.00"
+'2167','',Jamilla,Shali,Ngoka,06/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"331,401.00",300,"320,951.00","10,150.00"
+'2168','',Peter,Ephphatha,Minza,06/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"243,451.00","2,000.00","241,451.00",0
+'2169','',Janezevida,Michele,Okelo,07/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"239,701.00",0,"239,701.00",0
+'2170','',Prosper,Gweth,Ayimba,07/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"175,501.00","15,000.00","150,501.00","10,000.00"
+'2172','',Azaryah,Regina,Okere,07/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"324,401.00",0,"324,401.00",0
+'2177','',Theodore,Ngumbau,Mulwa,07/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"286,551.00",0,"259,051.00","27,500.00"
+'2178','',Soleil,Lozenja,Akuviza,09/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"277,576.00",0,"276,201.00","1,375.00"
+'2179','',Abigael,Mumbe,Musili,09/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"345,551.00","1,875.00","308,676.00","35,000.00"
+'2180','',Adrian,Luseso,Shimenga,13/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"330,851.00","-1,050.00","331,901.00",0
+'2181','',James,Kimani,Mburu,13/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"298,426.00",0,"285,926.00","12,500.00"
+'2183','',Alma,Maria,Osiemo,13/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"296,751.00",0,"295,426.00","1,325.00"
+'2186','',Renee,Ndunge,Mambo,13/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"240,151.00",0,"221,051.00","19,100.00"
+'2187','',Laura,Nthoki,Morinke,13/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"304,651.00",0,"304,651.00",0
+'2189','',Rian,Machanje,M'makwa,13/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"319,051.00","5,561.00","291,890.00","21,600.00"
+'2191','',John,Musomba,Mulee,13/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"154,651.00","18,750.00","135,901.00",0
+'2192','',Evelyna,Mitchelle,Ouma,13/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"316,476.00",0,"287,376.00","29,100.00"
+'2193','',Theresa,Wanjiku,Kariuki,13/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,,,,,
+'2194','',Cerrita,Mwongeli,Mutinda,14/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"310,726.00",0,"285,301.00","25,425.00"
+'2195','',Ann,Muhonja,Dali,14/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"240,151.00",0,"240,151.00",0
+'2196','',Sweeney,Manda,Brown,16/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"285,076.00",0,"285,076.00",0
+'2197','',Ethan,Musembi,Mumo,19/12/2022,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"215,051.00",0,"200,051.00","15,000.00"
+'2198','',Einstein,Imbiti,Dali,21/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"256,051.00","5,100.00","250,951.00",0
+'2199','',Jason,Mwendwa,Raymond,22/12/2022,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"241,951.00",0,"207,931.00","34,020.00"
+'2200','',Neema,Benetted,Juma,05/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"218,596.00","1,500.00","217,096.00",0
+'2201','',Rehema,Benetted,Juma,05/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"127,951.00","15,000.00","112,951.00",0
+'2203','',Aaliyah,Kate,Adisa,05/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"240,151.00",0,"229,553.00","10,598.00"
+'2204','',Dwayne,Jeevan,Momanyi,06/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"264,151.00",0,"249,151.00","15,000.00"
+'2206','',Gian,Monte,Mutinda,10/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"237,651.00",240,"236,086.00","1,325.00"
+'2207','',Ernest,Muendo,Muthama,14/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"315,800.00",-200,"316,000.00",0
+'2208','',Collins,Ndambuki,Moni,16/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"371,601.00","-8,649.00","380,250.00",0
+'2209','',Gloria,Chebichii,Kipkorir,16/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"304,950.00",0,"304,950.00",0
+'2210','',Chelsea,Chesang,Kipkorir,16/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"305,700.00",0,"305,700.00",0
+'2212','',Tamara,Ngolekong,Chepkorir,17/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"295,700.00",0,"295,700.00",0
+'2213','',Allan,,Muli,17/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"296,850.00",0,"296,850.00",0
+'2214','',Emmanuel,Kirop,Kipkorir,17/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"306,650.00",0,"303,650.00","3,000.00"
+'2215','',Bethrita,,Macharia,17/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"387,950.00",0,"387,950.00",0
+'2217','',Allan,,Amukoywa,18/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"335,150.00",0,"335,150.00",0
+'2219','',Antony,Mwangi,Thuo,18/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"368,850.00","2,660.00","366,190.00",0
+'2220','',Alvin,,Wanyeki,18/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"298,700.00",0,"298,700.00",0
+'2221','',Ricky,,Ngei,18/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"306,200.00",0,"306,200.00",0
+'2222','',Llewellyn,Mehta,Louis,18/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"387,100.00",0,"387,100.00",0
+'2223','',Teresa,Bosibori,Ratemo,19/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"372,150.00",0,"372,150.00",0
+'2224','',Jaylen,,Aruwa,19/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"199,951.00",0,"164,951.00","35,000.00"
+'2225','',Alvin,Macharia,Ndego,19/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"370,750.00",0,"370,750.00",0
+'2227','',Perpetual,Twili,Mumo,24/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"157,801.00",0,"153,151.00","4,650.00"
+'2228','',Eddy,Baraka,Muinde,25/01/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"329,501.00",0,"309,501.00","20,000.00"
+'2229','',Iris,Mumbe,Mambo,30/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"209,551.00",0,"196,051.00","13,500.00"
+'2230','',Kimberly,Achieng,Okoth,30/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"241,651.00",0,"230,626.00","11,025.00"
+'2232','',Charity,Wavinya,Mutuku,30/01/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"199,951.00",0,"199,951.00",0
+'2233','',Daniell,Makori,Motari,01/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"240,151.00",0,"223,131.00","17,020.00"
+'2234','',Altammirano,Patrabi,Junior,01/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"262,382.00",0,"262,382.00",0
+'2235','',Immaculate,N,Simiyu,01/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"297,450.00",0,"297,450.00",0
+'2236','',Loveleen,Anzethe,Amere,01/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"127,951.00","15,000.00","85,450.00","27,501.00"
+'2237','',Mark,Muoria,Gakunga,01/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"222,451.00",0,"222,451.00",0
+'2239','',Yvonne,Muendi,Mulee,06/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"255,601.00",0,"255,601.00",0
+'2240','',Francis,Kyalo,Muia,06/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"345,501.00",300,"325,301.00","19,900.00"
+'2241','',Chris,Omollo,Lugera,06/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"340,751.00",0,"340,601.00",150
+'2244','',Peninnah,Sharlyn,Kemunto,06/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"372,276.00",0,"339,251.00","33,025.00"
+'2245','',Anisha,Chepkoros,Nandwah,06/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"353,951.00",-200,"354,151.00",0
+'2246','',Bismark,Bahati,Maloba,06/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"341,751.00",0,"331,851.00","9,900.00"
+'2247','',Alicia,Mumbua,Muli,06/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"257,101.00",300,"252,501.00","4,300.00"
+'2248','',Sandra,Ateti,Olego,06/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"384,051.00",951,"383,100.00",0
+'2249','',Jaheim,,Baraka,06/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"340,301.00",0,"331,351.00","8,950.00"
+'2250','',Leon,Mwachia,Shimba,06/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"348,950.00",0,"348,950.00",0
+'2251','',Megan,Mumbi,Muhungura,06/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"344,650.00",0,"344,650.00",0
+'2252','',Lewis,Mwangi,Wainaina,06/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"257,851.00",0,"252,551.00","5,300.00"
+'2254','',Gloria,Kanana,Mwenda,07/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"394,501.00","4,300.00","390,201.00",0
+'2255','',Leon,Karl,Mabu,07/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"309,451.00",0,"289,451.00","20,000.00"
+'2256','',Robertberold,May,Omuom,08/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"304,201.00",0,"292,101.00","12,100.00"
+'2257','',Chantelle,,Makena,09/02/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"294,950.00",0,"271,950.00","23,000.00"
+'2258','',Daniel,Mwendwa,Muia,09/02/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"376,301.00",967,"344,884.00","30,450.00"
+'2259','',Sean,Njiru,Munene,23/03/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"395,100.00","35,404.00","359,696.00",0
+'2263','',Marie,Danielle,Museo,20/04/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"373,538.00","5,271.00","338,228.00","30,039.00"
+'2264','',Giovanni,Wambua,Kioko,20/04/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"335,318.00",0,"299,978.00","35,340.00"
+'2265','',Antwan,Migwi,Thaithi,02/05/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"275,223.00","-1,666.00","276,889.00",0
+'2266','',Becky,Jerotich,Caroline,11/05/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"386,488.00",0,"340,438.00","46,050.00"
+'2267','',Faith,Nduta,Mburu,11/05/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"309,343.00",0,"294,343.00","15,000.00"
+'2268','',Miriam,Nabwire,Musungu,12/05/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"277,834.00","-1,666.00","279,500.00",0
+'2269','',Shadrack,Tobiko,Tore,12/05/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"317,368.00",0,"307,918.00","9,450.00"
+'2270','',Maryann,Wambui,Mwaura,15/05/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"306,118.00",0,"286,628.00","19,490.00"
+'2271','',Brandon,Baraka,Mutunga,15/05/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"183,118.00",0,"174,971.00","8,147.00"
+'2273','',Prince,Hawi,Odoro,15/05/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"305,238.00",0,"286,388.00","18,850.00"
+'2274','',Trina,Ndanu,Muigai,15/05/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"247,368.00",0,"211,568.00","35,800.00"
+'2275','',Edwin,King'oo,Njoroge,15/05/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"367,988.00","11,608.00","329,788.00","26,592.00"
+'2276','',Sydney,James,Gichuru,31/08/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"327,383.00",0,"327,383.00",0
+'2278','',Aiden,Iban,Kimani,10/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"223,900.00",0,"223,900.00",0
+'2279','',Immaculate,Mumo,Kenedy,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"198,550.00",0,"198,550.00",0
+'2280','',Liam,Musyoka,Musli,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"192,800.00",0,"159,750.00","33,050.00"
+'2281','',Zane,Nonah,Mwangima,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"157,875.00",0,"144,925.00","12,950.00"
+'2283','',Odelia,Ruth,Otieno,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"175,145.00",0,"175,145.00",0
+'2286','',James,Kimani,Waite,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"204,650.00",0,"186,550.00","18,100.00"
+'2287','',Reinald,Tobiko,Maninkie,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"198,550.00",0,"193,395.00","5,155.00"
+'2288','',Assumpta,Mkanyika,Morinke,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"196,675.00",0,"196,675.00",0
+'2289','',Bella,Nduku,Nzyoki,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"161,150.00",0,"153,100.00","8,050.00"
+'2290','',Alena,Amary,Opudo,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"233,400.00",0,"233,400.00",0
+'2291','',Masha,Mukuhi,Mukono,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"113,100.00","32,950.00"
+'2292','',Victor,Omala,Okutoyi,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"198,550.00",0,"183,100.00","15,450.00"
+'2293','',Liam,Okora,Ohigo,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"181,675.00",-536,"165,636.00","16,575.00"
+'2295','',Celine,Njoki,Gicharu,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"184,975.00",0,"172,670.00","12,305.00"
+'2296','',Benitah,Iradukunda,Nzayisenga,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"133,100.00","12,950.00"
+'2297','',Natania,Kendi,Kinyanjui,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"138,100.00","7,950.00"
+'2298','',Samuel,Kitiva,Kitiva,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"124,100.00","21,950.00"
+'2299','',Nathan,Mwikamba,Shake,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"213,205.00",0,"213,205.00",0
+'2300','',Peter,Njongoro,Njuguna,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"204,650.00",0,"204,650.00",0
+'2301','',Trevor,Kweyu,Opiyo,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"201,200.00",0,"199,050.00","2,150.00"
+'2302','',Noel,Ramsey,Kwinga,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"174,750.00",0,"152,220.00","22,530.00"
+'2303','',Joshua,Fidel,Mwungura,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"113,100.00","32,950.00"
+'2304','',Raylen,Mumo,Mawia,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"133,100.00","12,950.00"
+'2305','',Latisha,Hendrica,Bala,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"215,400.00",0,"197,150.00","18,250.00"
+'2306','',Jack,Craig,Maswai,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"208,100.00",0,"187,000.00","21,100.00"
+'2307','',Adora,Mumbi,Makau,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"133,100.00","12,950.00"
+'2309','',Jasmine,Patience,Zawadi,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"928,000.00",0,"928,000.00",0
+'2313','',Christopher,Baraka,Nyoro,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"223,750.00","1,400.00","217,250.00","5,100.00"
+'2314','',Zita,Benita,Orwenyo,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"196,187.00","4,925.00","167,250.00","24,012.00"
+'2315','',Karlpeter,Mungai,Njunge,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"138,101.00","7,949.00"
+'2316','',Jayden,Ryan,Opar,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"168,550.00",0,"166,600.00","1,950.00"
+'2317','',Audrey,Joy,Ondieki,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"181,412.00",0,"172,870.00","8,542.00"
+'2318','',Linus,Mwendwa,Muteti,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"146,050.00",0
+'2319','',Ehsan,Wachira,Baru,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"198,550.00",0,"198,100.00",450
+'2320','',Brynlee,Florence,Omondi,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"195,125.00","1,330.00","193,795.00",0
+'2321','',Remy,Boli,Shake,11/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"151,600.00",0,"142,150.00","9,450.00"
+'2322','',Euniah,Waithera,Mwangi,11/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"146,050.00",0
+'2323','',Jasmine,Nasimiyu,Omondi,14/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"303,000.00",0,"303,000.00",0
+'2324','',Adrian,Munyao,Musyoki,14/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"171,400.00",0,"161,500.00","9,900.00"
+'2325','',Ivy,,Ndunge,14/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"238,600.00",0,"236,500.00","2,100.00"
+'2326','',Angeliz,Origi,Opudo,14/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"247,100.00","1,500.00","245,600.00",0
+'2327','',Jude,Miseda,Opudo,14/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"259,800.00","4,350.00","255,450.00",0
+'2328','',Jeremmiah,,Kithome,14/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"285,650.00","-25,950.00","302,400.00","9,200.00"
+'2329','',Emmanuel,Muuo,Muia,14/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00",0,"126,145.00","19,905.00"
+'2330','',Joy,Aoko,Ogolla,14/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"258,000.00",0,"248,000.00","10,000.00"
+'2331','',Elam,Righa,Shake,14/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"238,930.00",0,"238,930.00",0
+'2332','',Ivan,Julius,Mwambono,14/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"98,050.00","12,750.00","65,100.00","20,200.00"
+'2333','',Jaylon,Otiwu,Aruwa,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"261,750.00",0,"205,050.00","56,700.00"
+'2334','',Joy,Wavinya,Kioko,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"167,700.00",0,"167,700.00",0
+'2336','',Kelesyes,,Undisa,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"268,351.00",0,"268,351.00",0
+'2337','',Tamara,,Agiza,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"223,500.00",0,"223,500.00",0
+'2338','',Tevin,Prince,Luhatso,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"268,850.00",0,"268,850.00",0
+'2339','',Ashley,,Rose,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"207,500.00",0,"195,150.00","12,350.00"
+'2340','',Raymond,Mwendwa,Mwangangi,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"234,700.00",0,"234,700.00",0
+'2342','',Joshua,,Kingori,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"280,500.00",0,"280,500.00",0
+'2343','',Tamara,Ngendo,Mwangi,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"317,100.00",0,"310,400.00","6,700.00"
+'2344','',Elliemae,,Kemuma,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"160,200.00",0,"121,700.00","38,500.00"
+'2345','',Calvin,Mwangi,Mwangi,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"171,400.00",0,"150,980.00","20,420.00"
+'2346','',Jeremy,Gitau,Maina,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"212,050.00",0,"212,050.00",0
+'2347','',Tiffany,Ngina,Mulu,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"223,900.00",0,"216,900.00","7,000.00"
+'2348','',Femy,Kinya,Koome,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"234,250.00","3,517.00","230,733.00",0
+'2349','',Marian,Mwende,Nyamai,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"256,200.00",0,"253,400.00","2,800.00"
+'2350','',Killian,Kioko,Muthwa,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"304,550.00",0,"304,550.00",0
+'2351','',Vivian,Stephanie,Adhiambo,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"271,150.00",0,"271,150.00",0
+'2355','',Stephanie,Nau,Njeru,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"228,225.00",0,"217,175.00","11,050.00"
+'2356','',Liam,Aiden,Onyango,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"233,450.00",0,"233,450.00",0
+'2357','',Eva,Wangui,Njenga,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"171,400.00",0,"161,400.00","10,000.00"
+'2358','',Abigael,Mutanu,Musyoki,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"98,050.00","12,750.00","65,097.00","20,203.00"
+'2359','',Kristiana,Seda,Aloo,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"187,525.00",0,"181,800.00","5,725.00"
+'2360','',Grace,Ndanu,Kaiko,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"233,450.00",0,"221,100.00","12,350.00"
+'2362','',Margaret,,Juma,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"215,250.00",-352,"215,602.00",0
+'2363','',Faith,Poline,Akungwi,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"231,250.00","219,950.00","10,300.00","1,000.00"
+'2364','',Azareel,,Baraka,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"212,700.00",0,"207,700.00","5,000.00"
+'2365','',Zeke,Marumbu,Juma,15/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"246,900.00","-9,850.00","256,750.00",0
+'2366','',Gabriella,Phoebe,Ogemba,15/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"212,275.00",0,"212,275.00",0
+'2367','',Tracy,Caren,Odhiambo,16/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"243,700.00",0,"243,700.00",0
+'2369','',Everlyne,Midecha,Oyula,20/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"262,200.00",0,"222,600.00","39,600.00"
+'2370','',Ethren,Akumu,Oyula,20/11/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"262,200.00",0,"222,550.00","39,650.00"
+'2371','',Emmanuel,Kisia,Idiah,20/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"258,000.00",0,"244,640.00","13,360.00"
+'2372','',Neville,Omosa,Mitema,23/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"268,325.00",0,"268,325.00",0
+'2374','',Robert,Gicheru,Mwangi,29/11/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"258,000.00",0,"258,000.00",0
+'2376','',Meryl,Sasha,Otieno,06/12/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"312,700.00",0,"311,700.00","1,000.00"
+'2377','',Emmanuel,Nganga,Karanja,06/12/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"201,300.00",0,"201,300.00",0
+'2378','',Obedience,Neema,Wekesa,07/12/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"309,900.00",0,"309,900.00",0
+'2379','',Tyler,Hawi,Agwah,08/12/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"262,325.00",0,"262,325.00",0
+'2380','',Bob,Aloys,Ambata,11/12/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"284,025.00",0,"284,025.00",0
+'2382','',Dianah,Sasha,Zawadi,15/12/2023,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"171,400.00",0,"171,400.00",0
+'2383','',Eliezer,Mumo,Kioko,18/12/2023,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"249,800.00",0,"249,800.00",0
+'2384','',Amirah,Monyang,Isanda,04/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"209,200.00","1,500.00","194,050.00","13,650.00"
+'2385','',Ameer,Onsonso,Isanda,04/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"206,662.00",0,"194,050.00","12,612.00"
+'2388','',David,,Kylan,06/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"114,400.00","15,000.00","94,800.00","4,600.00"
+'2389','',Laura,Neema,Okumu,06/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"319,600.00",0,"319,600.00",0
+'2390','',Shirley,Therese,Ngina,06/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"259,200.00",0,"231,230.00","27,970.00"
+'2391','',Emmanuel,Muuo,Amani,06/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"158,350.00","158,350.00",0,0
+'2393','',Myles,Momanyi,Masimba,08/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"194,400.00",0,"194,280.00",120
+'2394','',Valerie,Muthoni,Karithi,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"293,500.00",0,"276,200.00","17,300.00"
+'2395','',Amaris,Moraa,Twabe,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"240,500.00",0,"227,900.00","12,600.00"
+'2396','',Shawn,Sio,Shake,08/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"209,050.00",0,"195,750.00","13,300.00"
+'2397','',Tehila,Themba,Mwangi,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"218,275.00",0,"213,475.00","4,800.00"
+'2398','',Christin,Aloo,Taraji,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"257,400.00",0,"250,200.00","7,200.00"
+'2399','',Earnest,Muiruri,Kinyajui,08/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"293,500.00",0,"252,700.00","40,800.00"
+'2400','',Tessy,Ndanu,Muema,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"308,150.00","4,725.00","303,425.00",0
+'2401','',Grace,Mutheu,Muema,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"266,650.00",0,"266,650.00",0
+'2402','',Ruby,Mwende,Muema,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"229,450.00",0,"229,450.00",0
+'2403','',Sharleen,Angella,Mutheu,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"283,375.00",546,"272,135.00","10,694.00"
+'2404','',Mark,Jayson,Ndego,08/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"195,150.00",0,"170,900.00","24,250.00"
+'2405','',John,Junior,Juma,08/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"259,350.00",-352,"259,702.00",0
+'2406','',Jason,Gikeri,Maina,08/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"217,600.00",0,"206,900.00","10,700.00"
+'2407','',Alma,Chetunda,Nyamote,08/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"249,075.00",0,"222,650.00","26,425.00"
+'2408','',Gabriel,Muuo,Wambua,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"275,100.00",0,"275,100.00",0
+'2410','',Glen,Bosibori,Khabeko,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"222,600.00",0,"208,400.00","14,200.00"
+'2411','',Mitchelle,Pendo,Mwendwa,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"271,925.00",0,"263,625.00","8,300.00"
+'2412','',Abigael,Nduku,Muia,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"266,000.00",0,"242,200.00","23,800.00"
+'2413','',Patricia,Mbeke,Kiamba,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"268,100.00",0,"261,300.00","6,800.00"
+'2414','',Ryan,Kigo,Ndungu,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"283,870.00",0,"283,870.00",0
+'2415','',Talia,Imali,Adema,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"250,600.00",0,"250,600.00",0
+'2416','',Jibril,Gaiton,Oluoch,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"288,600.00",0,"288,600.00",0
+'2417','',Christian,Kung'u,Irungu,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"273,700.00",0,"256,780.00","16,920.00"
+'2419','',Mark,Musau,Nyamai,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"311,200.00",0,"307,300.00","3,900.00"
+'2420','',Aaric,Obat,Ochieng,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"247,800.00","-1,236.00","228,986.00","20,050.00"
+'2421','',Tonia,Nthenya,Mulu,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"283,500.00","2,400.00","275,100.00","6,000.00"
+'2422','',Gracia,Atieno,Ogemba,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"266,350.00",0,"255,025.00","11,325.00"
+'2423','',Alexia,Samba,Ohieng,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"279,825.00",0,"268,825.00","11,000.00"
+'2424','',Gladys,Njeri,Kinji,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"265,550.00",0,"245,600.00","19,950.00"
+'2425','',Gavin,Asa,Ochieng,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"225,450.00",0,"216,450.00","9,000.00"
+'2426','',Leonnie,Meir,Louis,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"277,550.00",0,"277,550.00",0
+'2427','',Zulfa,Mina,Mwandebe,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"251,200.00",0,"232,360.00","18,840.00"
+'2428','',Joyroda,Mmboga,Lidaga,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"203,500.00",0,"194,500.00","9,000.00"
+'2429','',Mark,Miringu,Nganga,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"215,100.00",0,"200,310.00","14,790.00"
+'2430','',Adrian,Otieno,Omolo,09/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"262,900.00",0,"249,600.00","13,300.00"
+'2431','',Rita,Wausi,Kwinga,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"249,125.00",0,"218,510.00","30,615.00"
+'2432','',Aisha,Jebet,Kemboi,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"272,950.00","1,875.00","255,651.00","15,424.00"
+'2433','',Ashleigh,Jerono,Kemboi,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"284,800.00","2,400.00","261,600.00","20,800.00"
+'2435','',Ariana,Lumonya,Mwanja,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"171,400.00",0,"171,400.00",0
+'2436','',Shanice,Makombe,Anzetse,09/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"258,000.00",0,"256,340.00","1,660.00"
+'2437','',Leo,Kariuki,Orendo,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"246,250.00",0,"246,250.00",0
+'2438','',Lionel,Ogot,Bwire,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"203,500.00",0,"193,200.00","10,300.00"
+'2440','',Jean,Nyonga,Twabe,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"223,900.00",0,"212,300.00","11,600.00"
+'2441','',Maryaleticia,Mkakisha,Njumwa,10/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"222,200.00",0,"201,504.00","20,696.00"
+'2442','',Nicholas,,Mincha,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"309,900.00",0,"299,900.00","10,000.00"
+'2443','',Marion,Wanjiku,Mugo,10/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"281,900.00",0,"267,000.00","14,900.00"
+'2444','',Curtis,Mbote,Njenga,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"312,675.00",0,"301,975.00","10,700.00"
+'2445','',Loiparuni,Leseiyo,Parashina,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"81,600.00",0,"81,600.00",0
+'2446','',Valerie,,Mumbe,10/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"245,350.00","4,725.00","240,625.00",0
+'2447','',Jason,,Kyalo,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"235,150.00","4,725.00","230,425.00",0
+'2448','',Evans,,Nzau,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"234,650.00","1,800.00","232,850.00",0
+'2449','',Nathan,Mutanu,Mwaka,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"236,400.00","1,800.00","234,600.00",0
+'2450','',Sean,Sabari,Makau,10/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"309,750.00",0,"298,050.00","11,700.00"
+'2452','',Esther,Namulembwa,Musikoma,11/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"273,800.00",0,"260,800.00","13,000.00"
+'2453','',Angel,Wambui,Macharia,11/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"284,350.00",0,"253,500.00","30,850.00"
+'2454','',Emma,Wambui,Njenga,12/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"194,400.00","3,675.00","180,725.00","10,000.00"
+'2455','',Giftbaraka,,Ngugi,15/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"185,000.00",0,"185,000.00",0
+'2456','',Travis,Muruga,Gachoki,15/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"259,840.00",0,"258,840.00","1,000.00"
+'2457','',Talisa,Neema,Gachoki,15/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"198,310.00",0,"198,310.00",0
+'2458','',Shirlyne,Wairimu,Irungu,15/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"258,000.00",0,"243,300.00","14,700.00"
+'2460','',Grace,Angela,Kofi,15/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"253,000.00",0,"253,000.00",0
+'2462','',Ryan,Solitei,Melonyie,17/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"306,450.00",0,"300,750.00","5,700.00"
+'2463','',Rose,Naserian,Melonyie,17/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"295,200.00",0,"289,500.00","5,700.00"
+'2464','',Jayden,Muchui,Mwenda,17/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"271,500.00",0,"271,500.00",0
+'2465','',Michaelson,Muoki,Kariuki,17/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"150,600.00",0,"116,200.00","34,400.00"
+'2467','',Neville,Henry,Toywa,23/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"102,600.00","15,000.00","57,363.00","30,237.00"
+'2468','',Candy,Wanjiru,Gitau,26/01/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"146,050.00","22,645.00","104,255.00","19,150.00"
+'2469','',Skyler,Muthoni,Kigo,30/01/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"194,400.00",0,"180,100.00","14,300.00"
+'2470','',Zubeir,Mushira,Karim,20/02/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"102,600.00","15,000.00","67,600.00","20,000.00"
+'2472','',Dylan,Khalayi,Namisoho,14/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"141,533.00",0,"103,033.00","38,500.00"
+'2473','',Brian,Kiprop,Kiprono,06/05/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"117,533.00",0,"117,533.00",0
+'2475','',Elena,Wanjiru,Ngethe,06/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"224,733.00",0,"201,433.00","23,300.00"
+'2476','',Mercy,Nthenya,Musa,06/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"176,433.00",0,"166,633.00","9,800.00"
+'2477','',Patience,Koki,Musa,06/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"150,533.00",0,"145,933.00","4,600.00"
+'2478','',Charlene,Ingaitsa,Maliachi,06/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"208,385.00",0,"208,385.00",0
+'2479','',Olivia,Achieng,Owino,07/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"218,233.00",0,"176,163.00","42,070.00"
+'2480','',Kasaine,,Magilu,14/05/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"216,133.00",0,"166,533.00","49,600.00"
+'2481','',Rayden,Kisuza,Lisamadi,14/05/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"205,283.00","2,158.00","196,683.00","6,442.00"
+'2482','',Lorna,,Harnes,17/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"189,408.00",0,"172,308.00","17,100.00"
+'2483','',Parkisalie,,Magilu,17/05/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"192,583.00",0,"149,833.00","42,750.00"
+'2484','',Shantelle,Meena,Achieng,17/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"181,437.00",0,"171,437.00","10,000.00"
+'2485','',Carah,,Naishorua,20/05/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"182,612.00",0,"175,005.00","7,607.00"
+'2486','',Levis,Nganga,Karanja,21/05/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"151,383.00",0,"117,733.00","33,650.00"
+'2487','',Bernice,Kajuju,Makokha,14/06/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"239,184.00","10,651.00","214,833.00","13,700.00"
+'2488','',Faraja,Anne,Ondala,05/08/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"179,583.00",0,"134,783.00","44,800.00"
+'2489','',Samuel,Okechi,Oino,27/08/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"130,666.00",0,"121,066.00","9,600.00"
+'2490','',Allan,Mwendwa,Kyalo,27/08/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"158,958.00",0,"158,958.00",0
+'2491','',Ty,Lamo,Odhiambo,09/09/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"219,966.00",0,"174,840.00","45,126.00"
+'2492','',Sam-miguel,Ciira,Karuri,10/09/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"179,916.00",0,"179,916.00",0
+'2493','',Angela,Mumbi,Kyalo,12/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"81,000.00","10,250.00"
+'2494','',Henry,Sidney,Luchivya,12/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"190,100.00",0,"190,100.00",0
+'2495','',Shann,Kimari,Nduru,12/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"79,800.00","11,450.00"
+'2498','',Favour,Wanjiku,Ngare,12/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"115,400.00",0,"94,575.00","20,825.00"
+'2499','',Goodluck,Kagiri,Ngare,12/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"115,400.00",0,"104,575.00","10,825.00"
+'2500','',Zuri,Anyango,Nzuwa,12/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"115,400.00",0,"104,575.00","10,825.00"
+'2501','',Jayden,Lemaron,Kuyan,12/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"116,162.00",0,"102,100.00","14,062.00"
+'2502','',Annejoy,Gacheri,Gatundu,12/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"121,250.00",0,"121,250.00",0
+'2503','',Ruby,Kavaki,Mutua,12/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"191,750.00",0,"186,550.00","5,200.00"
+'2504','',Salma,Chepchirchir,Maiywa,12/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"111,837.00",0,"108,775.00","3,062.00"
+'2505','',Stacy,Nthenya,Mutisya,13/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"167,500.00",0,"154,550.00","12,950.00"
+'2506','',Simonpeter,Kilonzo,Nthuka,13/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,850.00",0,"91,850.00",0
+'2507','',Maria,Nyakoa,Ogutu,13/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"168,900.00",0,"168,900.00",0
+'2508','',Adley,Maraka,Mwanja,13/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"91,250.00",0
+'2509','',Phelan,Mutua,Kieti,14/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"137,050.00",0,"108,400.00","28,650.00"
+'2510','',Kayla,Mino,James,14/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"121,250.00",0,"121,250.00",0
+'2511','',Eupreshia,Nyanguthii,Wambui,14/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"190,100.00",0,"190,100.00",0
+'2512','',Mwangi,Kamande,Kamande,14/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"168,100.00",0,"157,950.00","10,150.00"
+'2513','',Boniface,Kiilu,Ndolo,14/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"119,175.00",0,"119,175.00",0
+'2514','',Evans,Mutua,Kaesa,14/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"104,400.00",0,"75,900.00","28,500.00"
+'2515','',Deborrah,Whitney,Njeri,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"181,500.00",0,"181,500.00",0
+'2516','',Fiona,Wanjiku,Muchiri,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"114,550.00",0,"97,900.00","16,650.00"
+'2517','',Adrian,Mwangi,Ndung'u,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"104,400.00",0,"68,400.00","36,000.00"
+'2518','',David,Omasaja,Ekadakada,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"126,900.00",0,"117,900.00","9,000.00"
+'2519','',Beracah,Mitch,Kose,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"160,000.00",0,"160,000.00",0
+'2520','',Brian,Kamande,Ng'ang'a,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"161,900.00",0,"146,975.00","14,925.00"
+'2521','',Aayden,Kyalo,Mutunga,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"84,800.00","6,450.00"
+'2522','',Alma,Akinyi,Odhiambo,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"160,387.00",0,"117,075.00","43,312.00"
+'2523','',Lorine,Chebet,Rono,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"134,200.00","2,400.00","115,300.00","16,500.00"
+'2524','',Leila,Cheptoo,Rono,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"134,200.00","2,400.00","115,350.00","16,450.00"
+'2525','',Nevon,Kipngetich,Bartera,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"91,250.00",0
+'2526','',Jeiel,Nolan,Nalianya,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"139,800.00",0,"124,100.00","15,700.00"
+'2527','',Sharon,Malian,Ekai,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"229,100.00",0,"229,100.00",0
+'2528','',Troy,Kunju,Thaithi,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"128,400.00",0,"128,400.00",0
+'2529','',Patience,Wanjiru,Kamau,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"134,400.00",0,"121,400.00","13,000.00"
+'2530','',Christian,Muuo,Mutisya,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"166,850.00",0,"162,550.00","4,300.00"
+'2531','',Harry,Onyancha,Nyangau,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"108,125.00",0,"88,625.00","19,500.00"
+'2532','',Marietha,Chao,Shete,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"175,150.00",0,"175,150.00",0
+'2534','',Giann,Githinji,Ndirangu,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"160,100.00",0,"146,400.00","13,700.00"
+'2535','',Kayden,Kamau,Ndirangu,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"160,100.00",0,"146,400.00","13,700.00"
+'2536','',George,Munywoki,Kyuwa,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][St. Agatha],"193,550.00",0,"176,850.00","16,700.00"
+'2537','',Amalia,Njoki,Kagai,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"91,250.00",0
+'2538','',Benaiah,Egaku,Iga,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"116,200.00",0,"116,200.00",0
+'2539','',Tabeal,Mukiri,Wanyonyi,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"118,550.00",0,"118,550.00",0
+'2540','',Jokate,Ngina,Muinde,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"140,500.00",0,"140,500.00",0
+'2541','',Elsie,Imani,Wafula,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"161,900.00",0,"148,550.00","13,350.00"
+'2542','',Tatiana,Taliah,Bahati,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"128,550.00","1,500.00","117,050.00","10,000.00"
+'2543','',Mary,Wangeci,Munyi,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"209,720.75",0,"209,720.75",0
+'2544','',Hezron,Leon,Nkatha,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"104,400.00",0,"104,400.00",0
+'2545','',Jasiri,Macharia,Muruki,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"112,650.00",0,"91,500.00","21,150.00"
+'2546','',Talyah,Kanana,Kavila,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"121,250.00",0,"121,250.00",0
+'2547','',Assumpta,Nzembi,Musyoki,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"104,400.00",0,"94,800.00","9,600.00"
+'2548','',Tabitha,Kanyereri,Shivachi,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"169,875.00",0,"169,875.00",0
+'2549','',Nicole,Achieng,Wamuyu,18/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"187,812.00",0,"174,500.00","13,312.00"
+'2550','',Mike,Jones,Manoti,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"91,250.00",0
+'2553','',Gabriel,Njuki,Mburu,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"186,475.00",546,"185,929.00",0
+'2554','',Jeremy,Baraka,Mburu,18/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"163,575.00",0,"163,575.00",0
+'2555','',Arnold,Kiprop,Soi,19/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"76,145.00","15,105.00"
+'2556','',Kristel,Lucia,Bala,19/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"128,950.00",0,"112,200.00","16,750.00"
+'2557','',Jeanelle,Kendi,Muthuri,19/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"122,900.00",0,"122,900.00",0
+'2558','',Jovanni,Masiga,Kimani,19/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"104,400.00",0,"92,150.00","12,250.00"
+'2559','',Erick,Muuo,Moses,19/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"83,800.00","7,450.00"
+'2560','',Makaylah,Jemosop,Kemboi,19/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"114,550.00",0,"90,900.00","23,650.00"
+'2561','',Jefferson,Gumo,Brown,19/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"104,400.00",0,"104,400.00",0
+'2562','',Dylan,Boaz,Omondi,20/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"104,400.00",0,"104,400.00",0
+'2563','',Myles,Kiogothi,Ndirangu,20/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"127,350.00",0,"127,350.00",0
+'2564','',Gabriel,Mumo,Nzyoki,20/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"134,400.00",0,"123,400.00","11,000.00"
+'2565','',Angel,Makena,Kimanthi,26/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"164,500.00",0,"145,350.00","19,150.00"
+'2566','',Abigael,G,Wairimu,27/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"146,450.00",0,"135,450.00","11,000.00"
+'2567','',Elvisbenson,Ngotho,Gachanja,27/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"173,450.00",0,"166,150.00","7,300.00"
+'2568','',Jacinta,Blessing,Mumo,27/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"104,400.00",0,"90,900.00","13,500.00"
+'2569','',Lucia,Amatta,Nzisa,27/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"104,400.00",0,"90,900.00","13,500.00"
+'2570','',Edrian,Sephan,Ouma,27/11/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"160,100.00",0,"149,400.00","10,700.00"
+'2571','',Mitchel,Luvuno,Kitti,28/11/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"160,100.00",0,"143,000.00","17,100.00"
+'2572','',Olivia,Ndanu,Mutisya,03/12/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"150,450.00",0,"147,350.00","3,100.00"
+'2573','',Liam,Njodero,Nyamole,03/12/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"104,400.00",0,"85,500.00","18,900.00"
+'2574','',Cornelius,Kahura,Gacuhi,03/12/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"37,950.00",0,"37,950.00",0
+'2575','',Jayden,Kinaro,Muriithi,03/12/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"114,550.00",0,"109,900.00","4,650.00"
+'2576','',Eliana,Wariara,Njenga,05/12/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"81,250.00","10,000.00"
+'2577','',Kyle,Kimani,Moses,05/12/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"188,075.00",0,"188,075.00",0
+'2578','',Tyler,Muuo,Munanie,09/12/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"112,000.00",0,"102,400.00","9,600.00"
+'2579','',Annet,Mukami,Mbugua,09/12/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"187,250.00",546,"174,689.00","12,015.00"
+'2580','',Grace,Natalia,Mwedwa,10/12/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"192,525.00",0,"190,500.00","2,025.00"
+'2581','',Bryssa,Wangeci,Mbuthia,17/12/2024,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"84,250.00","7,000.00"
+'2582','',Aaron,Amatta,Paul,19/12/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"139,800.00",0,"129,110.00","10,690.00"
+'2583','',Kyle,Maina,Gitonga,19/12/2024,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"91,250.00",0
+'2584','',Margret,Njeri,Ndung'u,03/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"91,250.00",0
+'2585','',Brytone,Alex,Waliaula,03/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"160,100.00",0,"125,100.00","35,000.00"
+'2586','',Moses,Magilu,Oruma,07/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"51,105.00",0,"40,109.00","10,996.00"
+'2587','',Victor,Mumo,Mbithe,07/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"84,800.00","6,450.00"
+'2588','',Tacceus,Tyler,Bahati,07/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"143,250.00",0,"130,250.00","13,000.00"
+'2589','',Bernice,Waithira,Nganga,07/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"119,100.00",0,"108,075.00","11,025.00"
+'2590','',Adeline,R,Mutinda,07/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"127,825.00",0,"118,225.00","9,600.00"
+'2591','',Jabez,Zayne,Zidani,07/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"151,359.00","12,160.00","139,199.00",0
+'2592','',Cyril,Gabriel,Nakhati,07/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"112,000.00",0,"112,000.00",0
+'2593','',Zurielle,Zawadi,Muthuri,07/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"143,528.00",0,"143,528.00",0
+'2594','',Ethan,Muthai,Nyamasyo,10/07/2014,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"144,662.00",0,"133,313.00","11,349.00"
+'2595','',Lynn,Mumbua,Nyamasyo,20/02/2018,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"132,587.00",0,"122,888.00","9,699.00"
+'2596','',Bravin,S,Bahat,31/01/2019,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"119,400.00",0,"107,980.00","11,420.00"
+'2597','',Gertrude,Moraa,Masimba,27/10/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"97,300.00",0,"96,500.00",800
+'2598','',Leon,Kiruma,Ndung'u,08/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"164,220.00",0,"164,220.00",0
+'2599','',Adrian,Katunge,Mutisya,08/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"160,100.00",0,"154,400.00","5,700.00"
+'2600','',Bravin,Njoro,Kairu,08/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"160,100.00",0,"160,100.00",0
+'2601','',Kalagai,Samantha,Becky,08/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"173,254.00","8,204.00","165,050.00",0
+'2603','',Theresa,Wanjiku,Kariuki,08/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"97,300.00",0,"97,300.00",0
+'2604','',Gordon,Kigen,Korir,08/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"206,850.00",0,"186,050.00","20,800.00"
+'2605','',Kieran,Kai,Kipkoech,08/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"128,400.00",0,"117,600.00","10,800.00"
+'2606','',Fidelis,Kendi,Mwenda,08/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"160,825.00",0,"104,700.00","56,125.00"
+'2607','',Kaytlyn,Amanda,Omwata,09/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"128,162.00",0,"110,550.00","17,612.00"
+'2608','',Brianna,,Chepkoech,09/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"124,700.00",0,"110,750.00","13,950.00"
+'2611','',Vincent,Kimani,Muinde,09/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"155,200.00",0,"155,200.00",0
+'2612','',Gift,Ngutho,Munyalo,09/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"160,100.00",0,"141,400.00","18,700.00"
+'2613','',Ezekiel,Kiarie,Ngamau,09/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"160,100.00",0,"160,100.00",0
+'2614','',Munei,Magilu,Moses,09/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"202,150.00","2,400.00","153,400.00","46,350.00"
+'2615','',Maria,,Tahari,09/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"81,800.00","9,450.00"
+'2617','',Griffin,Otieno,Ouma,09/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"206,850.00",0,"191,750.00","15,100.00"
+'2618','',Alpha,Maitha,Muuo,10/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"131,025.00",0,"131,025.00",0
+'2619','',Omega,Kilonzo,Muuo,10/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"192,525.00",0,"155,500.00","37,025.00"
+'2620','',Valarie,Munyiva,Kioko,10/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"210,250.00",0,"207,250.00","3,000.00"
+'2621','',Terryann,Nyaguthie,Nderitu,11/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"177,400.00","4,725.00","162,000.00","10,675.00"
+'2622','',Dylan,Wamae,Nderitu,11/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"108,550.00",0,"98,050.00","10,500.00"
+'2623','',Clarice,Wamuyu,Nderitu,11/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"145,700.00",0,"135,000.00","10,700.00"
+'2624','',Gabriel,Ndegwa,Mwangi,11/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"160,100.00",0,"127,400.00","32,700.00"
+'2625','',Leon,,Muchiri,11/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.Gabriel],"197,650.00",0,"194,450.00","3,200.00"
+'2626','',Daisy,Sinantei,Samanya,14/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"123,025.00",0,"123,025.00",0
+'2627','',Luna,Niomom,Maninkei,14/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"121,250.00",0,"115,650.00","5,600.00"
+'2628','',Fredrick,Kinyoi,Njenga,14/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"160,100.00",0,"144,000.00","16,100.00"
+'2629','',Gabriel,Mwendwa,Mawia,14/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"67,250.00","12,750.00","32,300.00","22,200.00"
+'2630','',Ethan,,Kaku,14/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"91,250.00",0,"91,250.00",0
+'2631','',Gabriel,Moindi,Achuti,15/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"91,250.00",0,"78,250.00","13,000.00"
+'2632','',Aquinas,Momanyi,Achuti,15/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"119,100.00",0,"108,500.00","10,600.00"
+'2633','',Sabla,Boya,Halake,15/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"161,850.00",0,"161,850.00",0
+'2634','',Joy,Amani,Mawa,15/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"118,500.00",0,"118,500.00",0
+'2635','',Loius,Wanjohi,Gakunga,15/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"92,750.00",0,"92,750.00",0
+'2636','',Liam,Muchiri,Maina,16/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"135,975.00",0,"126,250.00","9,725.00"
+'2637','',Jayden,Kiprop,Chelagai,16/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"115,137.00",0,"94,575.00","20,562.00"
+'2638','',Daniela,Ndila,Mbatha,16/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"112,000.00",0,"112,000.00",0
+'2639','',Jabari,Mutahi,Irungu,16/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"144,650.00",0,"128,680.00","15,970.00"
+'2640','',Joseph,Kitati,Ndolo,16/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"100,625.00",0,"91,250.00","9,375.00"
+'2641','',Isaac,Michael,Awara,16/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"92,750.00",0,"77,850.00","14,900.00"
+'2643','',Daisy,Wanjiru,Njoronge,21/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"191,450.00",0,"184,750.00","6,700.00"
+'2644','',Francis,Motiri,Ondicho,21/01/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"155,200.00",0,"141,650.00","13,550.00"
+'2645','',Sage,Kwamboka,Oira,28/01/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"172,500.00",0,"162,050.00","10,450.00"
+'2646','',Tirzah,Hilary,Chemutai,10/02/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.GregorytheGreat],"160,100.00",0,"134,400.00","25,700.00"
+'2647','',Peacelencer,Neema,Musau,06/03/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"127,700.00","22,233.00","105,467.00",0
+'2648','',Tamara,Adongo,Wekesa,28/04/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"98,842.00",0,"98,000.00",842
+'2649','',Brian,Macharia,Kagia,28/04/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"106,367.00",0,"61,567.00","44,800.00"
+'2650','',Brandon,,Kagia,28/04/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"106,367.00",0,"61,567.00","44,800.00"
+'2651','',Joseph,Calvis,Otieno,29/04/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"109,367.00",0,"109,367.00",0
+'2652','',Esther,Njeri,Mungai,29/04/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Of Fatima],"154,300.00","-1,666.00","133,966.00","22,000.00"
+'2653','',Trevon,James,Karanja,30/04/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"76,417.00",0,"66,417.00","10,000.00"
+'2656','',Miriam,Kathomi,Mutuma,30/04/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"89,167.00",0,"56,217.00","32,950.00"
+'2657','',Meghan,Njeri,Maina,05/05/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"75,417.00",0,"60,467.00","14,950.00"
+'2658','',Patience,Mwikali,Mwanzia,09/05/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"57,917.00","12,750.00","34,467.00","10,700.00"
+'2659','',Athalia,Benaddatte,Mokua,17/06/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"71,417.00","12,742.00","43,070.00","15,605.00"
+'2660','',Damian,Sila,Muli,18/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"107,483.00",0,"107,483.00",0
+'2661','',Alex,Muriuki,Mutembei,18/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St.Consolata],"81,833.00",0,"72,533.00","9,300.00"
+'2662','',Trevor,,Shikhuyu,18/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"101,800.00","-1,334.00","103,134.00",0
+'2663','',Nardyajoy,Ndanu,Kyalo,18/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"76,533.00",0,"76,533.00",0
+'2664','',Daisy,Mwanapili,Kofa,18/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"65,333.00",0,"56,833.00","8,500.00"
+'2665','',Emmanuel,Ayabel,Kipchumba,19/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"76,333.00",0,"72,033.00","4,300.00"
+'2666','',James,Kutwa,Omtoko,20/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"93,300.00","-1,334.00","80,550.00","14,084.00"
+'2667','',Lianadamaris,Nduta,Kimotho,20/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"109,568.00",0,"109,568.00",0
+'2668','',Sasha,Daisy,Mukeya,21/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"103,333.00",0,"103,333.00",0
+'2669','',Michelle,Waithera,Mburu,25/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"105,800.00","-1,334.00","107,134.00",0
+'2670','',Merlin,,Kimuyu,25/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"68,833.00",0,"68,833.00",0
+'2672','',Liam,Githungo,Mwangi,26/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"87,633.00",0,"79,133.00","8,500.00"
+'2673','',Eliana,Wambui,Murimi,27/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"64,333.00","18,750.00","10,000.00","35,583.00"
+'2674','',Faustina,Nyawira,Murimi,27/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"55,350.00",0,"5,000.00","50,350.00"
+'2675','',Wonderariella,Zahrah,Samson,27/08/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"81,033.00",0,"78,533.00","2,500.00"
+'2676','',Charles,Samson,Ndolo,27/08/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"75,933.00",0,"73,833.00","2,100.00"
+'2677','',Levis,Macharia,Ndwiga,01/09/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"73,533.00",0,"73,533.00",0
+'2678','',Princess,Keylah,Chebet,01/09/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"76,690.00",0,"66,000.00","10,690.00"
+'2679','',Abigael,Wanjiru,Muiruri,02/09/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"87,972.00",0,"87,972.00",0
+'2680','',Melisa,Waruguru,Kamau,07/10/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"76,000.00",0,"76,000.00",0
+'2681','',Ethan,Peter,Wanjala,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"52,100.00",0,"39,463.00","12,637.00"
+'2682','',Joy,Waruguru,Kiboro,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"41,950.00",0
+'2683','',Adeline,Hawi,Opudo,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"62,250.00",0,"62,250.00",0
+'2684','',Bethany,Wavinya,Musili,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"57,050.00",0,"20,500.00","36,550.00"
+'2685','',Giannah,Nyaboke,Iddy,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"54,450.00",0,"51,450.00","3,000.00"
+'2686','',Joel,Mwambu,Mulu,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"49,450.00",0,"42,450.00","7,000.00"
+'2687','',Kaylynn,Reynah,Kisanya,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"54,450.00",0,"42,000.00","12,450.00"
+'2688','',Alvin,Muema,Musyoki,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"31,500.00","10,450.00"
+'2689','',Gianni,Fadhili,Musamali,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"19,000.00","22,950.00"
+'2690','',Alpha,Jayce,Ombati,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"49,450.00",0,"49,450.00",0
+'2691','',Emanuel,Baraka,Joyce,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"15,000.00","26,950.00"
+'2692','',Imelda,Ndunge,Musinga,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"52,100.00",0,"52,100.00",0
+'2693','',Daniel,Nzioki,Ekadakada,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"49,450.00",0,"41,600.00","7,850.00"
+'2694','',Humphrey,Laisa,Buliga,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"20,000.00","21,950.00"
+'2695','',Lisa,Sydney,Kiamba,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"22,000.00","19,950.00"
+'2696','',Clara,Angela,Osiemo,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"53,275.00",0,"45,000.00","8,275.00"
+'2697','',Mirriam,Mumbua,Mulwa,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"31,950.00","10,000.00"
+'2699','',Fabiola,Loi,Mutua,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"52,100.00",0,"20,100.00","32,000.00"
+'2701','',Josh,Irungu,Kimondo,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"49,450.00",0,"44,000.00","5,450.00"
+'2702','',Raynard,Chege,Kinuthia,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"36,000.00","5,950.00"
+'2703','',James,Martin,Juma,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"18,000.00","23,950.00"
+'2704','',Mirren,Chebet,Oduory,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00","12,750.00",0,"29,200.00"
+'2705','',Shanian,Pauline,Bwire,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"49,450.00",0,"49,450.00",0
+'2707','',Ryan,Maingi,Kivasu,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"49,450.00",0,"49,450.00",0
+'2709','',Clarah,Wambugwa,Mwangi,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"25,000.00","16,950.00"
+'2710','',Emmy,Bright,Onyango,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"29,200.00",0,0,"29,200.00"
+'2711','',Joy,Wanjiku,Njuguna,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"52,100.00",0,"52,100.00",0
+'2712','',Samirah,Kwamboka,Isanda,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"49,450.00",0,"33,000.00","16,450.00"
+'2713','',Mario,Baraka,Alex,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"31,500.00","10,450.00"
+'2714','',Aurora,Elsie,Nyakundi,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"36,950.00","5,000.00"
+'2715','',Davis,Mwaka,Mwau,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"31,000.00","10,950.00"
+'2716','',Bernice,Khasandi,Amulavu,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"55,000.00",0,"55,000.00",0
+'2717','',Patience,Mutheu,Maithya,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"52,100.00",0,"52,100.00",0
+'2718','',Faith,Monique,Marunda,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"35,950.00","6,000.00"
+'2719','',Dawn,Marura,Mwangima,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"31,500.00","10,450.00"
+'2720','',Faustina,Meghon,Mwashighadi,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"28,950.00","13,000.00"
+'2721','',Leon,Njuguna,Gichuru,11/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"51,325.00",0,"40,000.00","11,325.00"
+'2722','',Melisa,Mbalazi,Iddy,11/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"58,000.00",0,"51,200.00","6,800.00"
+'2723','',Liammaurice,Mumo,Mululu,13/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"70,400.00",0,"57,100.00","13,300.00"
+'2724','',Fabian,,Mutua,13/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"66,200.00",0,"62,000.00","4,200.00"
+'2725','',Lucy,Nafula,Laisa,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"49,000.00",0,"24,000.00","25,000.00"
+'2726','',Jordan,Gachomo,Kimondo,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"53,000.00",0,"43,000.00","10,000.00"
+'2727','',Ashley,Nirvelly,Achieng,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"66,200.00",0,"66,200.00",0
+'2728','',Jescah,Mwikali,Mutisya,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"45,500.00",0,"39,000.00","6,500.00"
+'2729','',Claudius,,Murithi,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"54,600.00",0,"50,800.00","3,800.00"
+'2730','',Riley,Mathews,Agwah,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"55,300.00",0,"55,300.00",0
+'2731','',Ashley,Jeruto,Korir,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"45,500.00",0,"38,000.00","7,500.00"
+'2732','',Ramona,Mueni,Maingi,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"62,100.00",0,"62,100.00",0
+'2733','',Princess,Wambui,Muchwe,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"45,500.00",0,"37,000.00","8,500.00"
+'2734','',Shantel,Katanu,Mwende,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"62,100.00",0,"54,000.00","8,100.00"
+'2735','',Talia,Nyaera,Moraa,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"53,000.00",0,"37,000.00","16,000.00"
+'2736','',Tiffany,Neema,Mulu,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"45,500.00",0,"36,500.00","9,000.00"
+'2737','',Vanessa,Nyambura,Maina,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"66,125.00",0,"58,000.00","8,125.00"
+'2738','',Valeria,Wanjiru,Maina,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"65,925.00",0,"57,000.00","8,925.00"
+'2739','',Mariagoretti,Nduku,Mwau,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"49,000.00",0,"33,000.00","16,000.00"
+'2740','',Laylah,Jepkoech,Kemboi,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"67,100.00","1,875.00","49,000.00","16,225.00"
+'2741','',Kaylah,Jepkorir,Kemboi,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"67,100.00",0,"47,001.00","20,099.00"
+'2742','',Taji,Shalom,Homes,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"67,300.00",0,"67,300.00",0
+'2743','',Cecilia,Kalekye,Kyalo,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"62,300.00",0,"47,500.00","14,800.00"
+'2744','',Jaelzuri,Mumbe,Kimuli,23/12/2019,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"55,650.00","2,900.00","43,550.00","9,200.00"
+'2745','',Jovian,Baraka,Kyalo,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"46,000.00",0,"46,000.00",0
+'2746','',Blessing,Matia,Wainaina,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"45,500.00",0,"38,000.00","7,500.00"
+'2747','',Steven,Mutua,Muuo,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"55,650.00",0,"55,650.00",0
+'2748','',Grace,Ndila,Muuo,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"76,350.00",0,"76,350.00",0
+'2749','',Jayson,Gichuhi,Aliero,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"49,000.00",0,"40,000.00","9,000.00"
+'2750','',Ruth,Kajaira,Aliero,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"66,200.00",0,"54,000.00","12,200.00"
+'2751','',Evensteincarol,Leticiah Moraa,Metobo,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"53,000.00",0,"52,000.00","1,000.00"
+'2752','',Jayden,Musyoki,Malombe,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"60,600.00",0,"50,500.00","10,100.00"
+'2753','',Angel,Neema,Liavuli,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"64,000.00",0,"64,000.00",0
+'2754','',Saphan,Otieno,Odhiambo,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"60,600.00",0,"52,000.00","8,600.00"
+'2755','',Grace,Mumo,Maithya,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"64,750.00",0,"64,750.00",0
+'2756','',Renada,Makena,Mwenda,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"53,000.00",0,"53,000.00",0
+'2757','',Naomi,Wanjiku,Wanyeki,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. John Bosco],"64,675.00",0,"62,000.00","2,675.00"
+'2758','',Kesley,Wangari,Macharia,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"61,500.00",0,"29,000.00","32,500.00"
+'2759','',Melissa,Mbula,Roger,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"73,700.00",0,"63,700.00","10,000.00"
+'2760','',Ericca,Makena,Murithi,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"56,500.00",0,"32,000.00","24,500.00"
+'2761','',Jayden,Kisilu,Nzyoki,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"64,750.00",0,"62,000.00","2,750.00"
+'2762','',Shanna,Vivu,Mbaluka,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"54,600.00",0,"54,600.00",0
+'2763','',Ivan,Nzioka,Kakuli,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"55,650.00",0,"45,650.00","10,000.00"
+'2766','',Quinter,Wambui,Muthoni,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"54,600.00",0,"54,600.00",0
+'2767','',Kendra,Croh,Muhami,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"54,600.00",0,"54,600.00",0
+'2768','',Shanice,Wambui,Ng'ang'a,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"45,500.00",0,"24,000.00","21,500.00"
+'2769','',Grada,Nekesa,Simuyu,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"78,700.00",0,"50,000.00","28,700.00"
+'2770','',Penninah,Wanjiru,Maina,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"78,701.00","-12,499.00","91,200.00",0
+'2771','',Fred,Mwita,Wandaka,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"54,800.00",0,"54,800.00",0
+'2772','',Faith,Boke,Wamwea,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"66,200.00",0,"66,200.00",0
+'2773','',Michael,Mwalugha,Mwashighadi,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"54,600.00",0,"43,575.00","11,025.00"
+'2774','',Olivia,Kemunto,Obae,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"72,800.00",0,"52,000.00","20,800.00"
+'2775','',Bob,Momanyi,Obae,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 8][St.ClareofAssisi],"84,400.00",0,"67,000.00","17,400.00"
+'2776','',Ethan,Wanyenji,Wairimu,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"53,000.00",0,"53,000.00",0
+'2777','',Tavin,Isreal,Mwangi,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"54,600.00",0,"42,000.00","12,600.00"
+'2778','',Ethan,Karuri,Gachara,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"45,500.00",0,"41,800.00","3,700.00"
+'2779','',Tamara,Tracy,Bahati,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"75,575.00",0,"58,575.00","17,000.00"
+'2780','',Aiden,Johari,Wachira,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"73,700.00",0,"73,700.00",0
+'2781','',David,Kimani,Kaberi,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"49,000.00",0,"49,000.00",0
+'2782','',Paul,Kimita,Wanjau,17/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"78,700.00",0,"46,000.00","32,700.00"
+'2783','',Marcia,Gathigia,Muya,17/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"54,600.00",0,"54,600.00",0
+'2784','',Jeremy,Eliam,Mwangi,18/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"70,600.00",0,"70,600.00",0
+'2785','',Prince,Brighton,Mokua,18/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"66,200.00",0,"27,000.00","39,200.00"
+'2786','',Tiffany,Mutheu,Kioko,18/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"67,100.00",0,"59,300.00","7,800.00"
+'2787','',Tatiana,K,Ratemo,18/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"52,100.00",0,"39,500.00","12,600.00"
+'2788','',Elvis,Thaiya,Kamau,18/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"62,300.00",0,"50,000.00","12,300.00"
+'2789','',Darion,Wahome,Nyamu,19/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"45,500.00",0,"42,000.00","3,500.00"
+'2790','',Gianna,Wangui,Nyamu,19/11/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"35,000.00","6,950.00"
+'2791','',Leon,Waithaka,Muchiri,20/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"54,600.00",0,"33,000.00","21,600.00"
+'2792','',Lincon,Mutua,Maingi,25/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"62,300.00",0,"61,300.00","1,000.00"
+'2793','',Myles,Charagu,Gitau,25/11/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"20,400.00","21,550.00"
+'2794','',Layla,Nyambura,Mwangi,13/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"52,100.00",0,"42,100.00","10,000.00"
+'2795','',Trevor,Harvey,Apaka,13/12/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"54,450.00",0,"19,000.00","35,450.00"
+'2796','',Joshua,Ogachi,Isaboke,13/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"35,000.00","6,950.00"
+'2797','',Joseph,Nyambane,Isaboke,13/12/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"35,000.00","6,950.00"
+'2798','',Alvin,Ochako,Mosoti,13/12/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"53,000.00",0,"53,000.00",0
+'2799','',Gabriella,Wayua,Mutuku,13/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"41,950.00",0,"41,950.00",0
+'2800','',Geana,Bevin,Ogemba,16/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"53,275.00",0,"50,000.00","3,275.00"
+'2801','',Sabdio,Godana,Yatani,16/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"62,600.00","1,500.00","61,100.00",0
+'2802','',Adho,Godana,Yatani,16/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Stephen],"62,600.00",0,"62,600.00",0
+'2803','',Mamo,Godana,Yatani,16/12/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"58,000.00",0,"58,000.00",0
+'2804','',Arbe,Umuro,Yatani,16/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"78,700.00","2,400.00","76,300.00",0
+'2805','',Abigail,Mutheu,Muthama,16/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"52,100.00",0,"39,000.00","13,100.00"
+'2806','',Emmanuel,Were,Were,31/12/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"45,500.00",0,0,"45,500.00"
+'2807','',Tessydahlia,Imani,Lisamadi,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"57,050.00","2,158.00","45,000.00","9,892.00"
+'2808','',Terry,Nyambura,Gitonga,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Rita],"59,150.00",0,"59,150.00",0
+'2809','',Talia,Wanjiru,Gitonga,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"59,150.00",0,"59,150.00",0
+'2810','',Milian,Margret,Kihara,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"54,600.00",0,"54,600.00",0
+'2811','',Christina,Wangui,Kudondo,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"73,700.00",0,"73,700.00",0
+'2812','',Jabari,Ng'ang'a,Maina,31/12/2025,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"53,000.00",0,"53,000.00",0
+'2813','',Burnice,Bwari,Mokua,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 2][St. Michael],"49,000.00",0,"2,000.00","47,000.00"
+'2814','',Mark,Syano,Maingi,31/12/2025,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"49,450.00",0,"30,000.00","19,450.00"
+'2815','',Naomi,Wanjiku,Gachoka,02/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Bakhita],"54,600.00",0,"54,600.00",0
+'2816','',Melody,Nyarotso,Chitechi,02/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"43,450.00",0,"6,000.00","37,450.00"
+'2818','',Ashley,Waithera,Maina,05/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"73,700.00",0,"71,700.00","2,000.00"
+'2819','',Natasha,Mutanu,Moni,05/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"74,000.00",0,"74,000.00",0
+'2820','',Manuel,Wakori,Kihara,05/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"66,200.00",0,"66,200.00",0
+'2821','',Kenwesley,Letipat,Ntapaiya,05/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"63,400.00",0,"63,400.00",0
+'2822','',Witness,Amani,Wekesa,05/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"76,350.00",0,"76,350.00",0
+'2823','',Omega,Baraka,Wechuli,05/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"64,950.00",0,"64,950.00",0
+'2824','',Athalia,Brielle,Apoko,05/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"55,300.00",0,"55,300.00",0
+'2825','',Tamara,Aimee,Apoko,05/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"54,600.00",0,"54,600.00",0
+'2826','',Leonard,Muuo,Muthoka,05/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"54,600.00",0,"54,600.00",0
+'2827','',Ashley,Jebet,Limo,05/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"73,700.00",0,"55,500.00","18,200.00"
+'2828','',Antony,Padua,Kingi,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"49,562.00",0,"25,000.00","24,562.00"
+'2829','',Adrian,Abuga,Ratemo,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.Jude],"76,350.00",0,"57,500.00","18,850.00"
+'2830','',Baraka,,Jabali,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"60,600.00",0,"33,000.00","27,600.00"
+'2831','',Emmanuel,Kiplangat,Sitienei,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St.Augustine],"67,100.00",0,"67,100.00",0
+'2832','',Caleb,,Kiplagat,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"73,000.00",0,"37,500.00","35,500.00"
+'2833','',Jaydel,Kibet,Koech,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"78,700.00",0,"60,500.00","18,200.00"
+'2834','',Cythia,Mwende,Kyalo,06/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"67,200.00",0,"52,000.00","15,200.00"
+'2835','',Dylan,,Baraka,06/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.CatherineofSiena],"81,300.00",0,"68,300.00","13,000.00"
+'2836','',Austine,Okoth,Ochola,07/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Dominic Savio],"54,800.00","18,750.00",0,"36,050.00"
+'2837','',Oscar,Owour,Ochola,07/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"43,450.00",0,"26,000.00","17,450.00"
+'2838','',Talia,Rehema,Mukaria,07/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][Our Lady Queen Of Peace],"41,950.00",0,"41,950.00",0
+'2839','',Miguel,Wangaka,Kihara,07/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"54,800.00",0,"54,800.00",0
+'2840','',Louis,Ontweka,Ratemo,07/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"67,300.00",0,"55,000.00","12,300.00"
+'2841','',Joy,Zawadi,Raymond,07/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"41,950.00",0,"25,000.00","16,950.00"
+'2842','',Heather,Alicious,Kariuki,08/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"62,300.00",0,"58,800.00","3,500.00"
+'2843','',Michelle,Ndinda,Maingi,08/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Richard],"53,000.00",0,"41,750.00","11,250.00"
+'2844','',Macelino,Muthama,Mutiso,08/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"55,000.00",0,"55,000.00",0
+'2845','',Charles,Jason,Abwori,08/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"67,315.00",0,"67,315.00",0
+'2846','',Nathaniel,Mwaniki,Wachira,08/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 1][St. Teresa],"55,650.00",0,"45,000.00","10,650.00"
+'2847','',Logan,Waweru,Kimotho,08/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"43,450.00",0,"25,000.00","18,450.00"
+'2848','',Leonel,Gatura,Mwangi,08/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP2][St. Mary],"53,600.00",0,"42,000.00","11,600.00"
+'2849','',Blaise,Mwesige,Murungi,12/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"41,950.00",0,"25,000.00","16,950.00"
+'2850','',Jerome,Mukama,Murugi,12/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 3][St. Peter],"50,100.00","15,000.00","25,000.00","10,100.00"
+'2851','',Destiny,,Menya,12/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 7][St.KaroliLwanga],"78,700.00",0,"63,000.00","15,700.00"
+'2852','',Wayne,Wahome,Kirori,12/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[PG][St. Raphael],"49,450.00",0,"49,450.00",0
+'2853','',Joy,Cecily,Marunda,13/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 5][St. Anthony],"54,800.00",0,"45,000.00","9,800.00"
+'2854','',Michelle,Njeri,Njoroge,13/01/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St.Josemaria Escriva],"54,450.00",0,"32,000.00","22,450.00"
+'2855','',Roma,Ebenezer,Ochieng,20/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 6][St. Lucia],"71,425.00",0,"33,550.00","37,875.00"
+'2856','',Simeon,Monday,Jinza,30/01/2026,Male,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 9][Our Lady Seat Of Wisdom],"67,200.00",0,"2,000.00","65,200.00"
+'2857','',Teyanna,Mutanu,Munguti,09/02/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[PP1][St. Joseph],"34,400.00",0,"30,000.00","4,400.00"
+'2858','',Kylie,Mumbe,Munguti,09/02/2026,Female,Active,Full Time,Self-Sponsored,Christian,Kenya,[Grade 4][St. Anne],"56,700.00",0,"40,000.00","16,700.00"
