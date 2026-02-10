@@ -209,6 +209,7 @@
         let currentToken = null;
         let userType = null; // Set on user selection
         let loginUserType = null;
+        let parentOtpStep = false;
 
         function showUserTypeSection() {
             document.getElementById('userTypeSection').style.display = 'block';
@@ -219,6 +220,7 @@
 
         function showLogin(type) {
             loginUserType = type;
+            parentOtpStep = false;
             // Dynamically render login fields
             let html = '';
             let title = '';
@@ -226,38 +228,50 @@
             if (type === 'admin') {
                 title = '🔐 Admin Login';
                 html = `
-					<div class="mb-3">
-						<label class="form-label" for="loginEmail">Email</label>
-						<input type="email" class="form-control" id="loginEmail" placeholder="Enter admin email" title="Email">
-					</div>
-					<div class="mb-3">
-						<label class="form-label" for="loginPassword">Password</label>
-						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
-					</div>`;
+                    <div class="mb-3">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter admin email" title="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+                    </div>`;
                 registerLink = '';
             } else if (type === 'staff') {
                 title = '🔐 Staff Login';
                 html = `
-					<div class="mb-3">
-						<label class="form-label" for="loginEmail">Email</label>
-						<input type="email" class="form-control" id="loginEmail" placeholder="Enter staff email" title="Email">
-					</div>
-					<div class="mb-3">
-						<label class="form-label" for="loginPassword">Password</label>
-						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
-					</div>`;
+                    <div class="mb-3">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter staff email" title="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+                    </div>`;
                 registerLink = '<a href="#" onclick="showRegister()">Register as Staff</a>';
             } else if (type === 'parent') {
                 title = '🔐 Parent Login';
                 html = `
-					<div class="mb-3">
-						<label class="form-label" for="loginAdmission">Student Admission Number</label>
-						<input type="text" class="form-control" id="loginAdmission" placeholder="Enter admission number" title="Admission Number">
-					</div>
-					<div class="mb-3">
-						<label class="form-label" for="loginPassword">Password</label>
-						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
-					</div>`;
+                    <div class="mb-3">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter parent email" title="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginAdmission">Student Admission Number</label>
+                        <input type="text" class="form-control" id="loginAdmission" placeholder="Enter admission number" title="Admission Number">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-warning w-100" onclick="requestParentOtp()">Request OTP</button>
+                    </div>
+                    <div id="otpField" style="display:none;">
+                        <label class="form-label" for="loginOtp">Enter OTP</label>
+                        <input type="text" class="form-control" id="loginOtp" placeholder="Enter OTP from email">
+                        <button class="btn btn-info w-100 mt-2" onclick="verifyParentOtp()">Verify OTP</button>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+                    </div>`;
                 registerLink = '<a href="#" onclick="showRegister()">Register as Parent</a>';
             }
             document.getElementById('loginFields').innerHTML = html;
@@ -314,8 +328,14 @@
                 loginData.email = document.getElementById('loginEmail').value;
                 loginData.password = document.getElementById('loginPassword').value;
             } else if (loginUserType === 'parent') {
+                loginData.email = document.getElementById('loginEmail').value;
                 loginData.admission_number = document.getElementById('loginAdmission').value;
                 loginData.password = document.getElementById('loginPassword').value;
+                // Optionally require OTP verification before login
+                if (!parentOtpStep) {
+                    document.getElementById('loginMessage').innerHTML = '<div class="alert alert-warning">Please verify OTP before logging in.</div>';
+                    return;
+                }
             }
             document.getElementById('loginMessage').innerHTML = '<div class="alert alert-info">🔄 Logging in...</div>';
             try {
@@ -324,8 +344,11 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(loginData)
                 });
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
                 const data = await response.json();
+                if (response.status === 429) {
+                    document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger">❌ ${data.message || 'Account locked. Try again later.'}</div>`;
+                    return;
+                }
                 if (data.success) {
                     currentToken = data.token;
                     currentUser = data.user;
@@ -341,6 +364,59 @@
             }
         }
 
+        // Parent OTP request
+        async function requestParentOtp() {
+            const email = document.getElementById('loginEmail').value;
+            if (!email) {
+                document.getElementById('loginMessage').innerHTML = '<div class="alert alert-warning">Enter your email to request OTP.</div>';
+                return;
+            }
+            document.getElementById('loginMessage').innerHTML = '<div class="alert alert-info">🔄 Sending OTP...</div>';
+            try {
+                const response = await fetch('/api/parent/request-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('otpField').style.display = 'block';
+                    document.getElementById('loginMessage').innerHTML = '<div class="alert alert-success">OTP sent to your email.</div>';
+                } else {
+                    document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger">❌ ${data.message}</div>`;
+                }
+            } catch (error) {
+                document.getElementById('loginMessage').innerHTML = '<div class="alert alert-danger">❌ Failed to send OTP.</div>';
+            }
+        }
+
+        // Parent OTP verify
+        async function verifyParentOtp() {
+            const email = document.getElementById('loginEmail').value;
+            const otp = document.getElementById('loginOtp').value;
+            if (!email || !otp) {
+                document.getElementById('loginMessage').innerHTML = '<div class="alert alert-warning">Enter your email and OTP.</div>';
+                return;
+            }
+            document.getElementById('loginMessage').innerHTML = '<div class="alert alert-info">🔄 Verifying OTP...</div>';
+            try {
+                const response = await fetch('/api/parent/verify-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, otp })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    parentOtpStep = true;
+                    document.getElementById('loginMessage').innerHTML = '<div class="alert alert-success">OTP verified. You may now log in.</div>';
+                } else {
+                    document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger">❌ ${data.message}</div>`;
+                }
+            } catch (error) {
+                document.getElementById('loginMessage').innerHTML = '<div class="alert alert-danger">❌ Failed to verify OTP.</div>';
+            }
+        }
+
         // REGISTER FUNCTION
         async function register() {
             const username = document.getElementById('registerUsername').value;
@@ -350,6 +426,11 @@
             const staff_role = document.getElementById('registerStaffRole') ? document.getElementById('registerStaffRole').value : null;
             if (!userType) {
                 document.getElementById('registerMessage').innerHTML = '<div class="alert alert-warning">Please select user type</div>';
+                return;
+            }
+            // Show password requirements
+            if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password) || !/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)) {
+                document.getElementById('registerMessage').innerHTML = '<div class="alert alert-warning">Password must be at least 8 characters and include upper, lower, number, and symbol.</div>';
                 return;
             }
             let regData = { username, email, password, user_type: userType };
