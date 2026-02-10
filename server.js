@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 // Database connection
@@ -169,27 +169,31 @@ app.post('/api/login', async (req, res) => {
                 [user.id]
             );
 
-            // Create token
-            const token = jwt.sign(
-                {
-                    id: user.id,
-                    email: user.email,
-                    username: user.username,
-                    user_type: user.user_type
-                },
-                process.env.JWT_SECRET || 'default_secret',
-                { expiresIn: '24h' }
-            );
-
+            // Create token, include staff_role if staff
+            const tokenPayload = {
+                id: user.id,
+                email: user.email,
+                username: user.username,
+                user_type: user.user_type
+            };
+            if (user.user_type === 'staff') {
+                tokenPayload.staff_role = user.staff_role;
+            }
+            const token = jwt.sign(tokenPayload, process.env.JWT_SECRET || 'default_secret', { expiresIn: '24h' });
+            // Return user object with staff_role if staff
+            const userObj = {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                user_type: user.user_type
+            };
+            if (user.user_type === 'staff') {
+                userObj.staff_role = user.staff_role;
+            }
             return res.json({
                 success: true,
                 token,
-                user: {
-                    id: user.id,
-                    username: user.username,
-                    email: user.email,
-                    user_type: user.user_type
-                }
+                user: userObj
             });
 
         } catch (dbError) {
@@ -267,7 +271,7 @@ app.get('/api/admin/users', authenticateToken, async (req, res) => {
 // Register new user
 app.post('/api/register', async (req, res) => {
     try {
-        const { username, email, password, user_type } = req.body;
+        const { username, email, password, user_type, staff_role } = req.body;
 
         // Input validation
         if (!username || !email || !password || !user_type) {
@@ -275,6 +279,13 @@ app.post('/api/register', async (req, res) => {
         }
         if (!['staff', 'parent'].includes(user_type)) {
             return res.status(400).json({ success: false, message: 'Invalid user type' });
+        }
+        // Staff role validation
+        if (user_type === 'staff') {
+            const validRoles = ['teacher', 'cook', 'driver', 'cleaner', 'account_office'];
+            if (!staff_role || !validRoles.includes(staff_role)) {
+                return res.status(400).json({ success: false, message: 'Invalid or missing staff role.' });
+            }
         }
         // Strong password check
         if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password)) {
@@ -288,10 +299,15 @@ app.post('/api/register', async (req, res) => {
         }
         const hashedPassword = await bcrypt.hash(password, 12);
         // Insert user with verified = 0
-        const [result] = await pool.execute(
-            'INSERT INTO users (username, email, password_hash, user_type, is_active, verified) VALUES (?, ?, ?, ?, ?, ?)',
-            [username, email, hashedPassword, user_type, true, false]
-        );
+        let insertQuery, insertParams;
+        if (user_type === 'staff') {
+            insertQuery = 'INSERT INTO users (username, email, password_hash, user_type, staff_role, is_active, verified) VALUES (?, ?, ?, ?, ?, ?, ?)';
+            insertParams = [username, email, hashedPassword, user_type, staff_role, true, false];
+        } else {
+            insertQuery = 'INSERT INTO users (username, email, password_hash, user_type, is_active, verified) VALUES (?, ?, ?, ?, ?, ?)';
+            insertParams = [username, email, hashedPassword, user_type, true, false];
+        }
+        await pool.execute(insertQuery, insertParams);
         // Generate verification token
         const jwtSecret = process.env.JWT_SECRET || 'default_secret';
         const verificationToken = jwt.sign({ email }, jwtSecret, { expiresIn: '1d' });

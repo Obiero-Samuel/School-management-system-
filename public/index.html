@@ -226,38 +226,38 @@
             if (type === 'admin') {
                 title = '🔐 Admin Login';
                 html = `
-                    <div class="mb-3">
-                        <label class="form-label" for="loginEmail">Email</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter admin email" title="Email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="loginPassword">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
-                    </div>`;
+					<div class="mb-3">
+						<label class="form-label" for="loginEmail">Email</label>
+						<input type="email" class="form-control" id="loginEmail" placeholder="Enter admin email" title="Email">
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="loginPassword">Password</label>
+						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+					</div>`;
                 registerLink = '';
             } else if (type === 'staff') {
                 title = '🔐 Staff Login';
                 html = `
-                    <div class="mb-3">
-                        <label class="form-label" for="loginEmail">Email</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter staff email" title="Email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="loginPassword">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
-                    </div>`;
+					<div class="mb-3">
+						<label class="form-label" for="loginEmail">Email</label>
+						<input type="email" class="form-control" id="loginEmail" placeholder="Enter staff email" title="Email">
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="loginPassword">Password</label>
+						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+					</div>`;
                 registerLink = '<a href="#" onclick="showRegister()">Register as Staff</a>';
             } else if (type === 'parent') {
                 title = '🔐 Parent Login';
                 html = `
-                    <div class="mb-3">
-                        <label class="form-label" for="loginAdmission">Student Admission Number</label>
-                        <input type="text" class="form-control" id="loginAdmission" placeholder="Enter admission number" title="Admission Number">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="loginPassword">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
-                    </div>`;
+					<div class="mb-3">
+						<label class="form-label" for="loginAdmission">Student Admission Number</label>
+						<input type="text" class="form-control" id="loginAdmission" placeholder="Enter admission number" title="Admission Number">
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="loginPassword">Password</label>
+						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" title="Password">
+					</div>`;
                 registerLink = '<a href="#" onclick="showRegister()">Register as Parent</a>';
             }
             document.getElementById('loginFields').innerHTML = html;
@@ -401,28 +401,28 @@
                 if (data.success) {
                     const stats = data.data.statistics;
                     const statsHTML = `
-                        <div class="col-md-4">
-                            <div class="stats-card p-4 bg-primary text-white">
-                                <h4><i class="bi bi-people"></i> Users</h4>
-                                <h2>${stats.total_users}</h2>
-                                <p>Total registered users</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stats-card p-4 bg-success text-white">
-                                <h4><i class="bi bi-mortarboard"></i> Students</h4>
-                                <h2>${stats.total_students}</h2>
-                                <p>Total students</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stats-card p-4 bg-info text-white">
-                                <h4><i class="bi bi-journal-text"></i> Assignments</h4>
-                                <h2>${stats.total_assignments}</h2>
-                                <p>Total assignments</p>
-                            </div>
-                        </div>
-                    `;
+						<div class="col-md-4">
+							<div class="stats-card p-4 bg-primary text-white">
+								<h4><i class="bi bi-people"></i> Users</h4>
+								<h2>${stats.total_users}</h2>
+								<p>Total registered users</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="stats-card p-4 bg-success text-white">
+								<h4><i class="bi bi-mortarboard"></i> Students</h4>
+								<h2>${stats.total_students}</h2>
+								<p>Total students</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="stats-card p-4 bg-info text-white">
+								<h4><i class="bi bi-journal-text"></i> Assignments</h4>
+								<h2>${stats.total_assignments}</h2>
+								<p>Total assignments</p>
+							</div>
+						</div>
+					`;
 
                     document.getElementById('dashboardStats').innerHTML = statsHTML;
                 }
@@ -443,29 +443,29 @@
 
                 if (data.success) {
                     let tableHTML = `
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Type</th>
-                                    <th>Created</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                    `;
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Username</th>
+									<th>Email</th>
+									<th>Type</th>
+									<th>Created</th>
+								</tr>
+							</thead>
+							<tbody>
+					`;
 
                     data.data.forEach(user => {
                         tableHTML += `
-                            <tr>
-                                <td>${user.id}</td>
-                                <td>${user.username}</td>
-                                <td>${user.email}</td>
-                                <td><span class="badge bg-${user.user_type === 'admin' ? 'danger' : user.user_type === 'staff' ? 'primary' : 'success'}">${user.user_type}</span></td>
-                                <td>${new Date(user.created_at).toLocaleDateString()}</td>
-                            </tr>
-                        `;
+							<tr>
+								<td>${user.id}</td>
+								<td>${user.username}</td>
+								<td>${user.email}</td>
+								<td><span class="badge bg-${user.user_type === 'admin' ? 'danger' : user.user_type === 'staff' ? 'primary' : 'success'}">${user.user_type}</span></td>
+								<td>${new Date(user.created_at).toLocaleDateString()}</td>
+							</tr>
+						`;
                     });
 
                     tableHTML += `</tbody></table>`;
@@ -484,25 +484,25 @@
                 ? `<button class="btn btn-light" onclick="loadAssignments()">View Assignments</button>`
                 : `<p>You do not have access to academic features.</p>`;
             document.getElementById('dashboardStats').innerHTML = `
-                <div class="col-md-12">
-                    <div class="stats-card p-4 bg-primary text-white">
-                        <h4><i class="bi bi-person-badge"></i> Staff Dashboard</h4>
-                        <p>Welcome to the staff portal. ${roleText}</p>
-                        ${academicAccess}
-                    </div>
-                </div>
-            `;
+				<div class="col-md-12">
+					<div class="stats-card p-4 bg-primary text-white">
+						<h4><i class="bi bi-person-badge"></i> Staff Dashboard</h4>
+						<p>Welcome to the staff portal. ${roleText}</p>
+						${academicAccess}
+					</div>
+				</div>
+			`;
         }
 
         async function loadParentDashboard() {
             document.getElementById('dashboardStats').innerHTML = `
-                <div class="col-md-12">
-                    <div class="stats-card p-4 bg-success text-white">
-                        <h4><i class="bi bi-people"></i> Parent Dashboard</h4>
-                        <p>Welcome to the parent portal. You can monitor your child's academic progress here.</p>
-                    </div>
-                </div>
-            `;
+				<div class="col-md-12">
+					<div class="stats-card p-4 bg-success text-white">
+						<h4><i class="bi bi-people"></i> Parent Dashboard</h4>
+						<p>Welcome to the parent portal. You can monitor your child's academic progress here.</p>
+					</div>
+				</div>
+			`;
         }
 
         async function loadAssignments() {
@@ -515,27 +515,27 @@
 
                 if (data.success) {
                     let tableHTML = `
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Subject</th>
-                                    <th>Due Date</th>
-                                    <th>Assigned By</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                    `;
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Title</th>
+									<th>Subject</th>
+									<th>Due Date</th>
+									<th>Assigned By</th>
+								</tr>
+							</thead>
+							<tbody>
+					`;
 
                     data.data.forEach(assignment => {
                         tableHTML += `
-                            <tr>
-                                <td>${assignment.title}</td>
-                                <td>${assignment.subject}</td>
-                                <td>${new Date(assignment.due_date).toLocaleDateString()}</td>
-                                <td>${assignment.assigned_by_name}</td>
-                            </tr>
-                        `;
+							<tr>
+								<td>${assignment.title}</td>
+								<td>${assignment.subject}</td>
+								<td>${new Date(assignment.due_date).toLocaleDateString()}</td>
+								<td>${assignment.assigned_by_name}</td>
+							</tr>
+						`;
                     });
 
                     tableHTML += `</tbody></table>`;
