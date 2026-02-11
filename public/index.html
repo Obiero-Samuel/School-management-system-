@@ -550,11 +550,12 @@
                 });
                 const data = await response.json();
                 if (data.success) {
-                    let tableHTML = `<table class="table table-striped"><thead><tr>`;
+                    let tableHTML = `<div class="table-responsive"><table class="table table-hover table-bordered align-middle shadow rounded"><thead class="table-dark"><tr>`;
                     if (data.students.length > 0) {
                         Object.keys(data.students[0]).forEach(key => {
                             tableHTML += `<th>${key}</th>`;
                         });
+                        tableHTML += '<th>Profile</th>';
                     }
                     tableHTML += `</tr></thead><tbody>`;
                     data.students.forEach(student => {
@@ -562,9 +563,10 @@
                         Object.values(student).forEach(val => {
                             tableHTML += `<td>${val !== null ? val : ''}</td>`;
                         });
+                        tableHTML += `<td><a href="student_profile.html?id=${student.student_id}" class="btn btn-outline-primary btn-sm">View Profile</a></td>`;
                         tableHTML += '</tr>';
                     });
-                    tableHTML += '</tbody></table>';
+                    tableHTML += '</tbody></table></div>';
                     document.getElementById('studentsTable').innerHTML = tableHTML;
                 }
             } catch (error) {
@@ -580,11 +582,12 @@
                 });
                 const data = await response.json();
                 if (data.success) {
-                    let tableHTML = `<table class="table table-striped"><thead><tr>`;
+                    let tableHTML = `<div class="table-responsive"><table class="table table-hover table-bordered align-middle shadow rounded"><thead class="table-dark"><tr>`;
                     if (data.staff.length > 0) {
                         Object.keys(data.staff[0]).forEach(key => {
                             tableHTML += `<th>${key}</th>`;
                         });
+                        tableHTML += '<th>Profile</th>';
                     }
                     tableHTML += `</tr></thead><tbody>`;
                     data.staff.forEach(staff => {
@@ -592,9 +595,10 @@
                         Object.values(staff).forEach(val => {
                             tableHTML += `<td>${val !== null ? val : ''}</td>`;
                         });
+                        tableHTML += `<td><a href="staff_profile.html?id=${staff.staff_id}" class="btn btn-outline-primary btn-sm">View Profile</a></td>`;
                         tableHTML += '</tr>';
                     });
-                    tableHTML += '</tbody></table>';
+                    tableHTML += '</tbody></table></div>';
                     document.getElementById('staffTable').innerHTML = tableHTML;
                 }
             } catch (error) {

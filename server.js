@@ -1,3 +1,30 @@
+// Admin: Get individual student profile
+app.get('/api/admin/student-profile/:id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const [students] = await pool.execute('SELECT * FROM students WHERE student_id = ?', [req.params.id]);
+        if (students.length === 0) return res.json({ success: false, message: 'Student not found.' });
+        res.json({ success: true, student: students[0] });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch student.' });
+    }
+});
+
+// Admin: Get individual staff profile
+app.get('/api/admin/staff-profile/:id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const [staff] = await pool.execute('SELECT * FROM staff WHERE staff_id = ?', [req.params.id]);
+        if (staff.length === 0) return res.json({ success: false, message: 'Staff not found.' });
+        res.json({ success: true, staff: staff[0] });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch staff.' });
+    }
+});
 const express = require('express');
 const nodemailer = require('nodemailer');
 const mysql = require('mysql2/promise');
