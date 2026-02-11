@@ -483,15 +483,13 @@
                 await loadAdminDashboard();
                 await loadAllStudents();
                 await loadAllStaff();
-            } else if (currentUser.user_type === 'staff') {
-                await loadStaffDashboard();
-                // Hide staff/students data for non-admins
-                document.getElementById('studentsTable').innerHTML = '<div class="alert alert-info">Only admin can view all students.</div>';
-                document.getElementById('staffTable').innerHTML = '<div class="alert alert-info">Only admin can view all staff.</div>';
-            } else if (currentUser.user_type === 'parent') {
-                await loadParentDashboard();
-                document.getElementById('studentsTable').innerHTML = '<div class="alert alert-info">Only admin can view all students.</div>';
-                document.getElementById('staffTable').innerHTML = '<div class="alert alert-info">Only admin can view all staff.</div>';
+            } else {
+                await (currentUser.user_type === 'staff' ? loadStaffDashboard() : loadParentDashboard());
+                // Completely hide staff and students tabs for non-admins
+                document.getElementById('staffTabNav').style.display = 'none';
+                document.getElementById('pills-students-tab').style.display = 'none';
+                document.getElementById('studentsTable').innerHTML = '';
+                document.getElementById('staffTable').innerHTML = '';
             }
         }
 
