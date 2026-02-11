@@ -1,53 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { background: #f8f9fa; }
-        .profile-card {
-            background: #fff;
+        .not-found-box {
+            background: #fff3cd;
+            color: #856404;
             border-radius: 1rem;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
             padding: 2rem;
-            margin: 2rem auto;
-            max-width: 600px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
-        .profile-title { font-size: 2rem; font-weight: 700; }
-        .profile-label { font-weight: 600; color: #555; }
-        .profile-value { color: #222; }
+
+        .not-found-box i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-card {
+            background: #232946;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+            padding: 2.5rem;
+            margin: 2rem auto;
+            max-width: 650px;
+            color: #fff;
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #232946;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .profile-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .profile-table {
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .profile-label {
+            font-weight: 600;
+            color: #a1a1a1;
+            width: 40%;
+        }
+
+        .profile-value,
+        .profile-edit {
+            color: #fff;
+            width: 60%;
+        }
+
+        .profile-edit input,
+        .profile-edit select {
+            width: 100%;
+            background: #232946;
+            color: #fff;
+            border: 1px solid #a1a1a1;
+            border-radius: 6px;
+            padding: 4px 8px;
+        }
+
+        .change-indicator {
+            color: #ffb800;
+            font-size: 1.2rem;
+            margin-left: 8px;
+        }
+
+        .save-btn {
+            margin-top: 1.5rem;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .changed-row {
+            background: #393e6a;
+        }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="profile-card mt-5">
-            <div class="profile-title mb-4" id="profileName">Staff Profile</div>
-            <div id="profileDetails"></div>
-            <a href="/" class="btn btn-secondary mt-4">Back to Dashboard</a>
+    <div class="d-flex">
+        <nav id="sidebarMenu" class="d-lg-block bg-dark text-white sidebar collapse"
+            style="min-width:220px;min-height:100vh;">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="index.html"
+                        class="list-group-item list-group-item-action py-2 ripple bg-dark text-white"><i
+                            class="bi bi-house-door me-2"></i> Home</a>
+                    <a href="dashboard_admin.html"
+                        class="list-group-item list-group-item-action py-2 ripple bg-dark text-white"><i
+                            class="bi bi-speedometer2 me-2"></i> Admin Dashboard</a>
+                    <a href="dashboard_staff.html"
+                        class="list-group-item list-group-item-action py-2 ripple bg-dark text-white"><i
+                            class="bi bi-speedometer2 me-2"></i> Staff Dashboard</a>
+                    <a href="dashboard_student.html"
+                        class="list-group-item list-group-item-action py-2 ripple bg-dark text-white"><i
+                            class="bi bi-speedometer2 me-2"></i> Student Dashboard</a>
+                    <a href="dashboard_parent.html"
+                        class="list-group-item list-group-item-action py-2 ripple bg-dark text-white"><i
+                            class="bi bi-speedometer2 me-2"></i> Parent Dashboard</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex-grow-1">
+            <div class="container">
+                <div class="profile-card mt-5">
+                    <button class="btn btn-outline-primary edit-btn" id="editProfileBtn" type="button"><i
+                            class="bi bi-pencil-square"></i> Edit</button>
+                    <div class="profile-avatar" id="profileAvatar"></div>
+                    <div class="profile-title mb-4" id="profileName">Staff Profile</div>
+                    <form id="profileForm">
+                        <table class="profile-table table table-borderless">
+                            <tbody id="profileDetails"></tbody>
+                        </table>
+                        <button type="submit" class="btn btn-warning save-btn">Save Changes</button>
+                    </form>
+                    <a href="/" class="btn btn-secondary mt-4">Back to Dashboard</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <script>
-        async function loadProfile() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const id = urlParams.get('id');
-            if (!id) return;
-            const res = await fetch(`/api/admin/staff-profile/${id}`, { headers: { 'Authorization': localStorage.getItem('adminToken') } });
-            const data = await res.json();
-            if (data.success && data.staff) {
-                document.getElementById('profileName').textContent = `${data.staff.first_name} ${data.staff.surname}`;
-                let html = '<table class="table table-bordered">';
-                for (const [key, value] of Object.entries(data.staff)) {
-                    html += `<tr><td class="profile-label">${key.replace(/_/g, ' ')}</td><td class="profile-value">${value ?? ''}</td></tr>`;
+        <script>
+            let originalData = {};
+            let changedFields = new Set();
+            async function loadProfile() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const id = urlParams.get('id');
+                if (!id) return;
+                const res = await fetch(`/api/admin/staff-profile/${id}`, { headers: { 'Authorization': localStorage.getItem('adminToken') } });
+                const data = await res.json();
+                if (data.success && data.staff) {
+                    const staff = data.staff;
+                    originalData = { ...staff };
+                    document.getElementById('profileName').textContent = `${staff.first_name} ${staff.surname}`;
+                    // Avatar icon
+                    let avatarIcon = '<i class="bi bi-person-circle"></i>';
+                    if (staff.sex && staff.sex.toLowerCase().startsWith('m')) {
+                        avatarIcon = '<i class="bi bi-gender-male"></i>';
+                    } else if (staff.sex && staff.sex.toLowerCase().startsWith('f')) {
+                        avatarIcon = '<i class="bi bi-gender-female"></i>';
+                    }
+                    document.getElementById('profileAvatar').innerHTML = avatarIcon;
+                    // Editable fields
+                    let html = '';
+                    for (const [key, value] of Object.entries(staff)) {
+                        if (key === 'id') continue;
+                        let label = key.replace(/_/g, ' ');
+                        let inputType = 'text';
+                        if (key === 'date_of_employment') inputType = 'date';
+                        if (key === 'sex') {
+                            html += `<tr id="row-${key}"><td class="profile-label">${label}</td><td class="profile-edit"><select name="${key}" class="form-select" onchange="onFieldChange('${key}', this.value)" disabled><option value="Male" ${value === 'Male' ? 'selected' : ''}>Male</option><option value="Female" ${value === 'Female' ? 'selected' : ''}>Female</option></select><span class="change-indicator" id="change-${key}" style="display:none;">★</span></td></tr>`;
+                            continue;
+                        }
+                        html += `<tr id="row-${key}"><td class="profile-label">${label}</td><td class="profile-edit"><input type="${inputType}" name="${key}" value="${value ?? ''}" class="form-control" onchange="onFieldChange('${key}', this.value)" disabled><span class="change-indicator" id="change-${key}" style="display:none;">★</span></td></tr>`;
+                        let editing = false;
+                        document.getElementById('editProfileBtn').onclick = function () {
+                            editing = !editing;
+                            document.getElementById('profileForm').querySelectorAll('input,select').forEach(el => el.disabled = !editing);
+                            this.innerHTML = editing ? '<i class="bi bi-x-square"></i> Cancel' : '<i class="bi bi-pencil-square"></i> Edit';
+                        };
+                    }
+                    document.getElementById('profileDetails').innerHTML = html;
+                } else {
+                    document.getElementById('profileDetails').innerHTML = `
+                                    <div class="not-found-box">
+                                        <i class="bi bi-emoji-frown"></i>
+                                        <h4>Staff Not Found</h4>
+                                        <p>The staff profile could not be loaded. Please check the link or try again from the dashboard.</p>
+                                        <a href="/" class="btn btn-outline-warning mt-3">Back to Dashboard</a>
+                                    </div>
+                                `;
                 }
-                html += '</table>';
-                document.getElementById('profileDetails').innerHTML = html;
-            } else {
-                document.getElementById('profileDetails').innerHTML = '<div class="alert alert-danger">Staff not found.</div>';
             }
-        }
-        loadProfile();
-    </script>
+            function onFieldChange(key, value) {
+                if (originalData[key] != value) {
+                    changedFields.add(key);
+                    document.getElementById('row-' + key).classList.add('changed-row');
+                    document.getElementById('change-' + key).style.display = '';
+                } else {
+                    changedFields.delete(key);
+                    document.getElementById('row-' + key).classList.remove('changed-row');
+                    document.getElementById('change-' + key).style.display = 'none';
+                }
+            }
+            document.getElementById('profileForm').onsubmit = async function (e) {
+                e.preventDefault();
+                if (changedFields.size === 0) return alert('No changes to save.');
+                const formData = new FormData(e.target);
+                const update = {};
+                for (const key of changedFields) {
+                    update[key] = formData.get(key);
+                }
+                const urlParams = new URLSearchParams(window.location.search);
+                const id = urlParams.get('id');
+                try {
+                    const res = await fetch(`/api/admin/staff-profile/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': localStorage.getItem('adminToken')
+                        },
+                        body: JSON.stringify(update)
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        alert('Profile updated successfully!');
+                    } else {
+                        alert('Update failed: ' + (data.message || 'Unknown error'));
+                    }
+                } catch (err) {
+                    alert('Error updating profile.');
+                }
+                changedFields.clear();
+                loadProfile();
+            };
+            loadProfile();
+        </script>
 </body>
+
 </html>

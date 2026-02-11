@@ -495,6 +495,104 @@ app.get('/api/admin/all-staff', authenticateToken, async (req, res) => {
     }
 });
 
+// Admin: Get individual student profile by student_id
+app.get('/api/admin/student-profile/:student_id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const { student_id } = req.params;
+        const [students] = await pool.execute('SELECT * FROM students WHERE student_id = ?', [student_id]);
+        if (students.length === 0) {
+            return res.status(404).json({ success: false, message: 'Student not found.' });
+        }
+        res.json({ success: true, student: students[0] });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch student.' });
+    }
+});
+
+// Admin: Update student profile by student_id
+app.put('/api/admin/student-profile/:student_id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const { student_id } = req.params;
+        const fields = req.body;
+        if (!fields || Object.keys(fields).length === 0) {
+            return res.status(400).json({ success: false, message: 'No fields to update.' });
+        }
+        // Only allow updating valid columns
+        const allowed = ['first_name', 'middle_name', 'surname', 'admission_date', 'sex', 'date_of_birth', 'class', 'stream', 'address', 'phone', 'email', 'guardian_name', 'guardian_phone', 'status'];
+        const updates = [];
+        const params = [];
+        for (const key of Object.keys(fields)) {
+            if (allowed.includes(key)) {
+                updates.push(`${key} = ?`);
+                params.push(fields[key]);
+            }
+        }
+        if (updates.length === 0) {
+            return res.status(400).json({ success: false, message: 'No valid fields to update.' });
+        }
+        params.push(student_id);
+        await pool.execute(`UPDATE students SET ${updates.join(', ')} WHERE student_id = ?`, params);
+        res.json({ success: true, message: 'Student profile updated.' });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to update student.' });
+    }
+});
+
+// Admin: Get individual staff profile by staff_id
+app.get('/api/admin/staff-profile/:staff_id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const { staff_id } = req.params;
+        const [staff] = await pool.execute('SELECT * FROM staff WHERE staff_id = ?', [staff_id]);
+        if (staff.length === 0) {
+            return res.status(404).json({ success: false, message: 'Staff not found.' });
+        }
+        res.json({ success: true, staff: staff[0] });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch staff.' });
+    }
+});
+
+// Admin: Update staff profile by staff_id
+app.put('/api/admin/staff-profile/:staff_id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const { staff_id } = req.params;
+        const fields = req.body;
+        if (!fields || Object.keys(fields).length === 0) {
+            return res.status(400).json({ success: false, message: 'No fields to update.' });
+        }
+        // Only allow updating valid columns
+        const allowed = ['first_name', 'middle_name', 'surname', 'Sex', 'department', 'staff_type', 'status', 'birth_date', 'Join_Date', 'E-mail'];
+        const updates = [];
+        const params = [];
+        for (const key of Object.keys(fields)) {
+            if (allowed.includes(key)) {
+                updates.push(`${key} = ?`);
+                params.push(fields[key]);
+            }
+        }
+        if (updates.length === 0) {
+            return res.status(400).json({ success: false, message: 'No valid fields to update.' });
+        }
+        params.push(staff_id);
+        await pool.execute(`UPDATE staff SET ${updates.join(', ')} WHERE staff_id = ?`, params);
+        res.json({ success: true, message: 'Staff profile updated.' });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to update staff.' });
+    }
+});
+
 // Get assignments (staff/admin only)
 app.get('/api/assignments', authenticateToken, async (req, res) => {
     try {
