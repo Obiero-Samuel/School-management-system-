@@ -40,7 +40,7 @@ app.use((req, res, next) => {
         return res.status(403).send('HTTPS is required for security.');
     }
     next();
-});
+// Admin: Get individual student profile (moved after app initialization)
 // 2FA OTP store (in-memory for demo)
 const otpStore = {};
 const OTP_EXPIRY = 5 * 60 * 1000; // 5 minutes
@@ -68,6 +68,19 @@ app.post('/api/parent/request-otp', async (req, res) => {
             from: process.env.SMTP_USER,
             to: email,
             subject: 'Your School Portal Login OTP',
+// Admin: Get individual staff profile (moved after app initialization)
+app.get('/api/admin/staff-profile/:id', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const [staff] = await pool.execute('SELECT * FROM staff WHERE staff_id = ?', [req.params.id]);
+        if (staff.length === 0) return res.json({ success: false, message: 'Staff not found.' });
+        res.json({ success: true, staff: staff[0] });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch staff.' });
+    }
+});
             html: `<p>Your OTP for login is: <b>${otp}</b>. It expires in 5 minutes.</p>`
         });
     } catch (err) {
