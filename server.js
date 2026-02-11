@@ -1,4 +1,4 @@
-// Admin: Get individual student profile
+// Admin: Get individual student profile (must be after all other routes)
 app.get('/api/admin/student-profile/:id', authenticateToken, async (req, res) => {
     if (req.user.user_type !== 'admin') {
         return res.status(403).json({ success: false, message: 'Admin access required' });
