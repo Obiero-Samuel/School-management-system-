@@ -32,16 +32,16 @@ CREATE TABLE students (
     middle_name VARCHAR(50),
     surname VARCHAR(50) NOT NULL,
     admission_date DATE,
-    sex ENUM('M','F'),
+    sex ENUM('M', 'F'),
     status VARCHAR(20),
     sponsor_type VARCHAR(50),
     religion VARCHAR(50),
     nationality VARCHAR(50),
     grade_level VARCHAR(20),
-    grand_fee_charged DECIMAL(10,2),
-    grand_fee_adjusted DECIMAL(10,2),
-    grand_fee_paid DECIMAL(10,2),
-    grand_balance DECIMAL(10,2),
+    grand_fee_charged DECIMAL(10, 2),
+    grand_fee_adjusted DECIMAL(10, 2),
+    grand_fee_paid DECIMAL(10, 2),
+    grand_balance DECIMAL(10, 2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 -- 2a. Fees Table (complex fee management)
@@ -50,10 +50,16 @@ CREATE TABLE fees (
     student_id INT NOT NULL,
     term VARCHAR(20) NOT NULL,
     academic_year VARCHAR(10) NOT NULL,
-    amount_due DECIMAL(10,2) NOT NULL,
-    amount_paid DECIMAL(10,2) DEFAULT 0,
+    amount_due DECIMAL(10, 2) NOT NULL,
+    amount_paid DECIMAL(10, 2) DEFAULT 0,
     due_date DATE NOT NULL,
-    status ENUM('unpaid','partial','paid','overdue','suspended') DEFAULT 'unpaid',
+    status ENUM(
+        'unpaid',
+        'partial',
+        'paid',
+        'overdue',
+        'suspended'
+    ) DEFAULT 'unpaid',
     last_payment_date DATE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -163,4 +169,19 @@ VALUES (
         'First',
         '2024-2025'
     );
+-- 10. Staff Table
+CREATE TABLE staff (
+    staff_id VARCHAR(30) PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50),
+    middle_name VARCHAR(50),
+    surname VARCHAR(50),
+    sex VARCHAR(10),
+    department VARCHAR(50),
+    staff_type VARCHAR(50),
+    status VARCHAR(20),
+    birth_date DATE,
+    join_date DATE,
+    email VARCHAR(100) UNIQUE
+);
 SELECT '✅ Database setup complete!' as message;

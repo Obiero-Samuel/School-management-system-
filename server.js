@@ -44,7 +44,8 @@ app.post('/api/parent/request-otp', async (req, res) => {
             html: `<p>Your OTP for login is: <b>${otp}</b>. It expires in 5 minutes.</p>`
         });
     } catch (err) {
-        return res.status(500).json({ success: false, message: 'Failed to send OTP.' });
+        console.error('OTP email send error:', err);
+        return res.status(500).json({ success: false, message: 'Failed to send OTP.', error: err.stack });
     }
     res.json({ success: true, message: 'OTP sent to your email.' });
 });
@@ -465,6 +466,32 @@ app.get('/api/students', authenticateToken, async (req, res) => {
         res.json({ success: true, data: students });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Server error' });
+    }
+});
+
+// Admin: Get all students (full details)
+app.get('/api/admin/all-students', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const [students] = await pool.execute('SELECT * FROM students');
+        res.json({ success: true, students });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch students.' });
+    }
+});
+
+// Admin: Get all staff (full details)
+app.get('/api/admin/all-staff', authenticateToken, async (req, res) => {
+    if (req.user.user_type !== 'admin') {
+        return res.status(403).json({ success: false, message: 'Admin access required' });
+    }
+    try {
+        const [staff] = await pool.execute('SELECT * FROM staff');
+        res.json({ success: true, staff });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Failed to fetch staff.' });
     }
 });
 

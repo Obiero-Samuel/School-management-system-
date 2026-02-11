@@ -162,6 +162,10 @@
                     <button class="nav-link" id="pills-students-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-students">Students</button>
                 </li>
+                <li class="nav-item" role="presentation" id="staffTabNav" style="display:none;">
+                    <button class="nav-link" id="pills-staff-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-staff">Staff</button>
+                </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-assignments-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-assignments">Assignments</button>
@@ -189,6 +193,12 @@
                 <div class="tab-pane fade" id="pills-students">
                     <h3>Students</h3>
                     <div id="studentsTable"></div>
+                </div>
+
+                <!-- Staff Tab (admin only) -->
+                <div class="tab-pane fade" id="pills-staff">
+                    <h3>Staff</h3>
+                    <div id="staffTable"></div>
                 </div>
 
                 <!-- Assignments Tab -->
@@ -506,11 +516,77 @@
 					`;
 
                     document.getElementById('dashboardStats').innerHTML = statsHTML;
+                    // Only show staff tab for main admin
+                    if (currentUser && currentUser.email === 'admin@school.com') {
+                        document.getElementById('staffTabNav').style.display = '';
+                        await loadAllStudents();
+                        await loadAllStaff();
+                    }
                 }
             } catch (error) {
                 console.error('Dashboard error:', error);
                 document.getElementById('dashboardStats').innerHTML =
                     `<div class="alert alert-warning">Welcome to admin dashboard! Some features may not be available.</div>`;
+            }
+        }
+
+        // Load all students for admin
+        async function loadAllStudents() {
+            try {
+                const response = await fetch('/api/admin/all-students', {
+                    headers: { 'Authorization': 'Bearer ' + currentToken }
+                });
+                const data = await response.json();
+                if (data.success) {
+                    let tableHTML = `<table class="table table-striped"><thead><tr>`;
+                    if (data.students.length > 0) {
+                        Object.keys(data.students[0]).forEach(key => {
+                            tableHTML += `<th>${key}</th>`;
+                        });
+                    }
+                    tableHTML += `</tr></thead><tbody>`;
+                    data.students.forEach(student => {
+                        tableHTML += '<tr>';
+                        Object.values(student).forEach(val => {
+                            tableHTML += `<td>${val !== null ? val : ''}</td>`;
+                        });
+                        tableHTML += '</tr>';
+                    });
+                    tableHTML += '</tbody></table>';
+                    document.getElementById('studentsTable').innerHTML = tableHTML;
+                }
+            } catch (error) {
+                document.getElementById('studentsTable').innerHTML = `<div class="alert alert-danger">Error loading students: ${error.message}</div>`;
+            }
+        }
+
+        // Load all staff for admin
+        async function loadAllStaff() {
+            try {
+                const response = await fetch('/api/admin/all-staff', {
+                    headers: { 'Authorization': 'Bearer ' + currentToken }
+                });
+                const data = await response.json();
+                if (data.success) {
+                    let tableHTML = `<table class="table table-striped"><thead><tr>`;
+                    if (data.staff.length > 0) {
+                        Object.keys(data.staff[0]).forEach(key => {
+                            tableHTML += `<th>${key}</th>`;
+                        });
+                    }
+                    tableHTML += `</tr></thead><tbody>`;
+                    data.staff.forEach(staff => {
+                        tableHTML += '<tr>';
+                        Object.values(staff).forEach(val => {
+                            tableHTML += `<td>${val !== null ? val : ''}</td>`;
+                        });
+                        tableHTML += '</tr>';
+                    });
+                    tableHTML += '</tbody></table>';
+                    document.getElementById('staffTable').innerHTML = tableHTML;
+                }
+            } catch (error) {
+                document.getElementById('staffTable').innerHTML = `<div class="alert alert-danger">Error loading staff: ${error.message}</div>`;
             }
         }
 
