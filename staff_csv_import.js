@@ -1,56 +1,70 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 const mysql = require('mysql2/promise');
+const bcrypt = require('bcryptjs');
 require('dotenv').config();
+
+function formatMySQLDate(dateString) {
+    if (!dateString || dateString.trim() === "" || dateString === 'null') return null;
+    const parts = dateString.split('/');
+    if (parts.length === 3) {
+        return `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`;
+    }
+    return null;
+}
+
+function safeValue(val) {
+    return (val === undefined || val === null || val.toString().trim() === "") ? null : val;
+}
 
 async function importStaff() {
     const pool = await mysql.createPool({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME,
-        port: process.env.DB_PORT || 3306
+        database: process.env.DB_NAME
     });
+
+    const defaultPassword = "Welcome2026";
+    const hashedPassword = await bcrypt.hash(defaultPassword, 12);
+
+    console.log('🧹 Wiping staff table...');
+    await pool.execute('SET FOREIGN_KEY_CHECKS = 0');
+    await pool.execute('DELETE FROM staff');
+    await pool.execute('SET FOREIGN_KEY_CHECKS = 1');
 
     const results = [];
     fs.createReadStream('staff_import.csv')
         .pipe(csv())
         .on('data', (row) => results.push(row))
         .on('end', async () => {
-            for (const staff of results) {
-                // Map and sanitize values, use null for missing
-                const values = [
-                    staff['staff_id'] || null,
-                    staff['username'] || staff['Username'] || null,
-                    staff['first_name'] || staff['First Name'] || null,
-                    staff['middle_name'] || staff['Middle Name'] || null,
-                    staff['surname'] || staff['Surname'] || null,
-                    staff['Sex'] || staff['sex'] || null,
-                    staff['department'] || staff['Department'] || null,
-                    staff['staff_type'] || staff['Staff Type'] || null,
-                    staff['status'] || staff['Status'] || null,
-                    staff['birth_date'] || staff['Birth Date'] || null,
-                    staff['Join_Date'] || staff['Join Date'] || null,
-                    staff['E-mail'] || staff['email'] || null
-                ];
-                // Skip if staff_id or username is missing
-                if (!values[0] || !values[1]) {
-                    console.error('Skipping row: missing staff_id or Username', staff);
-                    continue;
-                }
+            let imported = 0;
+            for (const row of results) {
                 try {
                     await pool.execute(
-                        `INSERT INTO staff (staff_id, username, first_name, middle_name, surname, sex, department, staff_type, status, birth_date, join_date, email)
-                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-                        values
+                        `INSERT INTO staff (staff_id, username, password_hash, first_name, middle_name, last_name, sex, department, staff_type, status, birth_date, join_date, email)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                        [
+                            row['staff_id'],
+                            row['username'] || row['Username'],
+                            hashedPassword,
+                            safeValue(row['first_name']),
+                            safeValue(row['middle_name']),
+                            safeValue(row['surname'] || row['last_name']),
+                            safeValue(row['Sex'] || row['sex']),
+                            safeValue(row['department']),
+                            safeValue(row['staff_type']),
+                            safeValue(row['status']) || 'Active',
+                            formatMySQLDate(row['birth_date']),
+                            formatMySQLDate(row['Join_Date']),
+                            safeValue(row['E-mail'] || row['email'])
+                        ]
                     );
-                } catch (err) {
-                    console.error('Error inserting staff:', values[0], err.message);
-                }
+                    imported++;
+                } catch (err) { console.error(`❌ Staff ${row['staff_id']}:`, err.message); }
             }
-            console.log('Staff import complete.');
+            console.log(`\n✅ Staff Imported: ${imported} (Password: ${defaultPassword})`);
             process.exit();
         });
 }
-
 importStaff();
