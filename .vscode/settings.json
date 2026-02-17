@@ -1,0 +1,7 @@
+{
+    "files.simpleDialog.enable": true,
+    "chat.editing.explainChanges.enabled": true,
+    "github.copilot.chat.anthropic.contextEditing.enabled": true,
+    "editor.linkedEditing": true,
+    "explorer.fileNesting.enabled": true
+}

@@ -1,11 +1,36 @@
 {% extends "base.html" %}
 {% block title %}Admin Dashboard{% endblock %}
 {% block content %}
-	<h1>Welcome, {{ session.full_name }}</h1>
-	<p>Date/Time: {{ current_datetime }}</p>
-	<ul>
-		<li>Staff Count: {{ staff_count }}</li>
-		<li>Student Count: {{ student_count }}</li>
-		<li>Class Count: {{ class_count }}</li>
-	</ul>
+<div class="row justify-content-center align-items-center mb-4">
+	<div class="col-md-8 text-center">
+		<h1 class="mb-3">Welcome, {{ session.full_name }}</h1>
+		<p class="lead">Date/Time: {{ current_datetime }}</p>
+	</div>
+</div>
+<div class="row g-4 justify-content-center">
+	<div class="col-md-3">
+		<div class="card text-center shadow-sm">
+			<div class="card-body">
+				<h5 class="card-title">Staff</h5>
+				<p class="display-4 text-primary">{{ staff_count }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="card text-center shadow-sm">
+			<div class="card-body">
+				<h5 class="card-title">Students</h5>
+				<p class="display-4 text-success">{{ student_count }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="card text-center shadow-sm">
+			<div class="card-body">
+				<h5 class="card-title">Classes</h5>
+				<p class="display-4 text-warning">{{ class_count }}</p>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

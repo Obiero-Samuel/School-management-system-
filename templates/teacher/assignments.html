@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Give Assignment{% endblock %}
+{% block content %}
+<h2>Give Assignment</h2>
+<form method="POST">
+  <label for="class_id">Class:</label>
+  <select name="class_id" id="class_id" required>
+    {% for class in my_classes %}
+      <option value="{{ class.id }}">{{ class.name }}</option>
+    {% endfor %}
+  </select>
+  <label for="title">Title:</label>
+  <input type="text" name="title" id="title" required>
+  <label for="description">Description:</label>
+  <textarea name="description" id="description" required></textarea>
+  <button type="submit" class="btn btn-primary">Send Assignment</button>
+</form>
+{% endblock %}

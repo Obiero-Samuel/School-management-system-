@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Take Attendance{% endblock %}
+{% block content %}
+<h2>Take Attendance</h2>
+<form method="POST">
+  <label for="class_id">Class:</label>
+  <select name="class_id" id="class_id" required>
+    {% for class in my_classes %}
+      <option value="{{ class.id }}">{{ class.name }}</option>
+    {% endfor %}
+  </select>
+  <div id="students-list">
+    <!-- Students will be loaded here via JS or server render -->
+  </div>
+  <button type="submit" class="btn btn-primary">Submit Attendance</button>
+</form>
+{% endblock %}

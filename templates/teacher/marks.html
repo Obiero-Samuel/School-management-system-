@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Input Results & CAT Marks{% endblock %}
+{% block content %}
+<h2>Input Results & CAT Marks</h2>
+<form method="POST">
+  <label for="class_id">Class:</label>
+  <select name="class_id" id="class_id" required>
+    {% for class in my_classes %}
+      <option value="{{ class.id }}">{{ class.name }}</option>
+    {% endfor %}
+  </select>
+  <div id="students-marks">
+    <!-- Students and marks input fields will be loaded here -->
+  </div>
+  <button type="submit" class="btn btn-primary">Submit Marks</button>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Teacher Dashboard{% endblock %}
+{% block content %}
+<h2>Welcome, {{ session.full_name }}!</h2>
+<p>This is your teacher dashboard.</p>
+<ul>
+  <li><a href="{{ url_for('teacher_attendance') }}">Take Attendance</a></li>
+  <li><a href="{{ url_for('teacher_assignments') }}">Give Assignment</a></li>
+  <li><a href="{{ url_for('teacher_marks') }}">Input Results & CAT Marks</a></li>
+  <li><a href="{{ url_for('teacher_marks') }}">View Results</a></li>
+</ul>
+{% endblock %}

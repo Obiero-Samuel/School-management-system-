@@ -1,0 +1,80 @@
+/* Creative Dashboard Styles */
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.sidebar {
+    background: #312e81;
+    min-height: 100vh;
+    color: #fff;
+    box-shadow: 2px 0 8px rgba(49, 46, 129, 0.08);
+}
+
+.sidebar .nav-link {
+    color: #c7d2fe;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background: #6366f1;
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.18);
+}
+
+h2 {
+    color: #312e81;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+    border: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+
+    .content-wrapper {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}View Results{% endblock %}
+{% block content %}
+<h2>Results for Your Class</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>CAT</th>
+      <th>Exam</th>
+      <th>Total</th>
+      <th>Send to Parent</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for result in results %}
+    <tr>
+      <td>{{ result.student_name }}</td>
+      <td>{{ result.cat }}</td>
+      <td>{{ result.exam }}</td>
+      <td>{{ result.total }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('teacher_send_results') }}">
+          <input type="hidden" name="student_id" value="{{ result.student_id }}">
+          <button type="submit" class="btn btn-sm btn-success">Send Email</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %>

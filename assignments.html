@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-10 content-wrapper">
             {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}{% for category, message in messages %}<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>{% endfor %}{% endif %}
+            {% if messages %}{% for category, message in messages %}<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>{% endfor %}{% endif %}
             {% endwith %}
             <div class="d-flex justify-content-between align-items-center mb-4"><h2><i class="bi bi-clipboard"></i> Assignments</h2><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignmentModal"><i class="bi bi-plus-circle"></i> Create Assignment</button></div>
             <div class="card"><div class="card-body"><div class="table-responsive"><table class="table table-hover"><thead><tr><th>Title</th><th>Class</th><th>Due Date</th><th>Total Marks</th><th>Created</th></tr></thead><tbody>{% for assignment in assignments %}<tr><td>{{ assignment.title }}</td><td>{{ assignment.class_name }}</td><td>{{ assignment.due_date }}</td><td>{{ assignment.total_marks }}</td><td>{{ assignment.created_at.strftime('%Y-%m-%d') }}</td></tr>{% endfor %}</tbody></table></div></div></div>
@@ -24,11 +24,33 @@
 <div class="modal fade" id="assignmentModal" tabindex="-1">
     <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="bi bi-clipboard-plus"></i> Create Assignment</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
         <form method="POST"><div class="modal-body">
-            <div class="mb-3"><label class="form-label">Class *</label><select class="form-select" name="class_id" required><option value="">Select Class</option>{% for class in my_classes %}<option value="{{ class.id }}">{{ class.name }}</option>{% endfor %}</select></div>
-            <div class="mb-3"><label class="form-label">Title *</label><input type="text" class="form-control" name="title" required></div>
-            <div class="mb-3"><label class="form-label">Description</label><textarea class="form-control" name="description" rows="3"></textarea></div>
-            <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Due Date *</label><input type="date" class="form-control" name="due_date" required></div>
-            <div class="col-md-6 mb-3"><label class="form-label">Total Marks</label><input type="number" class="form-control" name="total_marks" value="100"></div></div>
+            <div class="mb-3">
+                <label class="form-label" for="class_id_select">Class *</label>
+                <select class="form-select" id="class_id_select" name="class_id" required title="Select Class">
+                    <option value="">Select Class</option>
+                    {% for class in my_classes %}
+                    <option value="{{ class.id }}">{{ class.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="assignment_title">Title *</label>
+                <input type="text" class="form-control" id="assignment_title" name="title" required title="Enter assignment title" placeholder="Enter assignment title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="assignment_description">Description</label>
+                <textarea class="form-control" id="assignment_description" name="description" rows="3" title="Enter assignment description" placeholder="Enter assignment description"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="due_date_input">Due Date *</label>
+                    <input type="date" class="form-control" id="due_date_input" name="due_date" required title="Select due date" placeholder="Select due date">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="total_marks_input">Total Marks</label>
+                    <input type="number" class="form-control" id="total_marks_input" name="total_marks" value="100" title="Enter total marks" placeholder="Enter total marks">
+                </div>
+            </div>
         </div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Create & Notify Parents</button></div></form>
     </div></div>
 </div>

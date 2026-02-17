@@ -215,7 +215,7 @@ def admin_staff():
         cursor.execute("""
             SELECT s.*, d.name as department_name, u.username, u.email 
             FROM staff s 
-            JOIN departments d ON s.department_id = d.department_id 
+            JOIN departments d ON s.department_id = d.id 
             JOIN users u ON s.user_id = u.id
             ORDER BY s.id DESC
         """)
@@ -237,7 +237,7 @@ def view_staff(staff_id):
         cursor.execute("""
             SELECT s.*, d.name as department_name, u.username, u.email 
             FROM staff s 
-            JOIN departments d ON s.department_id = d.department_id 
+            JOIN departments d ON s.department_id = d.id 
             JOIN users u ON s.user_id = u.id
             WHERE s.id = %s
         """, (staff_id,))
@@ -286,6 +286,18 @@ def edit_staff(staff_id):
                     SET email = %s 
                     WHERE id = (SELECT user_id FROM staff WHERE id = %s)
                 """, (request.form.get('email'), staff_id))
+
+                # Update password if provided
+                new_password = request.form.get('password')
+                if new_password:
+                    from werkzeug.security import generate_password_hash
+                    hashed_pw = generate_password_hash(new_password)
+                    cursor.execute("""
+                        UPDATE users
+                        SET password = %s
+                        WHERE id = (SELECT user_id FROM staff WHERE id = %s)
+                    """, (hashed_pw, staff_id))
+
                 conn.commit()
                 flash('Staff member updated successfully!', 'success')
                 cursor.close()
@@ -298,7 +310,7 @@ def edit_staff(staff_id):
         cursor.execute("""
             SELECT s.*, d.name as department_name, u.username, u.email 
             FROM staff s 
-            JOIN departments d ON s.department_id = d.department_id 
+            JOIN departments d ON s.department_id = d.id 
             JOIN users u ON s.user_id = u.id
             WHERE s.id = %s
         """, (staff_id,))
