@@ -475,7 +475,7 @@ def edit_student(student_id):
                 flash(f'Error updating student: {str(e)}', 'danger')
         
         cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM students WHERE id = %s", (student_id,))
+        cursor.execute("SELECT * FROM students WHERE student_id = %s", (student_id,))
         student = cursor.fetchone()
         
         cursor.execute("SELECT * FROM classes")
