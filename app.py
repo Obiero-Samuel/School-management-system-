@@ -213,17 +213,15 @@ def admin_staff():
     if conn:
         cursor = conn.cursor(dictionary=True)
         cursor.execute("""
-            SELECT s.*, d.department_name as department_name, u.username, u.email 
+            SELECT s.*, d.name as department_name, u.username, u.email 
             FROM staff s 
             JOIN departments d ON s.department_id = d.department_id 
             JOIN users u ON s.user_id = u.id
             ORDER BY s.id DESC
         """)
         staff_list = cursor.fetchall()
-        
         cursor.execute("SELECT * FROM departments")
         departments = cursor.fetchall()
-        
         cursor.close()
         conn.close()
         return render_template('admin/staff.html', staff_list=staff_list, departments=departments)
@@ -237,7 +235,7 @@ def view_staff(staff_id):
     if conn:
         cursor = conn.cursor(dictionary=True)
         cursor.execute("""
-            SELECT s.*, d.department_name as department_name, u.username, u.email 
+            SELECT s.*, d.name as department_name, u.username, u.email 
             FROM staff s 
             JOIN departments d ON s.department_id = d.department_id 
             JOIN users u ON s.user_id = u.id
@@ -298,7 +296,7 @@ def edit_staff(staff_id):
                 flash(f'Error updating staff: {str(e)}', 'danger')
         cursor = conn.cursor(dictionary=True)
         cursor.execute("""
-            SELECT s.*, d.department_name as department_name, u.username, u.email 
+            SELECT s.*, d.name as department_name, u.username, u.email 
             FROM staff s 
             JOIN departments d ON s.department_id = d.department_id 
             JOIN users u ON s.user_id = u.id
@@ -395,7 +393,7 @@ def admin_students():
             SELECT s.*, c.name as class_name 
             FROM students s 
             LEFT JOIN classes c ON s.class_id = c.id
-            ORDER BY s.id DESC
+            ORDER BY s.student_id DESC
         """)
         students = cursor.fetchall()
         
