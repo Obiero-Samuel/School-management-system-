@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Stock Management{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar p-0">
+            <div class="list-group list-group-flush">
+                <a href="{{ url_for('admin_dashboard') }}" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                <a href="{{ url_for('admin_profile') }}" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                <a href="{{ url_for('admin_staff') }}" class="nav-link"><i class="bi bi-people"></i> Staff</a>
+                <a href="{{ url_for('admin_students') }}" class="nav-link"><i class="bi bi-person-badge"></i> Students</a>
+                <a href="{{ url_for('admin_stock') }}" class="nav-link active"><i class="bi bi-box-seam"></i> Stock</a>
+                <a href="{{ url_for('admin_reports') }}" class="nav-link"><i class="bi bi-file-earmark-bar-graph"></i> Reports</a>
+            </div>
+        </div>
+        <div class="col-md-10 content-wrapper">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}{% for category, message in messages %}<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>{% endfor %}{% endif %}
+            {% endwith %}
+            <h2><i class="bi bi-box-seam"></i> Stock Management (By Department)</h2>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead><tr><th>Item Name</th><th>Department</th><th>Quantity</th><th>Unit</th><th>Last Updated By</th><th>Date</th></tr></thead>
+                            <tbody>
+                                {% for item in stock_items %}
+                                <tr><td>{{ item.item_name }}</td><td><span class="badge bg-primary">{{ item.department_name }}</span></td><td>{{ item.quantity }}</td><td>{{ item.unit }}</td><td>{{ item.updated_by_name or '-' }}</td><td>{{ item.last_updated_date.strftime('%Y-%m-%d') if item.last_updated_date else '-' }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+	<h1>Welcome, {{ session.full_name }}</h1>
+	<p>Date/Time: {{ current_datetime }}</p>
+	<ul>
+		<li>Staff Count: {{ staff_count }}</li>
+		<li>Student Count: {{ student_count }}</li>
+		<li>Class Count: {{ class_count }}</li>
+	</ul>
+{% endblock %}

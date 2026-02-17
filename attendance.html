@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Attendance Management{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar p-0">
+            <div class="list-group list-group-flush">
+                <a href="{{ url_for('teacher_dashboard') }}" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                <a href="{{ url_for('staff_profile') }}" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                <a href="{{ url_for('teacher_attendance') }}" class="nav-link active"><i class="bi bi-calendar-check"></i> Attendance</a>
+                <a href="{{ url_for('teacher_assignments') }}" class="nav-link"><i class="bi bi-clipboard"></i> Assignments</a>
+                <a href="{{ url_for('teacher_marks') }}" class="nav-link"><i class="bi bi-award"></i> Marks/Results</a>
+            </div>
+        </div>
+        <div class="col-md-10 content-wrapper">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}{% for category, message in messages %}<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>{% endfor %}{% endif %}
+            {% endwith %}
+            <h2><i class="bi bi-calendar-check"></i> Daily Attendance</h2>
+            <div class="card mt-4"><div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-md-4"><label class="form-label">Select Class *</label><select class="form-select" id="classSelect"><option value="">Choose Class</option>{% for class in my_classes %}<option value="{{ class.id }}">{{ class.name }}</option>{% endfor %}</select></div>
+                    <div class="col-md-4"><label class="form-label">Date *</label><input type="date" class="form-control" id="attendanceDate" value="{{ now().strftime('%Y-%m-%d') }}"></div>
+                    <div class="col-md-4"><label class="form-label">&nbsp;</label><button class="btn btn-primary w-100" onclick="loadStudents()"><i class="bi bi-search"></i> Load Students</button></div>
+                </div>
+                <form method="POST" id="attendanceForm" style="display:none;">
+                    <input type="hidden" name="class_id" id="formClassId">
+                    <input type="hidden" name="date" id="formDate">
+                    <div class="table-responsive"><table class="table table-hover" id="studentsTable"><thead><tr><th>Adm. No.</th><th>Name</th><th>Status</th><th>Remarks</th></tr></thead><tbody id="studentsBody"></tbody></table></div>
+                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle"></i> Save Attendance</button>
+                </form>
+            </div></div>
+        </div>
+    </div>
+</div>
+<script>
+function loadStudents() {
+    const classId = document.getElementById('classSelect').value;
+    const date = document.getElementById('attendanceDate').value;
+    if (!classId || !date) { alert('Please select class and date'); return; }
+    fetch('/teacher/get-students/' + classId).then(r => r.json()).then(students => {
+        document.getElementById('formClassId').value = classId;
+        document.getElementById('formDate').value = date;
+        const tbody = document.getElementById('studentsBody');
+        tbody.innerHTML = '';
+        students.forEach(s => {
+            tbody.innerHTML += `<tr><td>${s.admission_number}</td><td>${s.first_name} ${s.last_name}</td><td><select class="form-select" name="status_${s.id}" required><option value="Present">Present</option><option value="Absent">Absent</option><option value="Late">Late</option><option value="Excused">Excused</option></select></td><td><input type="text" class="form-control" name="remarks_${s.id}"></td></tr>`;
+        });
+        document.getElementById('attendanceForm').style.display = 'block';
+    });
+}
+</script>
+{% endblock %}

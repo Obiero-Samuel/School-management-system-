@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            text-align: center;
+        }
+        .logo-icon {
+            font-size: 5rem;
+            color: #4F46E5;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #1F2937;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            color: #6B7280;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .btn-custom {
+            /* ...existing code... */
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-card">
+        <div class="logo-icon"><i class="bi bi-mortarboard-fill"></i></div>
+        <h1>Welcome to School Management System</h1>
+        <div class="subtitle">Manage students, staff, classes, and more with ease.</div>
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg btn-custom">Login</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}My Profile{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar p-0">
+            <div class="list-group list-group-flush">
+                <a href="{% if session.department == 'Teaching' %}{{ url_for('teacher_dashboard') }}{% else %}{{ url_for('staff_dashboard') }}{% endif %}" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                <a href="{{ url_for('staff_profile') }}" class="nav-link active"><i class="bi bi-person"></i> Profile</a>
+                {% if session.department == 'Teaching' %}
+                <a href="{{ url_for('teacher_attendance') }}" class="nav-link"><i class="bi bi-calendar-check"></i> Attendance</a>
+                <a href="{{ url_for('teacher_assignments') }}" class="nav-link"><i class="bi bi-clipboard"></i> Assignments</a>
+                <a href="{{ url_for('teacher_marks') }}" class="nav-link"><i class="bi bi-award"></i> Marks/Results</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-10 content-wrapper">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}{% for category, message in messages %}<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>{% endfor %}{% endif %}
+            {% endwith %}
+            <h2><i class="bi bi-person-circle"></i> My Profile</h2>
+            <div class="card mt-4"><div class="card-body">
+                <form method="POST"><div class="row"><div class="col-md-3 text-center"><img src="https://via.placeholder.com/150" class="rounded-circle mb-3" width="150"><h5>{{ profile.first_name }} {{ profile.last_name }}</h5><p class="text-muted">{{ profile.department_name }}</p></div>
+                <div class="col-md-9"><h5 class="mb-3">Personal Information</h5>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Staff Number</label><input type="text" class="form-control" value="{{ profile.staff_number }}" readonly></div>
+                    <div class="col-md-6 mb-3"><label class="form-label">Username</label><input type="text" class="form-control" value="{{ profile.username }}" readonly></div></div>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Email</label><input type="email" class="form-control" name="email" value="{{ profile.email }}" required></div>
+                    <div class="col-md-6 mb-3"><label class="form-label">Phone</label><input type="tel" class="form-control" name="phone" value="{{ profile.phone or '' }}"></div></div>
+                    <div class="mb-3"><label class="form-label">Address</label><textarea class="form-control" name="address" rows="2">{{ profile.address or '' }}</textarea></div>
+                    <div class="mb-3"><label class="form-label">Qualification</label><input type="text" class="form-control" name="qualification" value="{{ profile.qualification or '' }}"></div>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Update Profile</button>
+                </div></div></form>
+            </div></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

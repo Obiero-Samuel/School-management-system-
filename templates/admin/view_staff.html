@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Staff Details{% endblock %}
+{% block content %}
+<h2>Staff Member Details</h2>
+<div class="card mb-4">
+  <div class="card-body">
+    <h4 class="card-title">{{ staff.first_name }} {{ staff.last_name }}</h4>
+    <p class="card-text"><strong>Username:</strong> {{ staff.username }}</p>
+    <p class="card-text"><strong>Email:</strong> {{ staff.email }}</p>
+    <p class="card-text"><strong>Department:</strong> {{ staff.department_name }}</p>
+    <p class="card-text"><strong>Staff Number:</strong> {{ staff.staff_number }}</p>
+    <p class="card-text"><strong>Phone:</strong> {{ staff.phone }}</p>
+    <p class="card-text"><strong>Address:</strong> {{ staff.address }}</p>
+    <p class="card-text"><strong>Date of Birth:</strong> {{ staff.date_of_birth }}</p>
+    <p class="card-text"><strong>Hire Date:</strong> {{ staff.hire_date }}</p>
+    <p class="card-text"><strong>Qualification:</strong> {{ staff.qualification }}</p>
+    <p class="card-text"><strong>Status:</strong> {{ staff.status }}</p>
+    <a href="{{ url_for('admin_staff') }}" class="btn btn-secondary">Back to Staff List</a>
+  </div>
+</div>
+{% endblock %}

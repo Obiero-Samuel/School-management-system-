@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Admin Profile{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar p-0">
+            <div class="list-group list-group-flush">
+                <a href="{{ url_for('admin_dashboard') }}" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                <a href="{{ url_for('admin_profile') }}" class="nav-link active"><i class="bi bi-person"></i> Profile</a>
+                <a href="{{ url_for('admin_staff') }}" class="nav-link"><i class="bi bi-people"></i> Staff</a>
+                <a href="{{ url_for('admin_students') }}" class="nav-link"><i class="bi bi-person-badge"></i> Students</a>
+                <a href="{{ url_for('admin_stock') }}" class="nav-link"><i class="bi bi-box-seam"></i> Stock</a>
+                <a href="{{ url_for('admin_reports') }}" class="nav-link"><i class="bi bi-file-earmark-bar-graph"></i> Reports</a>
+            </div>
+        </div>
+        <div class="col-md-10 content-wrapper">
+            <h2><i class="bi bi-person-circle"></i> My Profile</h2>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" width="150">
+                            <h5>{{ profile.first_name }} {{ profile.last_name }}</h5>
+                            <p class="text-muted">Administrator</p>
+                        </div>
+                        <div class="col-md-9">
+                            <h5 class="mb-3">Personal Information</h5>
+                            <table class="table">
+                                <tr><th width="200">Username:</th><td>{{ profile.username }}</td></tr>
+                                <tr><th>Email:</th><td>{{ profile.email }}</td></tr>
+                                <tr><th>Phone:</th><td>{{ profile.phone or 'Not provided' }}</td></tr>
+                                <tr><th>Address:</th><td>{{ profile.address or 'Not provided' }}</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
