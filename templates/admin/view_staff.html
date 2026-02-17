@@ -15,6 +15,7 @@
     <p class="card-text"><strong>Hire Date:</strong> {{ staff.hire_date }}</p>
     <p class="card-text"><strong>Qualification:</strong> {{ staff.qualification }}</p>
     <p class="card-text"><strong>Status:</strong> {{ staff.status }}</p>
+    <a href="{{ url_for('edit_staff', staff_id=staff.id) }}" class="btn btn-primary">Edit</a>
     <a href="{{ url_for('admin_staff') }}" class="btn btn-secondary">Back to Staff List</a>
   </div>
 </div>

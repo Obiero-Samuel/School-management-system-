@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Edit Staff{% endblock %}
+{% block content %}
+<h2>Edit Staff Member</h2>
+<form action="" method="post" class="row g-3">
+  <div class="col-md-4">
+    <label>First Name</label>
+    <input type="text" name="first_name" class="form-control" value="{{ staff.first_name }}" required>
+  </div>
+  <div class="col-md-4">
+    <label>Last Name</label>
+    <input type="text" name="last_name" class="form-control" value="{{ staff.last_name }}" required>
+  </div>
+  <div class="col-md-4">
+    <label>Department</label>
+    <select name="department_id" class="form-control" required>
+      {% for d in departments %}
+      <option value="{{ d.department_id }}" {% if d.department_id == staff.department_id %}selected{% endif %}>{{ d.department_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" value="{{ staff.email }}" required>
+  </div>
+  <div class="col-md-4">
+    <label>Phone</label>
+    <input type="text" name="phone" class="form-control" value="{{ staff.phone }}">
+  </div>
+  <div class="col-md-4">
+    <label>Address</label>
+    <input type="text" name="address" class="form-control" value="{{ staff.address }}">
+  </div>
+  <div class="col-md-4">
+    <label>Date of Birth</label>
+    <input type="date" name="date_of_birth" class="form-control" value="{{ staff.date_of_birth|safe }}">
+  </div>
+  <div class="col-md-4">
+    <label>Hire Date</label>
+    <input type="date" name="hire_date" class="form-control" value="{{ staff.hire_date|safe }}">
+  </div>
+  <div class="col-md-4">
+    <label>Qualification</label>
+    <input type="text" name="qualification" class="form-control" value="{{ staff.qualification }}">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Update Staff</button>
+    <a href="{{ url_for('view_staff', staff_id=staff.id) }}" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>
+{% endblock %}

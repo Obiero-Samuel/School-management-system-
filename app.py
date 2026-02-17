@@ -1,4 +1,3 @@
-## ...existing imports and app initialization...
 
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from flask_mail import Mail, Message
@@ -253,6 +252,64 @@ def view_staff(staff_id):
             flash('Staff member not found.', 'warning')
             return redirect(url_for('admin_staff'))
     flash('Database connection error.', 'danger')
+    return redirect(url_for('admin_staff'))
+
+# Edit Staff Details
+@app.route('/admin/staff/edit/<int:staff_id>', methods=['GET', 'POST'])
+@admin_required
+def edit_staff(staff_id):
+    conn = get_db_connection()
+    if conn:
+        if request.method == 'POST':
+            try:
+                cursor = conn.cursor()
+                # Update staff table
+                cursor.execute("""
+                    UPDATE staff 
+                    SET staff_number = %s, first_name = %s, last_name = %s, 
+                        department_id = %s, phone = %s, address = %s, 
+                        date_of_birth = %s, hire_date = %s, qualification = %s
+                    WHERE id = %s
+                """, (
+                    request.form.get('staff_number'),
+                    request.form.get('first_name'),
+                    request.form.get('last_name'),
+                    request.form.get('department_id'),
+                    request.form.get('phone'),
+                    request.form.get('address'),
+                    request.form.get('date_of_birth'),
+                    request.form.get('hire_date'),
+                    request.form.get('qualification'),
+                    staff_id
+                ))
+                # Update email in users table
+                cursor.execute("""
+                    UPDATE users 
+                    SET email = %s 
+                    WHERE id = (SELECT user_id FROM staff WHERE id = %s)
+                """, (request.form.get('email'), staff_id))
+                conn.commit()
+                flash('Staff member updated successfully!', 'success')
+                cursor.close()
+                conn.close()
+                return redirect(url_for('admin_staff'))
+            except Error as e:
+                conn.rollback()
+                flash(f'Error updating staff: {str(e)}', 'danger')
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""
+            SELECT s.*, d.department_name as department_name, u.username, u.email 
+            FROM staff s 
+            JOIN departments d ON s.department_id = d.department_id 
+            JOIN users u ON s.user_id = u.id
+            WHERE s.id = %s
+        """, (staff_id,))
+        staff = cursor.fetchone()
+        cursor.execute("SELECT * FROM departments")
+        departments = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return render_template('admin/edit_staff.html', staff=staff, departments=departments)
     return redirect(url_for('admin_staff'))
 
 @app.route('/admin/staff/add', methods=['POST'])
