@@ -221,6 +221,19 @@ CREATE TABLE IF NOT EXISTS email_logs (
     FOREIGN KEY (sender_id) REFERENCES users(id)
 );
 
+-- Teacher Attendance table
+CREATE TABLE IF NOT EXISTS teacher_attendance (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    staff_id INT NOT NULL,
+    attendance_date DATE NOT NULL,
+    status ENUM('Present', 'Absent', 'Leave') NOT NULL,
+    remarks VARCHAR(255),
+    recorded_by INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (staff_id) REFERENCES staff(id) ON DELETE CASCADE,
+    FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE SET NULL
+);
+
 -- Sample Admin User (password: admin123)
 -- Password is hashed using werkzeug.security
 INSERT INTO users (username, password, email, user_type) VALUES

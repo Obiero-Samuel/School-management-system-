@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Staff Profile{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2>My Profile</h2>
+    <form method="POST">
+        <table class="table table-bordered">
+            <tr><th>First Name</th><td><input type="text" name="first_name" class="form-control" value="{{ profile.first_name }}" required></td></tr>
+            <tr><th>Last Name</th><td><input type="text" name="last_name" class="form-control" value="{{ profile.last_name }}" required></td></tr>
+            <tr><th>Email</th><td><input type="email" name="email" class="form-control" value="{{ profile.email }}" required></td></tr>
+            <tr><th>Phone</th><td><input type="text" name="phone" class="form-control" value="{{ profile.phone }}"></td></tr>
+            <tr><th>Department</th><td><input type="text" class="form-control" value="{{ profile.department_name }}" disabled></td></tr>
+            <tr><th>Address</th><td><input type="text" name="address" class="form-control" value="{{ profile.address }}"></td></tr>
+            <tr><th>Date of Birth</th><td><input type="date" name="date_of_birth" class="form-control" value="{{ profile.date_of_birth }}"></td></tr>
+            <tr><th>Hire Date</th><td><input type="date" name="hire_date" class="form-control" value="{{ profile.hire_date }}" disabled></td></tr>
+            <tr><th>Qualification</th><td><input type="text" name="qualification" class="form-control" value="{{ profile.qualification }}"></td></tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form>
+</div>
+{% endblock %}

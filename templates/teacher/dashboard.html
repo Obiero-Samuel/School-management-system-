@@ -3,8 +3,12 @@
 {% block content %}
 <h2>Welcome, {{ session.full_name }}!</h2>
 <p>This is your teacher dashboard.</p>
+<div class="mt-4">
+  <a href="{{ url_for('teacher_attendance') }}" class="btn btn-lg btn-outline-primary mb-3">
+    <i class="bi bi-clipboard-check"></i> Take Attendance
+  </a>
+</div>
 <ul>
-  <li><a href="{{ url_for('teacher_attendance') }}">Take Attendance</a></li>
   <li><a href="{{ url_for('teacher_assignments') }}">Give Assignment</a></li>
   <li><a href="{{ url_for('teacher_marks') }}">Input Results & CAT Marks</a></li>
   <li><a href="{{ url_for('teacher_marks') }}">View Results</a></li>

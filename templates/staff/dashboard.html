@@ -43,7 +43,9 @@
             <div class="card mb-3">
                 <div class="card-header">Quick Actions</div>
                 <div class="card-body">
-                    <a href="{{ url_for('teacher_attendance') }}" class="btn btn-outline-primary mb-2">Take Attendance</a><br>
+                    {% if session.department == 'Teaching' %}
+                    <a href="{{ url_for('teacher_attendance') }}" class="btn btn-outline-primary mb-2">Take Class Attendance</a><br>
+                    {% endif %}
                     <a href="{{ url_for('teacher_assignments') }}" class="btn btn-outline-secondary mb-2">Manage Assignments</a><br>
                     <a href="{{ url_for('teacher_marks') }}" class="btn btn-outline-success mb-2">View Reports</a>
                 </div>

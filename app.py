@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -118,15 +117,12 @@ def login():
                 
                 elif user['user_type'] == 'staff':
                     cursor.execute("""
-                        SELECT s.*, d.name as department_name 
-                        FROM staff s 
-                        JOIN departments d ON s.department_id = d.id 
-                        WHERE s.user_id = %s
+                        SELECT * FROM staff_old WHERE user_id = %s
                     """, (user['id'],))
                     staff = cursor.fetchone()
-                    session['staff_id'] = staff['id']
-                    session['full_name'] = f"{staff['first_name']} {staff['last_name']}"
-                    session['department'] = staff['department_name']
+                    session['staff_id'] = staff['staff_id']
+                    session['full_name'] = f"{staff['first_name']} {staff['surname']}"
+                    session['department'] = staff.get('department') if staff.get('department') else ''
                     cursor.close()
                     conn.close()
                     return redirect(url_for('staff_dashboard'))
@@ -220,6 +216,7 @@ def admin_staff():
             ORDER BY s.id DESC
         """)
         staff_list = cursor.fetchall()
+        # Ensure departments are fetched and passed to template
         cursor.execute("SELECT * FROM departments")
         departments = cursor.fetchall()
         cursor.close()
@@ -589,6 +586,54 @@ def generate_report():
     
     return redirect(url_for('admin_reports'))
 
+# ========== TEACHER ATTENDANCE (ADMIN) ==========
+@app.route('/admin/teacher-attendance', methods=['GET', 'POST'])
+@admin_required
+def admin_teacher_attendance():
+    conn = get_db_connection()
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        # Get all teachers
+        cursor.execute("SELECT s.id, s.first_name, s.last_name, d.name as department FROM staff s JOIN departments d ON s.department_id = d.id WHERE d.name = 'Teaching'")
+        teachers = cursor.fetchall()
+        message = None
+        if request.method == 'POST':
+            attendance_date = request.form.get('attendance_date')
+            for teacher in teachers:
+                status = request.form.get(f'status_{teacher["id"]}')
+                remarks = request.form.get(f'remarks_{teacher["id"]}', '')
+                # Check if already recorded
+                cursor.execute("SELECT id FROM teacher_attendance WHERE staff_id = %s AND attendance_date = %s", (teacher['id'], attendance_date))
+                if cursor.fetchone():
+                    cursor.execute("UPDATE teacher_attendance SET status = %s, remarks = %s, recorded_by = %s WHERE staff_id = %s AND attendance_date = %s", (status, remarks, session['user_id'], teacher['id'], attendance_date))
+                else:
+                    cursor.execute("INSERT INTO teacher_attendance (staff_id, attendance_date, status, remarks, recorded_by) VALUES (%s, %s, %s, %s, %s)", (teacher['id'], attendance_date, status, remarks, session['user_id']))
+            conn.commit()
+            message = 'Attendance recorded!'
+        cursor.close()
+        conn.close()
+        return render_template('admin/teacher_attendance.html', teachers=teachers, message=message)
+    return redirect(url_for('admin_dashboard'))
+
+@app.route('/admin/teacher-attendance/history')
+@admin_required
+def admin_teacher_attendance_history():
+    conn = get_db_connection()
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""
+            SELECT ta.*, s.first_name, s.last_name, d.name as department
+            FROM teacher_attendance ta
+            JOIN staff s ON ta.staff_id = s.id
+            JOIN departments d ON s.department_id = d.id
+            ORDER BY ta.attendance_date DESC, s.last_name
+        """)
+        records = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return render_template('admin/teacher_attendance_history.html', records=records)
+    return redirect(url_for('admin_dashboard'))
+
 # ===================== STAFF ROUTES =====================
 
 @app.route('/staff/dashboard')
@@ -616,9 +661,12 @@ def staff_profile():
                 cursor = conn.cursor()
                 cursor.execute("""
                     UPDATE staff 
-                    SET phone = %s, address = %s, qualification = %s
+                    SET first_name = %s, last_name = %s, date_of_birth = %s, phone = %s, address = %s, qualification = %s
                     WHERE id = %s
                 """, (
+                    request.form.get('first_name'),
+                    request.form.get('last_name'),
+                    request.form.get('date_of_birth'),
                     request.form.get('phone'),
                     request.form.get('address'),
                     request.form.get('qualification'),
@@ -1004,4 +1052,5 @@ def send_results():
 
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+    # Enable Flask debug mode for detailed error pages
     app.run(debug=True, host='0.0.0.0', port=5000)
