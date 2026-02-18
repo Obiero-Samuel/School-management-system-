@@ -117,12 +117,13 @@ def login():
                 
                 elif user['user_type'] == 'staff':
                     cursor.execute("""
-                        SELECT * FROM staff_old WHERE user_id = %s
+                        SELECT * FROM staff WHERE user_id = %s
                     """, (user['id'],))
                     staff = cursor.fetchone()
-                    session['staff_id'] = staff['staff_id']
-                    session['full_name'] = f"{staff['first_name']} {staff['surname']}"
-                    session['department'] = staff.get('department') if staff.get('department') else ''
+                    session['staff_id'] = staff['id']
+                    session['staff_number'] = staff['staff_number']
+                    session['full_name'] = f"{staff['first_name']} {staff.get('surname', staff['last_name'])}"
+                    session['department_id'] = staff['department_id']
                     cursor.close()
                     conn.close()
                     return redirect(url_for('staff_dashboard'))
