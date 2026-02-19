@@ -1,5 +1,3 @@
-
-
 # ------------------- TEACHER ENHANCEMENT ROUTES -------------------
 # (All teacher routes moved here, after app and decorators)
 
@@ -88,6 +86,12 @@ def staff_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+# Admin dashboard route (must be after app and decorators)
+@app.route('/admin/dashboard')
+@admin_required
+def admin_dashboard():
+    return render_template('admin/dashboard.html')
+
 # Teacher required decorator
 def teacher_required(f):
     @wraps(f)
@@ -110,63 +114,147 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         conn = get_db_connection()
-        if conn:
-            cursor = conn.cursor(dictionary=True)
-            # Check user in users table
-            cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
-            user = cursor.fetchone()
-            if user and check_password_hash(user['password'], password):
-                session.clear()
-                session['user_id'] = user['id']
-                session['user_type'] = user['user_type']
-                # Admin
-                if user['user_type'] == 'admin':
-                    cursor.execute("SELECT first_name, last_name FROM admins WHERE user_id = %s", (user['id'],))
-                    admin = cursor.fetchone()
-                    session['full_name'] = f"{admin['first_name']} {admin['last_name']}" if admin else username
-                    cursor.close()
-                    conn.close()
-                    return redirect(url_for('admin_dashboard'))
-                # Staff (including teachers)
-                elif user['user_type'] == 'staff':
-                    cursor.execute("SELECT * FROM staff WHERE user_id = %s", (user['id'],))
-                    staff = cursor.fetchone()
-                    if staff:
-                        session['staff_id'] = staff['id']
-                        session['department'] = None
-                        # Get department name
-                        cursor.execute("SELECT name FROM departments WHERE id = %s", (staff['department_id'],))
-                        dept = cursor.fetchone()
-                        if dept:
-                            session['department'] = dept['name']
-                        session['full_name'] = f"{staff['first_name']} {staff['last_name']}"
-                        cursor.close()
-                        conn.close()
-                        # Route to department dashboard
-                        if session['department'] == 'Teaching':
-                            return redirect(url_for('teacher_dashboard'))
+        cursor = None
+        try:
+            if conn:
+                cursor = conn.cursor(dictionary=True)
+                try:
+                    # Check user in users table
+                    cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
+                    user = cursor.fetchone()
+                    # Always consume all results
+                    try:
+                        while cursor.nextset():
+                            pass
+                    except Exception:
+                        pass
+                    if user and check_password_hash(user['password'], password):
+                        session.clear()
+                        session['user_id'] = user['id']
+                        session['user_type'] = user['user_type']
+                        # Admin
+                        if user['user_type'] == 'admin':
+                            cursor.execute("SELECT first_name, last_name FROM admins WHERE user_id = %s", (user['id'],))
+                            admin = cursor.fetchone()
+                            try:
+                                while cursor.nextset():
+                                    pass
+                            except Exception:
+                                pass
+                            session['full_name'] = f"{admin['first_name']} {admin['last_name']}" if admin else username
+                            return redirect(url_for('admin_dashboard'))
+                        # Staff (including teachers)
+                        elif user['user_type'] == 'staff':
+                            cursor.execute("SELECT * FROM staff WHERE user_id = %s", (user['id'],))
+                            staff = cursor.fetchone()
+                            try:
+                                while cursor.nextset():
+                                    pass
+                            except Exception:
+                                pass
+                            if staff:
+                                session['staff_id'] = staff['id']
+                                session['department'] = None
+                                # Get department name
+                                cursor.execute("SELECT name FROM departments WHERE id = %s", (staff['department_id'],))
+                                dept = cursor.fetchone()
+                                try:
+                                    while cursor.nextset():
+                                        pass
+                                except Exception:
+                                    pass
+                                if dept:
+                                    session['department'] = dept['name']
+                                session['full_name'] = f"{staff['first_name']} {staff['last_name']}"
+                                # Route to department dashboard
+                                if session['department'] == 'Teaching':
+                                    return redirect(url_for('teacher_dashboard'))
+                                else:
+                                    return redirect(url_for('staff_dashboard'))
+                            else:
+                                # fetch all results to clear buffer
+                                try:
+                                    cursor.fetchall()
+                                except Exception:
+                                    pass
+                                try:
+                                    while cursor.nextset():
+                                        pass
+                                except Exception:
+                                    pass
+                                flash('Staff profile not found.', 'danger')
+                        # Parent
+                        elif user['user_type'] == 'parent':
+                            cursor.execute("SELECT first_name, last_name FROM parents WHERE user_id = %s", (user['id'],))
+                            parent = cursor.fetchone()
+                            try:
+                                while cursor.nextset():
+                                    pass
+                            except Exception:
+                                pass
+                            session['full_name'] = f"{parent['first_name']} {parent['last_name']}" if parent else username
+                            return redirect(url_for('index'))  # Or parent dashboard if exists
                         else:
-                            return redirect(url_for('staff_dashboard'))
+                            # fetch all results to clear buffer
+                            try:
+                                cursor.fetchall()
+                            except Exception:
+                                pass
+                            try:
+                                while cursor.nextset():
+                                    pass
+                            except Exception:
+                                pass
+                            flash('Unknown user type.', 'danger')
                     else:
-                        flash('Staff profile not found.', 'danger')
-                # Parent
-                elif user['user_type'] == 'parent':
-                    cursor.execute("SELECT first_name, last_name FROM parents WHERE user_id = %s", (user['id'],))
-                    parent = cursor.fetchone()
-                    session['full_name'] = f"{parent['first_name']} {parent['last_name']}" if parent else username
-                    cursor.close()
+                        # fetch all results to clear buffer
+                        try:
+                            cursor.fetchall()
+                        except Exception:
+                            pass
+                        try:
+                            while cursor.nextset():
+                                pass
+                        except Exception:
+                            pass
+                        flash('Invalid username or password.', 'danger')
+                finally:
+                    # Always consume any unread results before closing
+                    if cursor:
+                        try:
+                            while cursor.nextset():
+                                pass
+                        except Exception:
+                            pass
+                        try:
+                            cursor.fetchall()
+                        except Exception:
+                            pass
+                        cursor.close()
+                if conn and conn.is_connected():
                     conn.close()
-                    return redirect(url_for('index'))  # Or parent dashboard if exists
-                else:
-                    flash('Unknown user type.', 'danger')
             else:
-                flash('Invalid username or password.', 'danger')
-                if cursor:
-                    cursor.close()
-                if conn:
-                    conn.close()
-        else:
-            flash('Database connection error.', 'danger')
+                flash('Database connection error.', 'danger')
+        except Exception as e:
+            # Print the actual error for debugging
+            import traceback
+            print("[LOGIN ERROR]", e)
+            traceback.print_exc()
+            # Defensive: if anything goes wrong, still try to consume unread results
+            if cursor:
+                try:
+                    while cursor.nextset():
+                        pass
+                except Exception:
+                    pass
+                try:
+                    cursor.fetchall()
+                except Exception:
+                    pass
+                cursor.close()
+            if conn and conn.is_connected():
+                conn.close()
+            flash('An error occurred during login.', 'danger')
         return render_template('login.html')
     return render_template('login.html')
 
@@ -783,6 +871,7 @@ def get_class_students(class_id):
         students = cursor.fetchall()
         cursor.close()
         conn.close()
+        print(generate_password_hash('obiero@2006'))
         return jsonify(students)
     return jsonify([])
 
