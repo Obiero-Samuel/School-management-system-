@@ -902,7 +902,7 @@ def teacher_marks():
         
         # Get recent marks entries
         cursor.execute("""
-            SELECT m.*, s.first_name, s.surname AS last_name, s.admission_number, c.name as class_name
+            SELECT m.*, s.first_name, s.surname AS last_name, s.student_id, c.name as class_name
             FROM marks m
             JOIN students s ON m.student_id = s.student_id
             JOIN classes c ON m.class_id = c.id
