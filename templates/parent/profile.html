@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Parent Profile</h2>
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Name:</strong> {{ parent.first_name }} {{ parent.last_name }}</p>
+      <p><strong>Email:</strong> {{ parent.email }}</p>
+      <p><strong>Phone:</strong> {{ parent.phone }}</p>
+      <p><strong>Address:</strong> {{ parent.address }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

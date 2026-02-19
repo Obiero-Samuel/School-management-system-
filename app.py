@@ -1,3 +1,21 @@
+
+
+# ------------------- TEACHER ENHANCEMENT ROUTES -------------------
+# (All teacher routes moved here, after app and decorators)
+
+# ------------------- PARENT ROUTES -------------------
+from flask import send_file  # For file downloads
+
+# (All parent routes moved here, after app and decorators)
+# Parent required decorator
+def parent_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session or session.get('user_type') != 'parent':
+            flash('Parent access required.', 'danger')
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -91,145 +109,75 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        
         conn = get_db_connection()
         if conn:
             cursor = conn.cursor(dictionary=True)
-            
-            # Check user credentials
-            query = "SELECT * FROM users WHERE username = %s AND is_active = TRUE"
-            cursor.execute(query, (username,))
+            # Check user in users table
+            cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
             user = cursor.fetchone()
-            
             if user and check_password_hash(user['password'], password):
+                session.clear()
                 session['user_id'] = user['id']
-                session['username'] = user['username']
                 session['user_type'] = user['user_type']
-                
-                # Get additional user info based on type
+                # Admin
                 if user['user_type'] == 'admin':
-                    cursor.execute("SELECT * FROM admins WHERE user_id = %s", (user['id'],))
+                    cursor.execute("SELECT first_name, last_name FROM admins WHERE user_id = %s", (user['id'],))
                     admin = cursor.fetchone()
-                    session['full_name'] = f"{admin['first_name']} {admin['last_name']}"
+                    session['full_name'] = f"{admin['first_name']} {admin['last_name']}" if admin else username
                     cursor.close()
                     conn.close()
                     return redirect(url_for('admin_dashboard'))
-                
+                # Staff (including teachers)
                 elif user['user_type'] == 'staff':
-                    cursor.execute("""
-                        SELECT * FROM staff WHERE user_id = %s
-                    """, (user['id'],))
+                    cursor.execute("SELECT * FROM staff WHERE user_id = %s", (user['id'],))
                     staff = cursor.fetchone()
-                    session['staff_id'] = staff['id']
-                    session['staff_number'] = staff['staff_number']
-                    session['full_name'] = f"{staff['first_name']} {staff.get('surname', staff['last_name'])}"
-                    session['department_id'] = staff['department_id']
-                    cursor.close()
-                    conn.close()
-                    return redirect(url_for('staff_dashboard'))
-                
+                    if staff:
+                        session['staff_id'] = staff['id']
+                        session['department'] = None
+                        # Get department name
+                        cursor.execute("SELECT name FROM departments WHERE id = %s", (staff['department_id'],))
+                        dept = cursor.fetchone()
+                        if dept:
+                            session['department'] = dept['name']
+                        session['full_name'] = f"{staff['first_name']} {staff['last_name']}"
+                        cursor.close()
+                        conn.close()
+                        # Route to department dashboard
+                        if session['department'] == 'Teaching':
+                            return redirect(url_for('teacher_dashboard'))
+                        else:
+                            return redirect(url_for('staff_dashboard'))
+                    else:
+                        flash('Staff profile not found.', 'danger')
+                # Parent
                 elif user['user_type'] == 'parent':
-                    cursor.execute("SELECT * FROM parents WHERE user_id = %s", (user['id'],))
+                    cursor.execute("SELECT first_name, last_name FROM parents WHERE user_id = %s", (user['id'],))
                     parent = cursor.fetchone()
-                    session['parent_id'] = parent['id']
-                    session['full_name'] = f"{parent['first_name']} {parent['last_name']}"
+                    session['full_name'] = f"{parent['first_name']} {parent['last_name']}" if parent else username
                     cursor.close()
                     conn.close()
-                    return redirect(url_for('parent_dashboard'))
+                    return redirect(url_for('index'))  # Or parent dashboard if exists
+                else:
+                    flash('Unknown user type.', 'danger')
             else:
                 flash('Invalid username or password.', 'danger')
-            
-            cursor.close()
-            conn.close()
-    
+                if cursor:
+                    cursor.close()
+                if conn:
+                    conn.close()
+        else:
+            flash('Database connection error.', 'danger')
+        return render_template('login.html')
     return render_template('login.html')
-
-# Logout
-@app.route('/logout')
-def logout():
-    session.clear()
-    flash('You have been logged out successfully.', 'success')
-    return redirect(url_for('login'))
-
-# ===================== ADMIN ROUTES =====================
-
-@app.route('/admin/dashboard')
-@admin_required
-def admin_dashboard():
-    conn = get_db_connection()
-    if conn:
-        cursor = conn.cursor(dictionary=True)
-        
-        # Get statistics
-        cursor.execute("SELECT COUNT(*) as count FROM staff")
-        staff_count = cursor.fetchone()['count']
-        
-        cursor.execute("SELECT COUNT(*) as count FROM students")
-        student_count = cursor.fetchone()['count']
-        
-        cursor.execute("SELECT COUNT(*) as count FROM classes")
-        class_count = cursor.fetchone()['count']
-        
-        cursor.close()
-        conn.close()
-        
-        current_datetime = datetime.now().strftime("%A, %B %d, %Y %I:%M %p")
-        
-        return render_template('dashboard.html',
-                             current_datetime=current_datetime,
-                             staff_count=staff_count,
-                             student_count=student_count,
-                             class_count=class_count)
-    
-    return render_template('dashboard.html', current_datetime=datetime.now())
-
-@app.route('/admin/profile')
-@admin_required
-def admin_profile():
-    conn = get_db_connection()
-    if conn:
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("""
-            SELECT u.*, a.* 
-            FROM users u 
-            JOIN admins a ON u.id = a.user_id 
-            WHERE u.id = %s
-        """, (session['user_id'],))
-        profile = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        return render_template('admin/profile.html', profile=profile)
-    return redirect(url_for('admin_dashboard'))
-
-
-# Staff Management
-@app.route('/admin/staff')
-@admin_required
-def admin_staff():
-    conn = get_db_connection()
-    if conn:
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("""
-            SELECT s.*, d.name as department_name, u.username, u.email 
-            FROM staff s 
-            JOIN departments d ON s.department_id = d.id 
-            JOIN users u ON s.user_id = u.id
-            ORDER BY s.id DESC
-        """)
-        staff_list = cursor.fetchall()
-        # Ensure departments are fetched and passed to template
-        cursor.execute("SELECT * FROM departments")
-        departments = cursor.fetchall()
-        cursor.close()
-        conn.close()
-        return render_template('admin/staff.html', staff_list=staff_list, departments=departments)
-    return redirect(url_for('admin_dashboard'))
 
 # View Staff Details
 @app.route('/admin/staff/view/<int:staff_id>')
 @admin_required
 def view_staff(staff_id):
     conn = get_db_connection()
+    print("[DEBUG] Entered teacher_dashboard route")
+    import sys
+    sys.stdout.flush()
     if conn:
         cursor = conn.cursor(dictionary=True)
         cursor.execute("""
@@ -715,7 +663,20 @@ def teacher_dashboard():
     
     if conn:
         cursor = conn.cursor(dictionary=True)
-        
+        # Debug: Print current database and table structure (always, before any queries)
+        import sys
+        try:
+            cursor.execute("SELECT DATABASE()")
+            db_name = cursor.fetchone()
+            print("[DEBUG] Connected database:", db_name)
+            sys.stdout.flush()
+            cursor.execute("SHOW CREATE TABLE classes")
+            table_struct = cursor.fetchone()
+            print("[DEBUG] Table structure:", table_struct)
+            sys.stdout.flush()
+        except Exception as e:
+            print("[DEBUG] Error fetching DB/table info:", e)
+            sys.stdout.flush()
         # Get teacher's classes
         cursor.execute("""
             SELECT * FROM classes WHERE teacher_id = %s
@@ -941,9 +902,9 @@ def teacher_marks():
         
         # Get recent marks entries
         cursor.execute("""
-            SELECT m.*, s.first_name, s.last_name, s.admission_number, c.name as class_name
+            SELECT m.*, s.first_name, s.surname AS last_name, s.admission_number, c.name as class_name
             FROM marks m
-            JOIN students s ON m.student_id = s.id
+            JOIN students s ON m.student_id = s.student_id
             JOIN classes c ON m.class_id = c.id
             WHERE m.teacher_id = %s
             ORDER BY m.created_at DESC

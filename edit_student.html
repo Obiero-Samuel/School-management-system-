@@ -5,77 +5,95 @@
     <div class="row">
         <div class="col-md-2 sidebar p-0">
             <div class="list-group list-group-flush">
-                <a href="{{ url_for('admin_dashboard') }}" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                <!-- <a href="#" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a> -->
                 <a href="{{ url_for('admin_profile') }}" class="nav-link"><i class="bi bi-person"></i> Profile</a>
-                <a href="{{ url_for('admin_staff') }}" class="nav-link"><i class="bi bi-people"></i> Staff</a>
-                <a href="{{ url_for('admin_students') }}" class="nav-link active"><i class="bi bi-person-badge"></i> Students</a>
+                <!-- <a href="#" class="nav-link"><i class="bi bi-people"></i> Staff</a> -->
+                <a href="{{ url_for('admin_students') }}" class="nav-link active"><i class="bi bi-person-badge"></i>
+                    Students</a>
                 <a href="{{ url_for('admin_stock') }}" class="nav-link"><i class="bi bi-box-seam"></i> Stock</a>
-                <a href="{{ url_for('admin_reports') }}" class="nav-link"><i class="bi bi-file-earmark-bar-graph"></i> Reports</a>
+                <a href="{{ url_for('admin_reports') }}" class="nav-link"><i class="bi bi-file-earmark-bar-graph"></i>
+                    Reports</a>
             </div>
         </div>
         <div class="col-md-10 content-wrapper">
             <h2><i class="bi bi-pencil"></i> Edit Student</h2>
-            <div class="card mt-4"><div class="card-body">
-                <form method="POST">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">First Name *</label>
-                            <input type="text" class="form-control" name="first_name" value="{{ student.first_name }}" required placeholder="Enter first name" title="First Name">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-control" name="first_name"
+                                    value="{{ student.first_name }}" required placeholder="Enter first name"
+                                    title="First Name">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" name="last_name" value="{{ student.last_name }}"
+                                    required placeholder="Enter last name" title="Last Name">
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Last Name *</label>
-                            <input type="text" class="form-control" name="last_name" value="{{ student.last_name }}" required placeholder="Enter last name" title="Last Name">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Class</label>
+                                <select class="form-select" name="class_id" title="Class">
+                                    <option value="">Select Class</option>
+                                    {% for class in classes %}
+                                    <option value="{{ class.id }}" {% if class.id==student.class_id %}selected{% endif
+                                        %}>{{ class.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Gender *</label>
+                                <select class="form-select" name="gender" required title="Gender">
+                                    <option value="Male" {% if student.gender=='Male' %}selected{% endif %}>Male
+                                    </option>
+                                    <option value="Female" {% if student.gender=='Female' %}selected{% endif %}>Female
+                                    </option>
+                                    <option value="Other" {% if student.gender=='Other' %}selected{% endif %}>Other
+                                    </option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Class</label>
-                            <select class="form-select" name="class_id" title="Class">
-                                <option value="">Select Class</option>
-                                {% for class in classes %}
-                                <option value="{{ class.id }}" {% if class.id == student.class_id %}selected{% endif %}>{{ class.name }}</option>
-                                {% endfor %}
-                            </select>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" name="date_of_birth"
+                                    value="{{ student.date_of_birth }}" placeholder="YYYY-MM-DD" title="Date of Birth">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" name="phone" value="{{ student.phone or '' }}"
+                                    placeholder="Enter phone number" title="Phone">
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Gender *</label>
-                            <select class="form-select" name="gender" required title="Gender">
-                                <option value="Male" {% if student.gender == 'Male' %}selected{% endif %}>Male</option>
-                                <option value="Female" {% if student.gender == 'Female' %}selected{% endif %}>Female</option>
-                                <option value="Other" {% if student.gender == 'Other' %}selected{% endif %}>Other</option>
-                            </select>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Fee Status</label>
+                                <select class="form-select" name="fee_status" title="Fee Status">
+                                    <option value="Pending" {% if student.fee_status=='Pending' %}selected{% endif %}>
+                                        Pending</option>
+                                    <option value="Paid" {% if student.fee_status=='Paid' %}selected{% endif %}>Paid
+                                    </option>
+                                    <option value="Overdue" {% if student.fee_status=='Overdue' %}selected{% endif %}>
+                                        Overdue</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" name="date_of_birth" value="{{ student.date_of_birth }}" placeholder="YYYY-MM-DD" title="Date of Birth">
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <textarea class="form-control" name="address" rows="2" placeholder="Enter address"
+                                title="Address">{{ student.address or '' }}</textarea>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Phone</label>
-                            <input type="tel" class="form-control" name="phone" value="{{ student.phone or '' }}" placeholder="Enter phone number" title="Phone">
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Update
+                                Student</button>
+                            <a href="{{ url_for('admin_students') }}" class="btn btn-secondary">Cancel</a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Fee Status</label>
-                            <select class="form-select" name="fee_status" title="Fee Status">
-                                <option value="Pending" {% if student.fee_status == 'Pending' %}selected{% endif %}>Pending</option>
-                                <option value="Paid" {% if student.fee_status == 'Paid' %}selected{% endif %}>Paid</option>
-                                <option value="Overdue" {% if student.fee_status == 'Overdue' %}selected{% endif %}>Overdue</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Address</label>
-                        <textarea class="form-control" name="address" rows="2" placeholder="Enter address" title="Address">{{ student.address or '' }}</textarea>
-                    </div>
-                    <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Update Student</button>
-                        <a href="{{ url_for('admin_students') }}" class="btn btn-secondary">Cancel</a>
-                    </div>
-                </form>
-            </div></div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Your Children</h2>
+  <ul class="list-group">
+    {% for child in children %}
+    <li class="list-group-item">
+      <strong>{{ child.first_name }} {{ child.last_name }}</strong> (Class: {{ child.class_name }})<br>
+      <a href="{{ url_for('parent_assignments', child_id=child.id) }}" class="btn btn-sm btn-primary mt-2">View Assignments</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
