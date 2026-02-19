@@ -1,16 +1,47 @@
 {% extends 'base.html' %}
 {% block title %}Teacher Dashboard{% endblock %}
 {% block content %}
-<h2>Welcome, {{ session.full_name }}!</h2>
-<p>This is your teacher dashboard.</p>
-<div class="mt-4">
-  <a href="{{ url_for('teacher_attendance') }}" class="btn btn-lg btn-outline-primary mb-3">
-    <i class="bi bi-clipboard-check"></i> Take Attendance
-  </a>
+<div class="container py-4">
+  <div class="row justify-content-center align-items-center mb-4">
+    <div class="col-md-8 text-center">
+      <h1 class="mb-2">Welcome, {{ session.full_name }}!</h1>
+      <p class="lead">Today's Date/Time: <span id="live-datetime"></span></p>
+    </div>
+  </div>
+  <div class="row g-4 justify-content-center mb-4">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Take Attendance</h5>
+          <a href="{{ url_for('teacher_attendance') }}" class="btn btn-primary btn-lg mt-2"><i class="bi bi-clipboard-check"></i> Take Attendance</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Assignments</h5>
+          <a href="{{ url_for('teacher_assignments') }}" class="btn btn-success btn-lg mt-2"><i class="bi bi-journal-text"></i> Give Assignment</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Results & CAT Marks</h5>
+          <a href="{{ url_for('teacher_marks') }}" class="btn btn-warning btn-lg mt-2"><i class="bi bi-bar-chart"></i> Input/View Results</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<ul>
-  <li><a href="{{ url_for('teacher_assignments') }}">Give Assignment</a></li>
-  <li><a href="{{ url_for('teacher_marks') }}">Input Results & CAT Marks</a></li>
-  <li><a href="{{ url_for('teacher_marks') }}">View Results</a></li>
-</ul>
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    document.getElementById('live-datetime').textContent = now.toLocaleString('en-US', options);
+  }
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+</script>
 {% endblock %}
