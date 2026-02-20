@@ -100,6 +100,12 @@ def admin_staff():
         conn.close()
     return render_template('admin/staff.html', staff=staff)
 
+# GET: Show staff registration form (correct placement)
+@app.route('/admin/staff/add', methods=['GET'])
+@admin_required
+def add_staff_form():
+    return render_template('admin/add_staff.html')
+
 # Admin dashboard route (must be after app and decorators)
 @app.route('/admin/dashboard')
 @admin_required
