@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS events (
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 -- Tasks table
 CREATE TABLE IF NOT EXISTS tasks (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -156,8 +155,7 @@ CREATE TABLE IF NOT EXISTS assignments (
     total_marks INT DEFAULT 100,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
-    FOREIGN KEY (teacher_id) REFERENCES staff(id)
-    academic_year VARCHAR(20),
+    FOREIGN KEY (teacher_id) REFERENCES staff(id) academic_year VARCHAR(20),
     teacher_id INT,
     remarks TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -184,23 +182,22 @@ CREATE TABLE IF NOT EXISTS stock (
     item_name VARCHAR(255) NOT NULL,
     department_id INT NOT NULL,
     quantity INT NOT NULL,
-
--- Student-Parent relationship table (moved after students and parents)
-CREATE TABLE IF NOT EXISTS student_parents (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    student_id INT NOT NULL,
-    parent_id INT NOT NULL,
-    relationship VARCHAR(50),
-    is_primary_contact BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
-    FOREIGN KEY (parent_id) REFERENCES parents(id) ON DELETE CASCADE
-);
-    unit VARCHAR(50),
-    last_updated_by INT,
-    last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    description TEXT,
-    FOREIGN KEY (department_id) REFERENCES departments(id),
-    FOREIGN KEY (last_updated_by) REFERENCES staff(id)
+    -- Student-Parent relationship table (moved after students and parents)
+    CREATE TABLE IF NOT EXISTS student_parents (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        student_id INT NOT NULL,
+        parent_id INT NOT NULL,
+        relationship VARCHAR(50),
+        is_primary_contact BOOLEAN DEFAULT FALSE,
+        FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+        FOREIGN KEY (parent_id) REFERENCES parents(id) ON DELETE CASCADE
+    );
+unit VARCHAR(50),
+last_updated_by INT,
+last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+description TEXT,
+FOREIGN KEY (department_id) REFERENCES departments(id),
+FOREIGN KEY (last_updated_by) REFERENCES staff(id)
 );
 -- Notifications table
 CREATE TABLE IF NOT EXISTS notifications (
