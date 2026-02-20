@@ -1,3 +1,12 @@
+-- Events table
+CREATE TABLE IF NOT EXISTS events (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    location VARCHAR(255),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 -- Tasks table
 CREATE TABLE IF NOT EXISTS tasks (
@@ -148,17 +157,6 @@ CREATE TABLE IF NOT EXISTS assignments (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
     FOREIGN KEY (teacher_id) REFERENCES staff(id)
-);
--- Marks/Results table
-CREATE TABLE IF NOT EXISTS marks (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    student_id INT NOT NULL,
-    class_id INT NOT NULL,
-    subject VARCHAR(100) NOT NULL,
-    exam_type ENUM('CAT', 'Mid-Term', 'End-Term', 'Assignment') NOT NULL,
-    marks_obtained DECIMAL(5, 2),
-    total_marks DECIMAL(5, 2),
-    term VARCHAR(50),
     academic_year VARCHAR(20),
     teacher_id INT,
     remarks TEXT,
@@ -186,6 +184,17 @@ CREATE TABLE IF NOT EXISTS stock (
     item_name VARCHAR(255) NOT NULL,
     department_id INT NOT NULL,
     quantity INT NOT NULL,
+
+-- Student-Parent relationship table (moved after students and parents)
+CREATE TABLE IF NOT EXISTS student_parents (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT NOT NULL,
+    parent_id INT NOT NULL,
+    relationship VARCHAR(50),
+    is_primary_contact BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (parent_id) REFERENCES parents(id) ON DELETE CASCADE
+);
     unit VARCHAR(50),
     last_updated_by INT,
     last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

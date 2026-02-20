@@ -135,6 +135,22 @@ def add_staff_form():
 def admin_dashboard():
     return render_template('admin/dashboard.html')
 
+# Admin view events route
+@app.route('/admin/events')
+@admin_required
+def admin_events():
+    conn = get_db_connection()
+    events = []
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""
+            SELECT * FROM events WHERE date >= CURDATE() ORDER BY date ASC
+        """)
+        events = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    return render_template('admin/events.html', events=events)
+
 # Teacher required decorator
 def teacher_required(f):
     @wraps(f)
