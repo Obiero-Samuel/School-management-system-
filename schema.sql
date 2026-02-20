@@ -1,3 +1,13 @@
+
+-- Tasks table
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    staff_id INT NOT NULL,
+    task TEXT NOT NULL,
+    status ENUM('Pending', 'Completed') DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (staff_id) REFERENCES staff(id) ON DELETE CASCADE
+);
 -- School Management System Database Schema
 CREATE DATABASE IF NOT EXISTS school_management;
 USE school_management;

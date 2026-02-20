@@ -100,6 +100,29 @@ def admin_staff():
         conn.close()
     return render_template('admin/staff.html', staff=staff)
 
+# Admin assign tasks route (GET and POST)
+@app.route('/admin/tasks/assign', methods=['GET', 'POST'])
+@admin_required
+def assign_tasks():
+    conn = get_db_connection()
+    message = None
+    # Get all staff for dropdown
+    staff_list = []
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT id, first_name, last_name FROM staff")
+        staff_list = cursor.fetchall()
+        if request.method == 'POST':
+            staff_id = request.form.get('staff_id')
+            task = request.form.get('task')
+            if staff_id and task:
+                cursor.execute("INSERT INTO tasks (staff_id, task) VALUES (%s, %s)", (staff_id, task))
+                conn.commit()
+                message = 'Task assigned successfully!'
+        cursor.close()
+        conn.close()
+    return render_template('admin/assign_tasks.html', staff_list=staff_list, message=message)
+
 # GET: Show staff registration form (correct placement)
 @app.route('/admin/staff/add', methods=['GET'])
 @admin_required
@@ -707,6 +730,26 @@ def staff_dashboard():
     return render_template('staff/dashboard.html', 
                          department=department,
                          current_datetime=current_datetime)
+
+# Staff view for pending tasks assigned by admin
+@app.route('/staff/tasks')
+@staff_required
+def staff_tasks():
+    conn = get_db_connection()
+    tasks = []
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""
+            SELECT t.*, a.first_name AS assigned_by_name
+            FROM tasks t
+            JOIN admins a ON t.assigned_by = a.id
+            WHERE t.assigned_to = %s
+            ORDER BY t.due_date ASC
+        """, (session['staff_id'],))
+        tasks = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    return render_template('staff/tasks.html', tasks=tasks)
 
 @app.route('/staff/profile', methods=['GET', 'POST'])
 @staff_required

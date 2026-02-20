@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Assign Task to Staff</h2>
+  {% if message %}
+    <div class="alert alert-success">{{ message }}</div>
+  {% endif %}
+  <form method="post">
+    <div class="mb-3">
+      <label for="staff_id" class="form-label">Select Staff</label>
+      <select class="form-select" id="staff_id" name="staff_id" required>
+        <option value="">-- Select Staff --</option>
+        {% for s in staff_list %}
+        <option value="{{ s.id }}">{{ s.first_name }} {{ s.last_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="task" class="form-label">Task</label>
+      <textarea class="form-control" id="task" name="task" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Assign Task</button>
+  </form>
+</div>
+{% endblock %}
