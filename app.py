@@ -86,6 +86,20 @@ def staff_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+# Admin staff management route (correct placement)
+@app.route('/admin/staff')
+@admin_required
+def admin_staff():
+    conn = get_db_connection()
+    staff = []
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM staff")
+        staff = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    return render_template('admin/staff.html', staff=staff)
+
 # Admin dashboard route (must be after app and decorators)
 @app.route('/admin/dashboard')
 @admin_required

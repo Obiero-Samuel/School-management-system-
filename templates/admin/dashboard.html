@@ -1,7 +1,67 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-5">
-  <h1>Welcome, Admin!</h1>
-  <p>This is your dashboard. Add widgets and stats here as needed.</p>
+<div class="container py-5">
+  <div class="row mb-4">
+    <div class="col text-center">
+      <h1 class="display-5 fw-bold mb-2">Welcome, {{ session.full_name }}!</h1>
+      <p class="lead">Current Date/Time: <span id="live-datetime"></span></p>
+    </div>
+  </div>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="card dashboard-card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-person-plus"></i> Register New Staff</h5>
+          <p class="card-text">Add new staff members to the school database.</p>
+          <a href="{{ url_for('add_staff') }}" class="btn btn-primary btn-lg mt-2">Register Staff</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card dashboard-card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-people"></i> View/Update Staff</h5>
+          <p class="card-text">View all staff, update their details, or manage records.</p>
+          <a href="{{ url_for('admin_staff') }}" class="btn btn-success btn-lg mt-2">Staff Details</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card dashboard-card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-list-task"></i> Assign Tasks</h5>
+          <p class="card-text">Assign and manage tasks for staff members.</p>
+          <a href="#" class="btn btn-warning btn-lg mt-2 disabled" title="Feature coming soon">Assign Tasks</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card dashboard-card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-calendar-event"></i> School Events</h5>
+          <p class="card-text">View upcoming school event dates and details.</p>
+          <a href="#" class="btn btn-info btn-lg mt-2 disabled" title="Feature coming soon">View Events</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card dashboard-card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-bar-chart"></i> Generate Reports</h5>
+          <p class="card-text">Generate reports for expenses and school requirements.</p>
+          <a href="{{ url_for('admin_reports') }}" class="btn btn-dark btn-lg mt-2">Generate Reports</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+function updateDateTime() {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+  document.getElementById('live-datetime').textContent = now.toLocaleString('en-US', options);
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
 {% endblock %}
