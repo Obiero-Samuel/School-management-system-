@@ -1,17 +1,175 @@
 {% extends 'base.html' %}
 {% block title %}Input Results & CAT Marks{% endblock %}
 {% block content %}
-<h2>Input Results & CAT Marks</h2>
-<form method="POST">
-  <label for="class_id">Class:</label>
-  <select name="class_id" id="class_id" required>
-    {% for class in my_classes %}
-      <option value="{{ class.id }}">{{ class.name }}</option>
-    {% endfor %}
-  </select>
-  <div id="students-marks">
-    <!-- Students and marks input fields will be loaded here -->
+<div class="container py-4 results-theme">
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h2 class="mb-3"><i class="bi bi-bar-chart"></i> Input Results & CAT Marks</h2>
+      <p class="lead">Input, review, and analyze student results with ease and style!</p>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit Marks</button>
-</form>
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <div class="card shadow-lg results-card">
+        <div class="card-body">
+          <form method="POST" enctype="multipart/form-data" id="resultsForm">
+            <div class="mb-3">
+              <label for="class_id" class="form-label"><i class="bi bi-easel2"></i> Class</label>
+              <select name="class_id" id="class_id" class="form-select" required>
+                <option value="">-- Select Class --</option>
+                {% for class in my_classes %}
+                  <option value="{{ class.id }}">{{ class.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exam_type" class="form-label"><i class="bi bi-clipboard-data"></i> Exam Type</label>
+              <select name="exam_type" id="exam_type" class="form-select" required>
+                <option value="CAT 1">CAT 1</option>
+                <option value="CAT 2">CAT 2</option>
+                <option value="Midterm">Midterm</option>
+                <option value="Endterm">Endterm</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="marks_file" class="form-label"><i class="bi bi-upload"></i> Upload Marks (CSV/PDF)</label>
+              <input type="file" name="marks_file" id="marks_file" class="form-control">
+            </div>
+            <div class="mb-3 form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="urgent" name="urgent">
+              <label class="form-check-label" for="urgent"><i class="bi bi-exclamation-triangle"></i> Mark as Urgent</label>
+            </div>
+            <div class="mb-3 form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="schedule_release" name="schedule_release">
+              <label class="form-check-label" for="schedule_release"><i class="bi bi-calendar-plus"></i> Schedule Release</label>
+            </div>
+            <div class="mb-3">
+              <label for="release_date" class="form-label"><i class="bi bi-calendar-event"></i> Release Date</label>
+              <input type="date" name="release_date" id="release_date" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><i class="bi bi-people"></i> Enter Marks</label>
+              <div id="students-marks">
+                <!-- Students and marks input fields will be loaded here -->
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="preview" class="form-label"><i class="bi bi-eye"></i> Preview</label>
+              <textarea id="preview" class="form-control" rows="2" readonly></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100 themed-btn submit-btn"><i class="bi bi-send"></i> Submit Marks</button>
+            <div id="successAnimation" class="mt-3 text-center" style="display:none;">
+              <i class="bi bi-check-circle-fill text-success" style="font-size:2.5em;"></i>
+              <div class="fw-bold mt-2">Results Submitted!</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h4 class="mb-3"><i class="bi bi-graph-up"></i> Recent Results & Analytics</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped results-table">
+          <thead class="table-dark">
+            <tr>
+              <th>Class</th>
+              <th>Exam Type</th>
+              <th>Average</th>
+              <th>Highest</th>
+              <th>Lowest</th>
+              <th>Status</th>
+              <th>Urgent</th>
+              <th>Release Date</th>
+              <th>Export</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in recent_results %}
+            <tr class="results-row status-{{ 'overdue' if r.release_date and r.release_date < (now().date()|string) else 'active' }}">
+              <td>{{ r.class_name }}</td>
+              <td>{{ r.exam_type }}</td>
+              <td>{{ r.average }}</td>
+              <td>{{ r.highest }}</td>
+              <td>{{ r.lowest }}</td>
+              <td>
+                {% if r.release_date and r.release_date < (now().date()|string) %}
+                  <span class="badge bg-danger">Overdue</span>
+                {% elif r.release_date and r.release_date == (now().date()|string) %}
+                  <span class="badge bg-warning text-dark">Due Today</span>
+                {% else %}
+                  <span class="badge bg-success">Active</span>
+                {% endif %}
+              </td>
+              <td>{% if r.urgent %}<span class="badge bg-danger">Urgent</span>{% endif %}</td>
+              <td>{{ r.release_date }}</td>
+              <td><a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-download"></i> CSV</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block styles %}
+<style>
+.results-theme {
+  background: linear-gradient(120deg, #e0eafc 0%, #fdf6e3 100%);
+  min-height: 100vh;
+}
+.results-card {
+  background: linear-gradient(120deg, #f8fafc 0%, #e0eafc 100%);
+  border: 2px solid #10B981;
+  border-radius: 1.5em;
+  box-shadow: 0 6px 32px 0 rgba(16,185,129,0.13);
+  padding: 2em 1.5em;
+  margin-bottom: 2em;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.results-card:hover {
+  box-shadow: 0 12px 48px 0 rgba(16,185,129,0.18);
+  transform: translateY(-4px) scale(1.01);
+}
+.results-table th, .results-table td {
+  vertical-align: middle;
+}
+.results-row.status-overdue {
+  background: #fff0f0;
+}
+.results-row.status-active {
+  background: #f0fff4;
+}
+.submit-btn {
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.submit-btn:hover {
+  background: #4F46E5 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px 0 rgba(79,70,229,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+</style>
+{% endblock %}
+{% block extra_js %}
+<script>
+// Results preview
+const classInput = document.getElementById('class_id');
+const examTypeInput = document.getElementById('exam_type');
+const previewBox = document.getElementById('preview');
+function updatePreview() {
+  previewBox.value = `Class: ${classInput.value}\nExam: ${examTypeInput.value}`;
+}
+classInput.addEventListener('input', updatePreview);
+examTypeInput.addEventListener('input', updatePreview);
+// Animated feedback
+const form = document.getElementById('resultsForm');
+form.addEventListener('submit', function(e) {
+  setTimeout(function() {
+    document.getElementById('successAnimation').style.display = 'block';
+  }, 200);
+});
+</script>
 {% endblock %}
