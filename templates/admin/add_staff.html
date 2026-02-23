@@ -3,21 +3,62 @@
 <div class="container py-5">
   <h2 class="mb-4">Register New Staff</h2>
   <form method="post" action="{{ url_for('add_staff') }}">
+            <div class="mb-3">
+              <label for="staff_number" class="form-label">Staff Number</label>
+              <input type="text" class="form-control" id="staff_number" name="staff_number" required value="{{ form_data.staff_number if form_data else '' }}">
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" name="address" required value="{{ form_data.address if form_data else '' }}">
+            </div>
+            <div class="mb-3">
+              <label for="date_of_birth" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required value="{{ form_data.date_of_birth if form_data else '' }}">
+            </div>
+            <div class="mb-3">
+              <label for="hire_date" class="form-label">Hire Date</label>
+              <input type="date" class="form-control" id="hire_date" name="hire_date" required value="{{ form_data.hire_date if form_data else '' }}">
+            </div>
+            <div class="mb-3">
+              <label for="qualification" class="form-label">Qualification</label>
+              <input type="text" class="form-control" id="qualification" name="qualification" required value="{{ form_data.qualification if form_data else '' }}">
+            </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required value="{{ form_data.username if form_data else '' }}">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required autocomplete="email" value="{{ form_data.email if form_data else '' }}">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required value="{{ form_data.password if form_data else '' }}">
+        </div>
     <div class="mb-3">
       <label for="first_name" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="first_name" name="first_name" required>
+      <input type="text" class="form-control" id="first_name" name="first_name" required value="{{ form_data.first_name if form_data else '' }}">
     </div>
     <div class="mb-3">
       <label for="last_name" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="last_name" name="last_name" required>
+      <input type="text" class="form-control" id="last_name" name="last_name" required value="{{ form_data.last_name if form_data else '' }}">
     </div>
     <div class="mb-3">
-      <label for="department_id" class="form-label">Department ID</label>
-      <input type="text" class="form-control" id="department_id" name="department_id" required>
+      <label for="department_id" class="form-label">Department</label>
+      <select class="form-select" id="department_id" name="department_id" required>
+        <option value="" disabled {% if not form_data or not form_data.get('department_id') %}selected{% endif %}>Select Department</option>
+        <option value="Teaching" {% if form_data and form_data.get('department_id') == 'Teaching' %}selected{% endif %}>Teaching</option>
+        <option value="Administration" {% if form_data and form_data.get('department_id') == 'Administration' %}selected{% endif %}>Administration</option>
+        <option value="Finance" {% if form_data and form_data.get('department_id') == 'Finance' %}selected{% endif %}>Finance</option>
+        <option value="Kitchen" {% if form_data and form_data.get('department_id') == 'Kitchen' %}selected{% endif %}>Kitchen</option>
+        <option value="Transport" {% if form_data and form_data.get('department_id') == 'Transport' %}selected{% endif %}>Transport</option>
+        <option value="Cleaning" {% if form_data and form_data.get('department_id') == 'Cleaning' %}selected{% endif %}>Cleaning</option>
+        <option value="Support staff" {% if form_data and form_data.get('department_id') == 'Support staff' %}selected{% endif %}>Support staff</option>
+      </select>
     </div>
     <div class="mb-3">
       <label for="phone" class="form-label">Phone</label>
-      <input type="text" class="form-control" id="phone" name="phone" required>
+      <input type="text" class="form-control" id="phone" name="phone" required value="{{ form_data.phone if form_data else '' }}">
     </div>
     <button type="submit" class="btn btn-primary">Register Staff</button>
   </form>

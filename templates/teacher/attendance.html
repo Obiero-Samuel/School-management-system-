@@ -1,17 +1,266 @@
 {% extends 'base.html' %}
-{% block title %}Take Attendance{% endblock %}
+{% block title %}Student Attendance{% endblock %}
 {% block content %}
-<h2>Take Attendance</h2>
-<form method="POST">
-  <label for="class_id">Class:</label>
-  <select name="class_id" id="class_id" required>
-    {% for class in my_classes %}
-      <option value="{{ class.id }}">{{ class.name }}</option>
-    {% endfor %}
-  </select>
-  <div id="students-list">
-    <!-- Students will be loaded here via JS or server render -->
-  </div>
-  <button type="submit" class="btn btn-primary">Submit Attendance</button>
-</form>
+<div class="container mt-4 attendance-theme">
+    <div class="attendance-header text-center mb-4">
+        <span class="attendance-icon"><i class="bi bi-people-fill"></i></span>
+        <h2 class="mb-1">Student Attendance</h2>
+        <p class="subtitle">Easily record and review attendance for every class</p>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="class-groups p-3 rounded shadow-sm mb-3 vibrant-card">
+                <h5 class="mb-2"><i class="bi bi-grid-3x3-gap-fill"></i> School Classes</h5>
+                <div class="d-flex flex-wrap gap-2">
+                    {% set school_classes = [
+                        'Playgroup', 'PP1', 'PP2', 'Grade 1 Richard', 'Grade 1 Teresa',
+                        'Grade 2 Michael', 'Grade 2 St Rita', 'Grade 3 St Stephen', 'Grade 3 St Peter',
+                        'Grade 4 St Ann', 'Grade 4 Bakhita', 'Grade 5 St Anthony', 'Grade 5 Augustine', 'Grade 5 Dominic',
+                        'Grade 6 John Bosco', 'Grade 6 Lucia', 'Grade 6 Consolata', 'Grade 7 Catherine', 'Grade 7 Karoli', 'Grade 7 Jude',
+                        'Grade 8 Clare', 'Grade 8 Gabriel', 'Grade 8 Gregory', 'Grade 9 Wisdom', 'Grade 9 Agatha', 'Grade 9 Fatima'] %}
+                    {% for class_name in school_classes %}
+                        <span class="badge badge-class {% if classes and class_name in classes|map(attribute='name') %}badge-active{% endif %}">{{ class_name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if message %}
+        <div class="alert alert-info themed-alert">{{ message }}</div>
+    {% endif %}
+    <form method="get" class="mb-3">
+        <div class="form-group">
+            <label for="class_id"><i class="bi bi-easel2"></i> Select Class:</label>
+            <select name="class_id" id="class_id" class="form-control" required>
+                <option value="">-- Select Class --</option>
+                {% for c in classes %}
+                    <option value="{{ c.id }}" {% if c.id|string == selected_class_id|string %}selected{% endif %}>{{ c.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary themed-btn"><i class="bi bi-search"></i> View Students</button>
+    </form>
+    {% if students %}
+    <form method="post">
+        <input type="hidden" name="class_id" value="{{ selected_class_id }}">
+        <div class="form-group">
+            <label for="attendance_date"><i class="bi bi-calendar-event"></i> Attendance Date:</label>
+            <input type="date" name="attendance_date" id="attendance_date" class="form-control" required value="{{ request.form.attendance_date or request.args.attendance_date or '' }}">
+        </div>
+        <!-- Animated Progress Bar -->
+        <div class="attendance-progress mb-3">
+            {% set present_count = students|selectattr('status', 'equalto', 'Present')|list|length if students else 0 %}
+            {% set total_count = students|length if students else 0 %}
+            {% set percent = (present_count / total_count * 100) if total_count > 0 else 0 %}
+            <div class="progress-label">Present: {{ present_count }}/{{ total_count }}</div>
+            <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: {{ percent }}%" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="table-responsive">
+        <table class="table table-bordered mt-3 attendance-table">
+            <thead class="thead-light sticky-header">
+                <tr>
+                    <th><i class="bi bi-person-badge"></i> Student</th>
+                    <th><i class="bi bi-check2-square"></i> Status</th>
+                    <th><i class="bi bi-chat-left-text"></i> Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr class="attendance-row">
+                    <td>
+                        <span class="student-avatar">
+                            {% if student.avatar_url %}
+                                <img src="{{ student.avatar_url }}" alt="Avatar" class="avatar-img">
+                            {% else %}
+                                {{ student.first_name[0]|upper }}{{ student.last_name[0]|upper }}
+                            {% endif %}
+                        </span>
+                        {{ student.first_name }} {{ student.last_name }}
+                    </td>
+                    <td>
+                        <select name="status_{{ student.id }}" class="form-control status-select" required>
+                            <option value="Present" class="badge-status badge-present">Present</option>
+                            <option value="Absent" class="badge-status badge-absent">Absent</option>
+                            <option value="Late" class="badge-status badge-late">Late</option>
+                            <option value="Excused" class="badge-status badge-excused">Excused</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="remarks_{{ student.id }}" class="form-control" placeholder="Remarks"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        <button type="submit" class="btn btn-success themed-btn submit-btn"><i class="bi bi-check-circle"></i> Submit Attendance</button>
+    </form>
+    {% endif %}
+    {% if history %}
+    <h4 class="mt-5"><i class="bi bi-clock-history"></i> Attendance History</h4>
+    <div class="table-responsive">
+    <table class="table table-striped table-sm mt-2">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Status</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in history %}
+            <tr class="history-row status-{{ record.status|lower }} attendance-row">
+                <td>{{ record.attendance_date }}</td>
+                <td>
+                    <span class="student-avatar">
+                        {% if record.avatar_url %}
+                            <img src="{{ record.avatar_url }}" alt="Avatar" class="avatar-img">
+                        {% else %}
+                            {{ record.first_name[0]|upper }}{{ record.last_name[0]|upper }}
+                        {% endif %}
+                    </span>
+                    {{ record.first_name }} {{ record.last_name }}
+                </td>
+                <td><span class="badge badge-status badge-{{ record.status|lower }}">{{ record.status }}</span></td>
+                <td>{{ record.remarks }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block styles %}
+<style>
+.vibrant-card {
+    background: linear-gradient(120deg, #f9d423 0%, #ff4e50 100%);
+    box-shadow: 0 2px 12px 0 rgba(255, 78, 80, 0.13);
+    border: 2px solid #ff4e50;
+}
+.badge-class {
+    background: #ff4e50;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5em 1.1em;
+    border-radius: 20px;
+    margin-bottom: 0.25em;
+    margin-right: 0.3em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 1px 4px 0 rgba(255, 78, 80, 0.13);
+    cursor: pointer;
+    border: 1.5px solid #f9d423;
+    user-select: none;
+    font-weight: 500;
+    opacity: 1;
+}
+.badge-class:hover {
+    background: #f9d423;
+    color: #ff4e50;
+    box-shadow: 0 2px 8px 0 rgba(255, 78, 80, 0.18);
+    transform: translateY(-2px) scale(1.07);
+}
+.badge-active {
+    background: linear-gradient(90deg, #ff4e50 60%, #f9d423 100%);
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #f9d423;
+    box-shadow: 0 2px 8px 0 rgba(255, 78, 80, 0.22);
+}
+.badge-status {
+    display: inline-block;
+    padding: 0.35em 0.9em;
+    border-radius: 12px;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 0.2em;
+    margin-bottom: 0.1em;
+    letter-spacing: 0.02em;
+}
+.badge-present { background: #28a745; }
+.badge-absent { background: #dc3545; }
+.badge-late { background: #fd7e14; }
+.badge-excused { background: #007bff; }
+.attendance-progress {
+    margin-bottom: 1.2em;
+}
+.progress-label {
+    font-weight: 500;
+    margin-bottom: 0.2em;
+    color: #2563eb;
+}
+.progress {
+    height: 1.2em;
+    background: #e9ecef;
+    border-radius: 0.7em;
+    overflow: hidden;
+    box-shadow: 0 1px 4px 0 rgba(80,120,200,0.10);
+}
+.progress-bar {
+    transition: width 0.7s cubic-bezier(.4,2.2,.2,1);
+    font-size: 1em;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 0.7em;
+}
+.sticky-header th {
+    position: sticky;
+    top: 0;
+    background: #f8fafc;
+    z-index: 2;
+}
+.table-responsive {
+    overflow-x: auto;
+}
+.student-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1em;
+    height: 2.1em;
+    border-radius: 50%;
+    background: #e3e9f7;
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 0.6em;
+    box-shadow: 0 1px 4px 0 rgba(80,120,200,0.10);
+    border: 1.5px solid #b6c6e6;
+    overflow: hidden;
+}
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.attendance-row:hover {
+    background: #f0f6ff;
+    transition: background 0.2s;
+}
+.submit-btn, .themed-btn, .btn {
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.submit-btn:hover, .themed-btn:hover, .btn:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+    box-shadow: 0 2px 8px 0 rgba(80,120,200,0.18);
+    transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 768px) {
+    .attendance-header h2 { font-size: 1.3em; }
+    .attendance-table th, .attendance-table td { font-size: 0.95em; }
+    .badge-class { font-size: 0.9em; }
+    .progress-label { font-size: 0.95em; }
+    .student-avatar { width: 1.6em; height: 1.6em; font-size: 0.95em; }
+    .table-responsive { margin-bottom: 1em; }
+}
+@media (max-width: 480px) {
+    .attendance-header h2 { font-size: 1.1em; }
+    .student-avatar { width: 1.2em; height: 1.2em; font-size: 0.8em; }
+    .badge-class { font-size: 0.8em; }
+}
+</style>
 {% endblock %}

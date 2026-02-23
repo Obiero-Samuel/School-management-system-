@@ -1,0 +1,211 @@
+INFO:root:Received POST data: {'staff_number': 'S02', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'username': 'Ramadhan', 'email': 'ramadhanabdul@gmail.com', 'password': 'Abdul@2026', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'department_id': '8', 'phone': '0703806909'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:01:34] "[32mPOST /admin/staff/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:01:34] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:01:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:Received POST data: {'username': 'Ramadhan', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:05:17] "[32mPOST /admin/staff/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:05:17] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:05:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:08:14] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:08:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:16:03] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:16:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:16:17] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:16:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:28:39] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:28:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:28:44] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:28:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:05] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:12] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:13] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:14] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:30:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:34] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:41] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:root:RAW POST DATA: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:43] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:43] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:root:Received POST data: {'username': 'Ramadhan ', 'password': 'Abdul@2026', 'email': 'ramadhanabdul@gmail.com', 'staff_number': 'S02', 'first_name': 'Ramadhan', 'last_name': 'Abdul Karim', 'phone': '0703806909', 'address': 'Kitengela', 'date_of_birth': '1993-11-26', 'hire_date': '2020-01-07', 'qualification': 'Kiswahili', 'department_id': '19'}
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:49] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:51] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:52] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:53] "GET /admin/dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:55] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:34:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:35:16] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:35:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:35:26] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:35:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:36:54] "GET /admin/dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:36:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:36:57] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:36:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:36:59] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:36:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:03] "GET /admin/staff/view/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:11] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:17] "[32mGET /staff/dashboard HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:17] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:37:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:16] "GET /admin/dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:26] "GET /admin/dashboard HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:31] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2026 10:39:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:21:24] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:21:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:21:34] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:22:02] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:22:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:22:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:23:02] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:29:33] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:29:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:31:20] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:31:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:33:21] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:33:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:33:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:39:13] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:39:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user: username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:40:19] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 11:40:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user: username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:29:26] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:29:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user: username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:33:51] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:33:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user: username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:36:04] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:36:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:36:06] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user: username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:36:12] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:36:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user: username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:38:23] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:38:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user (FINAL CHECK): username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: fmusyoka, scrypt:327..., fredymusyoka@gmail.com
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:42] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user (FINAL CHECK): username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: fmusyoka, scrypt:327..., fredymusyoka@gmail.com
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:45] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:48] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user (FINAL CHECK): username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: fmusyoka, scrypt:327..., fredymusyoka@gmail.com
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:53] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 12:46:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-07-07', 'hire_date': '2020-01-20', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0730162474'}
+INFO:root:About to insert user (FINAL CHECK): username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: fmusyoka, scrypt:327..., fredymusyoka@gmail.com
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:19:29] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:19:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:45:55] "[32mGET /staff/dashboard HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:45:55] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:45:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:09] "GET /admin/dashboard HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:28] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:33] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:38] "GET /admin/tasks/assign HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:41] "GET /admin/events HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:44] "GET /admin/reports HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:46:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:49:50] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:49:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-11-26', 'hire_date': '2020-01-07', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0703806909'}
+INFO:root:Received POST data: {'staff_number': 'S04', 'address': 'Kitengela', 'date_of_birth': '1990-11-26', 'hire_date': '2020-01-07', 'qualification': 'Science ', 'username': 'fmusyoka', 'email': 'fredymusyoka@gmail.com', 'password': 'Musyoka@2026', 'first_name': 'Fredric', 'last_name': 'Wambua', 'department_id': 'Teaching', 'phone': '0703806909'}
+INFO:root:About to insert user (FINAL CHECK): username=fmusyoka, email=fredymusyoka@gmail.com, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: fmusyoka, scrypt:327..., fredymusyoka@gmail.com
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:50:54] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 13:50:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S05', 'address': 'Kitengela', 'date_of_birth': '2003-03-29', 'hire_date': '2025-07-22', 'qualification': 'Creative Arts, Kiswahili', 'username': 'vmwangi', 'email': 'virginiamwangi083@gmail.com', 'password': 'Mwangi@2026', 'first_name': 'Virginia', 'last_name': 'Mwangi', 'department_id': 'Teaching', 'phone': '0740392964'}
+INFO:root:Received POST data: {'staff_number': 'S05', 'address': 'Kitengela', 'date_of_birth': '2003-03-29', 'hire_date': '2025-07-22', 'qualification': 'Creative Arts, Kiswahili', 'username': 'vmwangi', 'email': 'virginiamwangi083@gmail.com', 'password': 'Mwangi@2026', 'first_name': 'Virginia', 'last_name': 'Mwangi', 'department_id': 'Teaching', 'phone': '0740392964'}
+INFO:root:About to insert user (FINAL CHECK): username=vmwangi, email=virginiamwangi083@gmail.com, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: vmwangi, scrypt:327..., virginiamwangi083@gmail.com
+ERROR:root:Exception during staff registration: 1062 (23000): Duplicate entry '' for key 'email'
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 14:02:27] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 14:02:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading

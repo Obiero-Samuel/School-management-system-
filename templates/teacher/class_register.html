@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Class Register{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h2 class="mb-3">Class Register</h2>
+      <p class="lead">Full register for all students in this class.</p>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Admission #</th>
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in attendance_history %}
+          <tr>
+            <td>{{ record.admission_number or '' }}</td>
+            <td>{{ record.first_name }} {{ record.last_name }}</td>
+            <td>{{ record.date }}</td>
+            <td><span class="badge badge-status badge-{{ record.status|lower }}">{{ record.status }}</span></td>
+            <td>{{ record.remarks }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block styles %}
+<style>
+.badge-status { display: inline-block; padding: 0.35em 0.9em; border-radius: 12px; font-size: 0.95em; font-weight: 600; color: #fff; margin-right: 0.2em; margin-bottom: 0.1em; letter-spacing: 0.02em; }
+.badge-present { background: #28a745; }
+.badge-absent { background: #dc3545; }
+.badge-late { background: #fd7e14; }
+.badge-excused { background: #007bff; }
+</style>
+{% endblock %}

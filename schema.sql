@@ -1,3 +1,17 @@
+# Student Attendance Table
+CREATE TABLE IF NOT EXISTS student_attendance (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    class_id INT NOT NULL,
+    attendance_date DATE NOT NULL,
+    status ENUM('Present','Absent','Late') NOT NULL,
+    remarks VARCHAR(255),
+    recorded_by INT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
+    FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE SET NULL
+);
 -- Events table
 CREATE TABLE IF NOT EXISTS events (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -182,16 +196,7 @@ CREATE TABLE IF NOT EXISTS stock (
     item_name VARCHAR(255) NOT NULL,
     department_id INT NOT NULL,
     quantity INT NOT NULL,
-    -- Student-Parent relationship table (moved after students and parents)
-    CREATE TABLE IF NOT EXISTS student_parents (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        student_id INT NOT NULL,
-        parent_id INT NOT NULL,
-        relationship VARCHAR(50),
-        is_primary_contact BOOLEAN DEFAULT FALSE,
-        FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
-        FOREIGN KEY (parent_id) REFERENCES parents(id) ON DELETE CASCADE
-    );
+    -- Removed duplicate student_parents table definition (already defined above)
 unit VARCHAR(50),
 last_updated_by INT,
 last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -234,14 +239,4 @@ CREATE TABLE IF NOT EXISTS teacher_attendance (
     FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE
     SET NULL
 );
--- Sample Admin User (password: admin123)
--- Password is hashed using werkzeug.security
-INSERT INTO users (username, password, email, user_type)
-VALUES (
-        'admin',
-        'scrypt:32768:8:1$gB8QXzY5Wj9FPjQg$c7d3d6e4c3a8f6b5e9d2c4a1b8f7e3d6c5a9b2f8e1d7c3a6b9e4f2d8c5a1b3f7e6d9c2a4b8f5e3d1c7a9b6e2f4d8',
-        'admin@school.com',
-        'admin'
-    );
-INSERT INTO admins (user_id, first_name, last_name, phone)
-VALUES (1, 'System', 'Administrator', '+254700000000');
+    -- Removed legacy/sample admin user insert statements

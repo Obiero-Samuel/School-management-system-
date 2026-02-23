@@ -1,3 +1,4 @@
+# ...existing code...
 # ------------------- TEACHER ENHANCEMENT ROUTES -------------------
 # (All teacher routes moved here, after app and decorators)
 
@@ -81,7 +82,6 @@ def staff_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'user_id' not in session or session.get('user_type') != 'staff':
-            flash('Staff access required.', 'danger')
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
@@ -91,14 +91,23 @@ def staff_required(f):
 @admin_required
 def admin_staff():
     conn = get_db_connection()
-    staff = []
+    staff_list = []
+    departments = []
     if conn:
         cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM staff")
-        staff = cursor.fetchall()
+        # Fetch staff with department names
+        cursor.execute("""
+            SELECT s.*, d.name as department_name
+            FROM staff s
+            LEFT JOIN departments d ON s.department_id = d.id
+        """)
+        staff_list = cursor.fetchall()
+        # Fetch departments for dropdown
+        cursor.execute("SELECT id, name FROM departments")
+        departments = cursor.fetchall()
         cursor.close()
         conn.close()
-    return render_template('admin/staff.html', staff=staff)
+    return render_template('admin/staff.html', staff_list=staff_list, departments=departments)
 
 # Admin assign tasks route (GET and POST)
 @app.route('/admin/tasks/assign', methods=['GET', 'POST'])
@@ -127,7 +136,15 @@ def assign_tasks():
 @app.route('/admin/staff/add', methods=['GET'])
 @admin_required
 def add_staff_form():
-    return render_template('admin/add_staff.html')
+    conn = get_db_connection()
+    departments = []
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT id, name FROM departments")
+        departments = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    return render_template('admin/add_staff.html', departments=departments)
 
 # Admin dashboard route (must be after app and decorators)
 @app.route('/admin/dashboard')
@@ -156,7 +173,6 @@ def teacher_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'user_id' not in session or session.get('user_type') != 'staff' or session.get('department') != 'Teaching':
-            flash('Teacher access required.', 'danger')
             return redirect(url_for('staff_dashboard'))
         return f(*args, **kwargs)
     return decorated_function
@@ -328,9 +344,8 @@ def view_staff(staff_id):
     if conn:
         cursor = conn.cursor(dictionary=True)
         cursor.execute("""
-            SELECT s.*, d.name as department_name, u.username, u.email 
+            SELECT s.*, u.username, u.email 
             FROM staff s 
-            JOIN departments d ON s.department_id = d.id 
             JOIN users u ON s.user_id = u.id
             WHERE s.id = %s
         """, (staff_id,))
@@ -418,22 +433,106 @@ def edit_staff(staff_id):
 @app.route('/admin/staff/add', methods=['POST'])
 @admin_required
 def add_staff():
+    # Debug: Log all POST data immediately
+    if request.method == 'POST':
+        import logging
+        logging.basicConfig(filename='staff_registration_debug.log', level=logging.INFO)
+        logging.info(f"RAW POST DATA: {dict(request.form)}")
+
+    # Always fetch departments from DB
+    # Use only the specified department list for registration
+    departments = [
+        {'id': 'Teaching', 'name': 'Teaching'},
+        {'id': 'Administration', 'name': 'Administration'},
+        {'id': 'Finance', 'name': 'Finance'},
+        {'id': 'Kitchen', 'name': 'Kitchen'},
+        {'id': 'Transport', 'name': 'Transport'},
+        {'id': 'Cleaning and support staff', 'name': 'Cleaning and support staff'}
+    ]
+
     conn = get_db_connection()
+    required_fields = [
+        'username', 'password', 'email', 'staff_number', 'first_name', 'last_name',
+        'phone', 'address', 'date_of_birth', 'hire_date', 'qualification', 'department_id'
+    ]
+    # Robust validation for all required fields
+    missing = []
+    for f in required_fields:
+        val = request.form.get(f)
+        if not val or not str(val).strip():
+            missing.append(f)
+    if missing:
+        flash(f"Missing required fields: {', '.join(missing)}", 'danger')
+        return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+    # Log all POST data for debugging
+    import logging
+    logging.basicConfig(filename='staff_registration_debug.log', level=logging.INFO)
+    logging.info(f"Received POST data: {dict(request.form)}")
+    # Defensive: Ensure email is not empty or whitespace, and only use the stripped value
+    email = request.form.get('email', '')
+    if not email or not email.strip():
+        logging.warning('Attempted registration with empty email field.')
+        flash('Email cannot be empty.', 'danger')
+        return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+    email = email.strip()
+    # Defensive: Ensure password is not empty or whitespace
+    password_raw = request.form.get('password')
+    if not password_raw or not password_raw.strip():
+        flash('Password cannot be empty.', 'danger')
+        return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+    password = generate_password_hash(password_raw.strip())
+    # Ensure email is defined for all code paths
+    if not email:
+        flash('Email is required.', 'danger')
+        return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+    conn_check = get_db_connection()
+    if conn_check:
+        cursor_check = conn_check.cursor()
+        cursor_check.execute("SELECT id FROM users WHERE email = %s", (email,))
+        if cursor_check.fetchone():
+            flash('Email already exists. Please use a different email.', 'danger')
+            cursor_check.close()
+            conn_check.close()
+            return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+        cursor_check.close()
+        conn_check.close()
     if conn:
         try:
             cursor = conn.cursor()
-            
+            # Check for duplicate username and staff_number only (email checked above)
+            cursor.execute("SELECT id FROM users WHERE username = %s", (request.form['username'],))
+            if cursor.fetchone():
+                flash('Username already exists.', 'danger')
+                cursor.close()
+                conn.close()
+                return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+            cursor.execute("SELECT id FROM staff WHERE staff_number = %s", (request.form['staff_number'],))
+            if cursor.fetchone():
+                flash('Staff number already exists.', 'danger')
+                cursor.close()
+                conn.close()
+                return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
             # Create user account
-            username = request.form.get('username')
-            password = generate_password_hash(request.form.get('password'))
-            email = request.form.get('email')
-            
+            username = request.form['username']
+            # Extra debug: log values about to be inserted
+            logging.info(f"About to insert user (FINAL CHECK): username={username}, email={email}, password={'***' if password else None}")
+            assert email and email.strip(), f"Email is empty at DB insert step! username={username}"
+            if not email or not email.strip():
+                logging.error(f"Attempted to insert user with empty email at DB insert step. username={username}")
+                flash('Internal error: Email is empty at DB insert.', 'danger')
+                cursor.close()
+                conn.close()
+                return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
+            # Log the actual SQL and parameters
+            user_insert_params = (username, password, email)
+            logging.info(f"SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: {user_insert_params}")
+            logging.info(f"DEBUG PARAM TYPES: username={type(username)}, password={type(password)}, email={type(email)}")
+            logging.info(f"DEBUG PARAM VALUES: username={repr(username)}, password={repr(password)}, email={repr(email)}")
             cursor.execute("""
                 INSERT INTO users (username, password, email, user_type) 
                 VALUES (%s, %s, %s, 'staff')
             """, (username, password, email))
             user_id = cursor.lastrowid
-            
             # Create staff profile
             cursor.execute("""
                 INSERT INTO staff (user_id, staff_number, first_name, last_name, 
@@ -442,26 +541,28 @@ def add_staff():
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """, (
                 user_id,
-                request.form.get('staff_number'),
-                request.form.get('first_name'),
-                request.form.get('last_name'),
-                request.form.get('department_id'),
-                request.form.get('phone'),
-                request.form.get('address'),
-                request.form.get('date_of_birth'),
-                request.form.get('hire_date'),
-                request.form.get('qualification')
+                request.form['staff_number'],
+                request.form['first_name'],
+                request.form['last_name'],
+                request.form['department_id'],  # This is now a string (department name)
+                request.form['phone'],
+                request.form['address'],
+                request.form['date_of_birth'],
+                request.form['hire_date'],
+                request.form['qualification']
             ))
-            
             conn.commit()
             flash('Staff member added successfully!', 'success')
         except Error as e:
             conn.rollback()
+            import logging
+            logging.basicConfig(filename='staff_registration_debug.log', level=logging.INFO)
+            logging.error(f"Exception during staff registration: {str(e)}")
             flash(f'Error adding staff: {str(e)}', 'danger')
+            return render_template('admin/staff.html', staff_list=[], departments=departments, form_data=request.form)
         finally:
             cursor.close()
             conn.close()
-    
     return redirect(url_for('admin_staff'))
 
 @app.route('/admin/staff/delete/<int:staff_id>')
@@ -1179,6 +1280,64 @@ def send_results():
             conn.close()
     
     return redirect(url_for('teacher_marks'))
+
+@app.route('/teacher/classes')
+@teacher_required
+def teacher_classes():
+    conn = get_db_connection()
+    classes = []
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        # Get all classes
+        cursor.execute("SELECT id, name, teacher_id FROM classes")
+        all_classes = cursor.fetchall()
+        for c in all_classes:
+            is_class_teacher = (c['teacher_id'] == session.get('staff_id'))
+            classes.append({
+                'id': c['id'],
+                'name': c['name'],
+                'is_class_teacher': is_class_teacher
+            })
+        cursor.close()
+        conn.close()
+    return render_template('teacher/classes.html', classes=classes)
+
+@app.route('/teacher/class_register', methods=['POST'])
+@teacher_required
+def teacher_class_register():
+    class_id = request.form.get('class_id')
+    password = request.form.get('password')
+    staff_id = session.get('staff_id')
+    # Verify this staff is the class teacher for the class
+    conn = get_db_connection()
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT teacher_id FROM classes WHERE id = %s", (class_id,))
+        row = cursor.fetchone()
+        if not row or row['teacher_id'] != staff_id:
+            cursor.close()
+            conn.close()
+            flash('You are not the class teacher for this class.', 'danger')
+            return redirect(url_for('teacher_classes'))
+        # Verify password
+        cursor.execute("SELECT password FROM staff WHERE id = %s", (staff_id,))
+        staff_row = cursor.fetchone()
+        if not staff_row or not check_password_hash(staff_row['password'], password):
+            cursor.close()
+            conn.close()
+            flash('Incorrect password.', 'danger')
+            return redirect(url_for('teacher_classes'))
+        # Get all students in the class
+        cursor.execute("SELECT id, admission_number, first_name, last_name FROM students WHERE class_id = %s", (class_id,))
+        students = cursor.fetchall()
+        # Get attendance history for all students in the class
+        cursor.execute("SELECT a.*, s.first_name, s.last_name FROM attendance a JOIN students s ON a.student_id = s.id WHERE a.class_id = %s ORDER BY a.date DESC", (class_id,))
+        attendance_history = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return render_template('teacher/class_register.html', students=students, attendance_history=attendance_history)
+    flash('Database connection error.', 'danger')
+    return redirect(url_for('teacher_classes'))
 
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)

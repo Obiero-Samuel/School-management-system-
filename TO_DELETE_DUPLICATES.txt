@@ -1,0 +1,6 @@
+dashboard (1).html
+profile (1).html
+index (2).html
+backup_school_management.sql
+
+These files appear to be duplicates, backups, or not used in the main system. Please confirm before deletion.

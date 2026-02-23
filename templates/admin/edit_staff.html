@@ -14,8 +14,9 @@
   <div class="col-md-4">
     <label>Department</label>
     <select name="department_id" class="form-control" required>
+      <option value="">Select Department</option>
       {% for d in departments %}
-      <option value="{{ d.department_id }}" {% if d.department_id == staff.department_id %}selected{% endif %}>{{ d.department_name }}</option>
+      <option value="{{ d.id }}" {% if d.id == staff.department_id %}selected{% endif %}>{{ d.name }}</option>
       {% endfor %}
     </select>
   </div>
