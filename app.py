@@ -866,7 +866,12 @@ def staff_tasks():
         tasks = cursor.fetchall()
         cursor.close()
         conn.close()
-    return render_template('staff/tasks.html', tasks=tasks)
+    analytics = {
+        'completed': sum(1 for t in tasks if t['status'] == 'completed'),
+        'pending': sum(1 for t in tasks if t['status'] == 'pending'),
+        'total': len(tasks)
+    }
+    return render_template('staff/tasks.html', tasks=tasks, analytics=analytics)
 
 @app.route('/staff/profile', methods=['GET', 'POST'])
 @staff_required
