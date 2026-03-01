@@ -439,16 +439,17 @@ def add_staff():
         logging.basicConfig(filename='staff_registration_debug.log', level=logging.INFO)
         logging.info(f"RAW POST DATA: {dict(request.form)}")
 
-    # Always fetch departments from DB
-    # Use only the specified department list for registration
-    departments = [
-        {'id': 'Teaching', 'name': 'Teaching'},
-        {'id': 'Administration', 'name': 'Administration'},
-        {'id': 'Finance', 'name': 'Finance'},
-        {'id': 'Kitchen', 'name': 'Kitchen'},
-        {'id': 'Transport', 'name': 'Transport'},
-        {'id': 'Cleaning and support staff', 'name': 'Cleaning and support staff'}
-    ]
+    # Always fetch departments from DB for dropdown and validation
+    conn_dept = get_db_connection()
+    departments = []
+    if conn_dept:
+        cursor_dept = conn_dept.cursor(dictionary=True)
+        cursor_dept.execute("SELECT id, name FROM departments")
+        departments = cursor_dept.fetchall()
+        cursor_dept.close()
+        conn_dept.close()
+
+    # ...existing code...
 
     conn = get_db_connection()
     required_fields = [

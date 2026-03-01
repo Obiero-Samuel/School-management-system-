@@ -209,3 +209,64 @@ ERROR:root:Exception during staff registration: 1062 (23000): Duplicate entry ''
 INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 14:02:27] "POST /admin/staff/add HTTP/1.1" 200 -
 INFO:werkzeug:192.168.1.110 - - [23/Feb/2026 14:02:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:Received POST data: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:About to insert user (FINAL CHECK): username=Obiero, email=obiero.odhiambo@strathmore.edu, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: ('Obiero', 'scrypt:32768:8:1$rcT4Lx4CxcjxxOh2$f923a8691d8a22f069c92a86252794cb66702fd082557b72e7252f1e11cb33d6b37623d9b5237250d54d9c848ad2d5698998879346d3159f1a8786825d8fd48e', 'obiero.odhiambo@strathmore.edu')
+INFO:root:DEBUG PARAM TYPES: username=<class 'str'>, password=<class 'str'>, email=<class 'str'>
+INFO:root:DEBUG PARAM VALUES: username='Obiero', password='scrypt:32768:8:1$rcT4Lx4CxcjxxOh2$f923a8691d8a22f069c92a86252794cb66702fd082557b72e7252f1e11cb33d6b37623d9b5237250d54d9c848ad2d5698998879346d3159f1a8786825d8fd48e', email='obiero.odhiambo@strathmore.edu'
+ERROR:root:Exception during staff registration: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`school_management`.`staff`, CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`))
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:32:18] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:32:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:33:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:Received POST data: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:About to insert user (FINAL CHECK): username=Obiero, email=obiero.odhiambo@strathmore.edu, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: ('Obiero', 'scrypt:32768:8:1$jORJ3bQfSOMaZ7xo$22f8ed7e26b26580dbe7039ab242f8306aa595d7f98fb268e44e9682aace399974652bac2cd8903c0fa2227967154ea1a30742d7626ecfa2135acde2ec832315', 'obiero.odhiambo@strathmore.edu')
+INFO:root:DEBUG PARAM TYPES: username=<class 'str'>, password=<class 'str'>, email=<class 'str'>
+INFO:root:DEBUG PARAM VALUES: username='Obiero', password='scrypt:32768:8:1$jORJ3bQfSOMaZ7xo$22f8ed7e26b26580dbe7039ab242f8306aa595d7f98fb268e44e9682aace399974652bac2cd8903c0fa2227967154ea1a30742d7626ecfa2135acde2ec832315', email='obiero.odhiambo@strathmore.edu'
+ERROR:root:Exception during staff registration: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`school_management`.`staff`, CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`))
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:33:16] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:33:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:Received POST data: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:About to insert user (FINAL CHECK): username=Obiero, email=obiero.odhiambo@strathmore.edu, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: ('Obiero', 'scrypt:32768:8:1$P5vmyAveoMOtl2EF$95eed99bb6921d2dd3f6e62344030d09520501a7bf72d3f05e7be589b1f1843cac59f441d58b0e43014c6f37f30168a80af6b66b62dfef5714daf5cf9223e54b', 'obiero.odhiambo@strathmore.edu')
+INFO:root:DEBUG PARAM TYPES: username=<class 'str'>, password=<class 'str'>, email=<class 'str'>
+INFO:root:DEBUG PARAM VALUES: username='Obiero', password='scrypt:32768:8:1$P5vmyAveoMOtl2EF$95eed99bb6921d2dd3f6e62344030d09520501a7bf72d3f05e7be589b1f1843cac59f441d58b0e43014c6f37f30168a80af6b66b62dfef5714daf5cf9223e54b', email='obiero.odhiambo@strathmore.edu'
+ERROR:root:Exception during staff registration: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`school_management`.`staff`, CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`))
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:33:22] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:33:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:root:RAW POST DATA: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:Received POST data: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:About to insert user (FINAL CHECK): username=Obiero, email=obiero.odhiambo@strathmore.edu, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: ('Obiero', 'scrypt:32768:8:1$uWvKF2dg8tzeMbBH$c178b87231e354ec4634b491e7bce7962045ca0dc2d83c4d6bc2ff10632b48b9948a3aef83c170cefa91160fdf544b15eeedfe43f97f5caa91adbb796f574a03', 'obiero.odhiambo@strathmore.edu')
+INFO:root:DEBUG PARAM TYPES: username=<class 'str'>, password=<class 'str'>, email=<class 'str'>
+INFO:root:DEBUG PARAM VALUES: username='Obiero', password='scrypt:32768:8:1$uWvKF2dg8tzeMbBH$c178b87231e354ec4634b491e7bce7962045ca0dc2d83c4d6bc2ff10632b48b9948a3aef83c170cefa91160fdf544b15eeedfe43f97f5caa91adbb796f574a03', email='obiero.odhiambo@strathmore.edu'
+ERROR:root:Exception during staff registration: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`school_management`.`staff`, CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`))
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:35:45] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:35:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:35:47] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:root:RAW POST DATA: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:Received POST data: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': 'Teaching', 'phone': '0704122634'}
+INFO:root:About to insert user (FINAL CHECK): username=Obiero, email=obiero.odhiambo@strathmore.edu, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: ('Obiero', 'scrypt:32768:8:1$HTHqu0tLdonzs1bG$d9939b4245aa413261c07cf85ff5c6ae6d52130981d5c7d2707e2d2c932ca9ee881618eca13ffc59ecaba465d7a1562b573f645c19494686f9af0776e91fc389', 'obiero.odhiambo@strathmore.edu')
+INFO:root:DEBUG PARAM TYPES: username=<class 'str'>, password=<class 'str'>, email=<class 'str'>
+INFO:root:DEBUG PARAM VALUES: username='Obiero', password='scrypt:32768:8:1$HTHqu0tLdonzs1bG$d9939b4245aa413261c07cf85ff5c6ae6d52130981d5c7d2707e2d2c932ca9ee881618eca13ffc59ecaba465d7a1562b573f645c19494686f9af0776e91fc389', email='obiero.odhiambo@strathmore.edu'
+ERROR:root:Exception during staff registration: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`school_management`.`staff`, CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`))
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:35:55] "POST /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:35:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:36:25] "GET /admin/staff/add HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading
+INFO:root:RAW POST DATA: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': '16', 'phone': '+254704122634'}
+INFO:root:Received POST data: {'staff_number': 'S01', 'address': 'Kitengela', 'date_of_birth': '2006-01-10', 'hire_date': '2026-01-06', 'qualification': 'Computer studies', 'username': 'Obiero', 'email': 'obiero.odhiambo@strathmore.edu', 'password': 'obiero2006', 'first_name': 'Samuel ', 'last_name': 'Obiero', 'department_id': '16', 'phone': '+254704122634'}
+INFO:root:About to insert user (FINAL CHECK): username=Obiero, email=obiero.odhiambo@strathmore.edu, password=***
+INFO:root:SQL: INSERT INTO users (username, password, email, user_type) VALUES (%s, %s, %s, 'staff') | Params: ('Obiero', 'scrypt:32768:8:1$UhJtV7GP7m8umRwU$d6b455b0b053219b4ff8a770ac57f98de6673c840fcabad2408bd05f40daca92530c1aeb8e1b6989ebdaf58485fabdd7576e7a1c73600ad8fe7751d1eb80f443', 'obiero.odhiambo@strathmore.edu')
+INFO:root:DEBUG PARAM TYPES: username=<class 'str'>, password=<class 'str'>, email=<class 'str'>
+INFO:root:DEBUG PARAM VALUES: username='Obiero', password='scrypt:32768:8:1$UhJtV7GP7m8umRwU$d6b455b0b053219b4ff8a770ac57f98de6673c840fcabad2408bd05f40daca92530c1aeb8e1b6989ebdaf58485fabdd7576e7a1c73600ad8fe7751d1eb80f443', email='obiero.odhiambo@strathmore.edu'
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:40:18] "[32mPOST /admin/staff/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:40:18] "GET /admin/staff HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:40:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:40:27] "GET /admin/staff/view/6 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.18.5 - - [02/Mar/2026 01:40:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\xampp\\htdocs\\SOE\\school-management-system\\app.py', reloading

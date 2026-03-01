@@ -4,13 +4,14 @@ CREATE TABLE IF NOT EXISTS student_attendance (
     student_id INT NOT NULL,
     class_id INT NOT NULL,
     attendance_date DATE NOT NULL,
-    status ENUM('Present','Absent','Late') NOT NULL,
+    status ENUM('Present', 'Absent', 'Late') NOT NULL,
     remarks VARCHAR(255),
     recorded_by INT NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
     FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
-    FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE SET NULL
+    FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE
+    SET NULL
 );
 -- Events table
 CREATE TABLE IF NOT EXISTS events (
@@ -197,12 +198,12 @@ CREATE TABLE IF NOT EXISTS stock (
     department_id INT NOT NULL,
     quantity INT NOT NULL,
     -- Removed duplicate student_parents table definition (already defined above)
-unit VARCHAR(50),
-last_updated_by INT,
-last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-description TEXT,
-FOREIGN KEY (department_id) REFERENCES departments(id),
-FOREIGN KEY (last_updated_by) REFERENCES staff(id)
+    unit VARCHAR(50),
+    last_updated_by INT,
+    last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    description TEXT,
+    FOREIGN KEY (department_id) REFERENCES departments(id),
+    FOREIGN KEY (last_updated_by) REFERENCES staff(id)
 );
 -- Notifications table
 CREATE TABLE IF NOT EXISTS notifications (
@@ -239,4 +240,4 @@ CREATE TABLE IF NOT EXISTS teacher_attendance (
     FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE
     SET NULL
 );
-    -- Removed legacy/sample admin user insert statements
+-- Removed legacy/sample admin user insert statements

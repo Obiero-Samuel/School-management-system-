@@ -47,13 +47,9 @@
       <label for="department_id" class="form-label">Department</label>
       <select class="form-select" id="department_id" name="department_id" required>
         <option value="" disabled {% if not form_data or not form_data.get('department_id') %}selected{% endif %}>Select Department</option>
-        <option value="Teaching" {% if form_data and form_data.get('department_id') == 'Teaching' %}selected{% endif %}>Teaching</option>
-        <option value="Administration" {% if form_data and form_data.get('department_id') == 'Administration' %}selected{% endif %}>Administration</option>
-        <option value="Finance" {% if form_data and form_data.get('department_id') == 'Finance' %}selected{% endif %}>Finance</option>
-        <option value="Kitchen" {% if form_data and form_data.get('department_id') == 'Kitchen' %}selected{% endif %}>Kitchen</option>
-        <option value="Transport" {% if form_data and form_data.get('department_id') == 'Transport' %}selected{% endif %}>Transport</option>
-        <option value="Cleaning" {% if form_data and form_data.get('department_id') == 'Cleaning' %}selected{% endif %}>Cleaning</option>
-        <option value="Support staff" {% if form_data and form_data.get('department_id') == 'Support staff' %}selected{% endif %}>Support staff</option>
+        {% for dept in departments %}
+          <option value="{{ dept.id }}" {% if form_data and form_data.get('department_id') == dept.id|string %}selected{% endif %}>{{ dept.name }}</option>
+        {% endfor %}
       </select>
     </div>
     <div class="mb-3">

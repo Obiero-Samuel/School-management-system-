@@ -33,14 +33,15 @@
         <div class="col-md-10 content-wrapper">
             <!-- Flash Messages -->
             {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" title="Close alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %}
-                {% endif %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" title="Close alert"
+                    aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
             {% endwith %}
 
             <!-- Welcome Banner -->
@@ -117,7 +118,8 @@
                                     </a>
                                 </div>
                                 <div class="col-md-3 text-center mb-3">
-                                    <a href="{{ url_for('admin_students') }}" class="btn btn-outline-success btn-lg w-100">
+                                    <a href="{{ url_for('admin_students') }}"
+                                        class="btn btn-outline-success btn-lg w-100">
                                         <i class="bi bi-person-plus-fill"></i><br>
                                         <small>Add Student</small>
                                     </a>
@@ -129,7 +131,8 @@
                                     </a>
                                 </div>
                                 <div class="col-md-3 text-center mb-3">
-                                    <a href="{{ url_for('admin_reports') }}" class="btn btn-outline-warning btn-lg w-100">
+                                    <a href="{{ url_for('admin_reports') }}"
+                                        class="btn btn-outline-warning btn-lg w-100">
                                         <i class="bi bi-file-earmark-bar-graph"></i><br>
                                         <small>Generate Report</small>
                                     </a>
@@ -149,12 +152,13 @@
                         </div>
                         <div class="card-body">
                             <p class="text-muted">
-                                <i class="bi bi-info-circle"></i> 
+                                <i class="bi bi-info-circle"></i>
                                 Use the navigation menu to manage staff, students, stock, and generate reports.
                             </p>
                             <div class="alert alert-info">
-                                <strong><i class="bi bi-lightbulb"></i> Tip:</strong> 
-                                You can add new staff and students, view stock by department, and generate detailed reports from their respective sections.
+                                <strong><i class="bi bi-lightbulb"></i> Tip:</strong>
+                                You can add new staff and students, view stock by department, and generate detailed
+                                reports from their respective sections.
                             </div>
                         </div>
                     </div>
