@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Admin Timetable Management</h2>
+  {% if message %}<div class="alert alert-success">{{ message }}</div>{% endif %}
+  <form method="POST" class="row g-3 mb-4">
+    <div class="col-md-2">
+      <label>Class</label>
+      <select name="class_id" class="form-control" required>
+        <option value="">Select</option>
+        {% for c in classes %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label>Teacher</label>
+      <select name="teacher_id" class="form-control" required>
+        <option value="">Select</option>
+        {% for t in teachers %}<option value="{{ t.id }}">{{ t.first_name }} {{ t.last_name }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label>Day</label>
+      <select name="day_of_week" class="form-control" required>
+        <option value="">Select</option>
+        {% for day in ['Monday','Tuesday','Wednesday','Thursday','Friday'] %}<option value="{{ day }}">{{ day }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="col-md-1">
+      <label>Period</label>
+      <input type="number" name="period" class="form-control" min="1" max="10" required>
+    </div>
+    <div class="col-md-2">
+      <label>Subject</label>
+      <input type="text" name="subject" class="form-control" required>
+    </div>
+    <div class="col-md-1">
+      <label>Start</label>
+      <input type="time" name="start_time" class="form-control" required>
+    </div>
+    <div class="col-md-1">
+      <label>End</label>
+      <input type="time" name="end_time" class="form-control" required>
+    </div>
+    <div class="col-md-1 d-flex align-items-end">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Class</th><th>Teacher</th><th>Day</th><th>Period</th><th>Subject</th><th>Start</th><th>End</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in timetable %}
+      <tr>
+        <td>{{ entry.class_id }}</td>
+        <td>{{ entry.teacher_id }}</td>
+        <td>{{ entry.day_of_week }}</td>
+        <td>{{ entry.period }}</td>
+        <td>{{ entry.subject }}</td>
+        <td>{{ entry.start_time }}</td>
+        <td>{{ entry.end_time }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

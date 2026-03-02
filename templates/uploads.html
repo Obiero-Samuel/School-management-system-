@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Upload Document</h2>
+  {% if message %}<div class="alert alert-success">{{ message }}</div>{% endif %}
+  <form method="POST" enctype="multipart/form-data" class="row g-3 mb-4">
+    <div class="col-md-6">
+      <label>File</label>
+      <input type="file" name="file" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label>Description</label>
+      <input type="text" name="description" class="form-control">
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary mt-2">Upload</button>
+    </div>
+  </form>
+  <h3>Your Uploaded Files</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>File</th><th>Description</th><th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for up in uploads %}
+      <tr>
+        <td><a href="{{ url_for('static', filename='uploads/' ~ up.filename) }}" target="_blank">{{ up.original_name }}</a></td>
+        <td>{{ up.description }}</td>
+        <td>{{ up.uploaded_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -10,8 +10,45 @@ CREATE TABLE IF NOT EXISTS student_attendance (
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
     FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
+
     FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE
     SET NULL
+);
+
+-- Audit logs table for tracking user actions
+CREATE TABLE IF NOT EXISTS audit_logs (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    action VARCHAR(255) NOT NULL,
+    details TEXT,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+);
+
+-- Uploads table for staff/teacher document uploads
+CREATE TABLE IF NOT EXISTS uploads (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    filename VARCHAR(255) NOT NULL,
+    original_name VARCHAR(255) NOT NULL,
+    description TEXT,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+);
+
+-- Messaging table for internal messaging system
+CREATE TABLE IF NOT EXISTS messages (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    sender_id INT NOT NULL,
+    recipient_id INT NOT NULL,
+    subject VARCHAR(255),
+    body TEXT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (recipient_id) REFERENCES users(id) ON DELETE CASCADE
 );
 -- Events table
 CREATE TABLE IF NOT EXISTS events (
@@ -240,4 +277,17 @@ CREATE TABLE IF NOT EXISTS teacher_attendance (
     FOREIGN KEY (recorded_by) REFERENCES users(id) ON DELETE
     SET NULL
 );
--- Removed legacy/sample admin user insert statements
+
+-- Timetable table
+CREATE TABLE IF NOT EXISTS timetable (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    class_id INT NOT NULL,
+    teacher_id INT NOT NULL,
+    day_of_week ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday') NOT NULL,
+    period INT NOT NULL,
+    subject VARCHAR(100) NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL,
+    FOREIGN KEY (class_id) REFERENCES classes(id),
+    FOREIGN KEY (teacher_id) REFERENCES staff(id)
+);

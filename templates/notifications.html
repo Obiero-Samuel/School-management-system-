@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Notifications</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th><th>Title</th><th>Message</th><th>Date</th><th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for n in notifications %}
+      <tr {% if not n.is_read %}class="table-info"{% endif %}>
+        <td>{{ n.type }}</td>
+        <td>{{ n.title }}</td>
+        <td>{{ n.message }}</td>
+        <td>{{ n.created_at }}</td>
+        <td>{% if n.is_read %}Read{% else %}Unread{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

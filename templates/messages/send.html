@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Send Message</h2>
+  {% if message %}<div class="alert alert-success">{{ message }}</div>{% endif %}
+  <form method="POST" class="row g-3">
+    <div class="col-md-4">
+      <label>Recipient</label>
+      <select name="recipient_id" class="form-control" required>
+        <option value="">Select</option>
+        {% for u in users %}<option value="{{ u.id }}">{{ u.username }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label>Subject</label>
+      <input type="text" name="subject" class="form-control">
+    </div>
+    <div class="col-md-8">
+      <label>Message</label>
+      <textarea name="body" class="form-control" rows="4" required></textarea>
+    </div>
+    <div class="col-md-8">
+      <button type="submit" class="btn btn-primary mt-2">Send</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
