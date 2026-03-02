@@ -1,10 +1,4 @@
 # ...existing code...
-# ...existing code...
-# ...existing code...
-# ...existing code...
-# ...existing code...
-# ...existing code...
-# ...existing code...
 # ------------------- TEACHER ENHANCEMENT ROUTES -------------------
 # (All teacher routes moved here, after app and decorators)
 
@@ -156,21 +150,7 @@ def add_staff_form():
 @app.route('/admin/dashboard')
 @admin_required
 def admin_dashboard():
-    conn = get_db_connection()
-    stats = {}
-    if conn:
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM students')
-        stats['students'] = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM staff')
-        stats['staff'] = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM classes')
-        stats['classes'] = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM fees WHERE status = "Pending"')
-        stats['pending_fees'] = cursor.fetchone()[0]
-        cursor.close()
-        conn.close()
-    return render_template('admin/dashboard.html', stats=stats)
+    return render_template('admin/dashboard.html')
 
 # Admin view events route
 @app.route('/admin/events')
@@ -189,31 +169,6 @@ def admin_events():
     return render_template('admin/events.html', events=events)
 
 # Teacher required decorator
-@app.route('/teacher/timetable')
-@staff_required
-def teacher_timetable():
-    teacher_id = session.get('staff_id')
-    conn = get_db_connection()
-    timetable_periods = []
-    timetable = {day: [] for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']}
-    if conn and teacher_id:
-        cursor = conn.cursor(dictionary=True)
-        # Get all periods for display (distinct period numbers and times)
-        cursor.execute("SELECT DISTINCT period, start_time, end_time FROM timetable ORDER BY period ASC")
-        timetable_periods = cursor.fetchall()
-        # Get timetable for this teacher
-        cursor.execute("""
-            SELECT day_of_week, period, subject
-            FROM timetable
-            WHERE teacher_id = %s
-            ORDER BY day_of_week, period
-        """, (teacher_id,))
-        rows = cursor.fetchall()
-        for row in rows:
-            timetable[row['day_of_week']].append(row['subject'])
-        cursor.close()
-        conn.close()
-    return render_template('teacher/timetable.html', timetable_periods=timetable_periods, timetable=timetable)
 def teacher_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
