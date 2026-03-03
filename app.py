@@ -861,16 +861,118 @@ def staff_tasks():
 @app.route('/parent/dashboard')
 @parent_required
 def parent_dashboard():
-    return render_template('parent/dashboard.html')
+    conn = get_db_connection()
+    children = []
+    fee_history = {}
+    downloadable_reports = []
+    school_events = []
+    parent_profile = {}
+    notifications = []
     if conn:
         cursor = conn.cursor(dictionary=True)
-        cursor.execute("""
-            SELECT t.*, a.first_name AS assigned_by_name
-            FROM tasks t
-            JOIN admins a ON t.assigned_by = a.id
-            WHERE t.assigned_to = %s
-            ORDER BY t.due_date ASC
-        """, (session['staff_id'],))
+        # Get parent ID from session user_id
+        cursor.execute("SELECT id, first_name, last_name, phone, address, occupation, profile_picture FROM parents WHERE user_id = %s", (session['user_id'],))
+        parent_row = cursor.fetchone()
+        if parent_row:
+            parent_profile = parent_row
+        parent_id = parent_row['id'] if parent_row else None
+        if parent_id:
+            # Get children info with fee status and assignments
+            fee_history = {}
+            downloadable_reports = []
+            school_events = []
+            parent_profile = {}
+            if conn:
+                cursor = conn.cursor(dictionary=True)
+                # Get parent ID from session user_id
+                cursor.execute("SELECT id, first_name, last_name, phone, address, occupation, profile_picture FROM parents WHERE user_id = %s", (session['user_id'],))
+                parent_row = cursor.fetchone()
+                parent_id = parent_row['id'] if parent_row else None
+                if parent_row:
+                    parent_profile = parent_row
+                if parent_id:
+                    # Get children info with fee status and assignments
+                    cursor.execute(
+                        "SELECT s.id, s.first_name, s.last_name, c.name as class_name, s.fee_status "
+                        "FROM students s "
+                        "JOIN student_parents sp ON s.id = sp.student_id "
+                        "LEFT JOIN classes c ON s.class_id = c.id "
+                        "WHERE sp.parent_id = %s",
+                        (parent_id,)
+                    )
+                    children_raw = cursor.fetchall()
+                    children = []
+                    for child in children_raw:
+                        # Get recent assignments for this child
+                        cursor.execute(
+                            "SELECT a.title, a.due_date, a.description "
+                            "FROM assignments a "
+                            "WHERE a.class_id = (SELECT class_id FROM students WHERE id = %s) "
+                            "ORDER BY a.due_date DESC "
+                            "LIMIT 3",
+                            (child['id'],)
+                        )
+                        assignments = cursor.fetchall()
+                        child['assignments'] = assignments
+
+                        # Get recent marks/grades for this child
+                        cursor.execute(
+                            "SELECT subject, exam_type, marks_obtained, total_marks, term, academic_year, created_at "
+                            "FROM marks "
+                            "WHERE student_id = %s "
+                            "ORDER BY created_at DESC "
+                            "LIMIT 5",
+                            (child['id'],)
+                        )
+                        marks = cursor.fetchall()
+                        child['marks'] = marks
+
+                        # Get recent attendance for this child
+                        cursor.execute(
+                            "SELECT attendance_date, status, remarks "
+                            "FROM student_attendance "
+                            "WHERE student_id = %s "
+                            "ORDER BY attendance_date DESC "
+                            "LIMIT 7",
+                            (child['id'],)
+                        )
+                        attendance = cursor.fetchall()
+                        child['attendance'] = attendance
+
+                        # Get fee payment history for this child
+                        cursor.execute(
+                            "SELECT term, academic_year, amount_due, amount_paid, payment_date, status, due_date "
+                            "FROM fees "
+                            "WHERE student_id = %s "
+                            "ORDER BY payment_date DESC, due_date DESC "
+                            "LIMIT 5",
+                            (child['id'],)
+                        )
+                        fee_history[child['id']] = cursor.fetchall()
+
+                        children.append(child)
+                # Get notifications for this parent (by user_id)
+                cursor.execute(
+                    "SELECT type, title, message, created_at FROM notifications WHERE user_id = %s ORDER BY created_at DESC LIMIT 10",
+                    (session['user_id'],)
+                )
+                notifications = cursor.fetchall()
+                # Get downloadable reports (simulate with static links for now)
+                downloadable_reports = [
+                    {'name': 'Term Report Card', 'url': url_for('static', filename='uploads/report_card_sample.pdf')},
+                    {'name': 'Assignment Sheet', 'url': url_for('static', filename='uploads/assignment_sheet_sample.pdf')}
+                ]
+                # Get upcoming school events
+                cursor.execute("SELECT name, date, location, description FROM events WHERE date >= CURDATE() ORDER BY date ASC LIMIT 5")
+                school_events = cursor.fetchall()
+                cursor.close()
+                conn.close()
+            return render_template('parent/dashboard.html', children=children, notifications=notifications, fee_history=fee_history, downloadable_reports=downloadable_reports, school_events=school_events, parent_profile=parent_profile)
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT t.*, a.first_name AS assigned_by_name FROM tasks t JOIN admins a ON t.assigned_by = a.id WHERE t.assigned_to = %s ORDER BY t.due_date ASC",
+            (session['staff_id'],)
+        )
         tasks = cursor.fetchall()
         cursor.close()
         conn.close()

@@ -1,14 +1,78 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-4">
+<div class="container parent-dashboard">
   <h2>Parent Dashboard</h2>
   <div class="row">
     <div class="col-md-6">
+      <div class="profile-card card mb-3">
+        <div class="card-body">
+          <h4 class="card-title">Your Profile</h4>
+          <strong>Name:</strong> {{ parent_profile.first_name }} {{ parent_profile.last_name }}<br>
+          <strong>Phone:</strong> {{ parent_profile.phone }}<br>
+          <strong>Address:</strong> {{ parent_profile.address }}<br>
+          <strong>Occupation:</strong> {{ parent_profile.occupation }}<br>
+        </div>
+      </div>
       <h4>Your Children</h4>
       <ul class="list-group">
         {% for child in children %}
         <li class="list-group-item">
-          {{ child.first_name }} {{ child.last_name }} (Class: {{ child.class_name }})
+          <strong>{{ child.first_name }} {{ child.last_name }}</strong> <span class="badge bg-info">Class: {{ child.class_name }}</span><br>
+          <span>Fee Status: <span class="badge bg-info">{{ child.fee_status }}</span></span>
+          <br>
+          <strong>Recent Assignments:</strong>
+          <ul>
+            {% for a in child.assignments %}
+            <li>
+              <strong>{{ a.title }}</strong> <span class="badge bg-secondary">Due: {{ a.due_date }}</span><br>
+              <small>{{ a.description }}</small>
+            </li>
+            {% else %}
+            <li>No assignments found.</li>
+            {% endfor %}
+          </ul>
+          <strong>Recent Marks/Grades:</strong>
+          <ul>
+            {% for m in child.marks %}
+            <li>
+              <strong>{{ m.subject }}</strong> ({{ m.exam_type }}) - <span class="badge bg-success">{{ m.marks_obtained }}/{{ m.total_marks }}</span>
+              <small class="text-muted">Term: {{ m.term }}, Year: {{ m.academic_year }}, {{ m.created_at }}</small>
+            </li>
+            {% else %}
+            <li>No marks found.</li>
+            {% endfor %}
+          </ul>
+          <strong>Recent Attendance:</strong>
+          <ul>
+            {% for att in child.attendance %}
+            <li>
+              {{ att.attendance_date }} - <span class="badge bg-warning text-dark">{{ att.status }}</span>
+              {% if att.remarks %}<small class="text-muted">({{ att.remarks }})</small>{% endif %}
+            </li>
+            {% else %}
+            <li>No attendance records found.</li>
+            {% endfor %}
+          </ul>
+          <strong>Fee Payment History:</strong>
+          <ul>
+            {% for fee in fee_history[child.id] %}
+            <li>
+              {{ fee.term }} {{ fee.academic_year }}: Due <span class="badge bg-danger">{{ fee.amount_due }}</span>, Paid <span class="badge bg-success">{{ fee.amount_paid }}</span> <span class="badge bg-info">{{ fee.status }}</span>
+              {% if fee.payment_date %}<small class="text-muted">Paid on {{ fee.payment_date }}</small>{% endif %}
+              {% if fee.due_date %}<small class="text-muted">Due by {{ fee.due_date }}</small>{% endif %}
+            </li>
+            {% else %}
+            <li>No fee history found.</li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+      <h4>Downloadable Reports</h4>
+      <ul class="list-group">
+        {% for report in downloadable_reports %}
+        <li class="list-group-item">
+          <a href="{{ report.url }}" target="_blank">{{ report.name }}</a>
         </li>
         {% endfor %}
       </ul>
@@ -18,12 +82,35 @@
       <ul class="list-group">
         {% for note in notifications %}
         <li class="list-group-item">
+          <strong>{{ note.title }}</strong> <span class="badge bg-secondary">{{ note.type }}</span><br>
           {{ note.message }} <small class="text-muted">{{ note.created_at }}</small>
         </li>
         {% else %}
         <li class="list-group-item">No notifications.</li>
         {% endfor %}
       </ul>
+      <h4>Upcoming School Events</h4>
+      <ul class="list-group">
+        {% for event in school_events %}
+        <li class="event">
+          <strong>{{ event.name }}</strong> - {{ event.date }}<br>
+          <small>{{ event.location }}</small><br>
+          <span>{{ event.description }}</span>
+        </li>
+        {% else %}
+        <li class="event">No upcoming events.</li>
+        {% endfor %}
+      </ul>
+      <div class="feedback-form">
+        <h4>Feedback & Support</h4>
+        <form method="post" action="#">
+          <div class="mb-3">
+            <label for="feedback" class="form-label">Your Feedback or Support Request</label>
+            <textarea class="form-control" id="feedback" name="feedback" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

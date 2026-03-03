@@ -117,3 +117,75 @@ h2 {
         padding: 1rem;
     }
 }
+
+/* Parent Dashboard Custom Styles */
+.parent-dashboard {
+  padding: 2rem 0;
+}
+.parent-dashboard h2 {
+  color: #6366f1;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+.parent-dashboard .card {
+  background: linear-gradient(120deg, #e0e7ff 60%, #fff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+  margin-bottom: 1.5rem;
+}
+.parent-dashboard .list-group-item {
+  background: #f8fafc;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.parent-dashboard .list-group-item:hover {
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.15);
+  transform: scale(1.02);
+}
+.parent-dashboard .badge {
+  font-size: 0.95rem;
+  padding: 0.4em 0.8em;
+  border-radius: 1em;
+}
+.parent-dashboard .card-title {
+  color: #312e81;
+  font-weight: 600;
+}
+.parent-dashboard .feedback-form {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+.parent-dashboard .btn-primary {
+  background: linear-gradient(90deg, #6366f1 60%, #312e81 100%);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+}
+.parent-dashboard .btn-primary:hover {
+  background: linear-gradient(90deg, #312e81 60%, #6366f1 100%);
+}
+.parent-dashboard .event {
+  background: #e0e7ff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+.parent-dashboard .event strong {
+  color: #6366f1;
+}
+.parent-dashboard .profile-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
