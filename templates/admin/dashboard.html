@@ -54,7 +54,43 @@
       </div>
     </div>
   </div>
+  <hr class="my-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">Student Enrollment (Last 12 Months)</div>
+        <div class="card-body">
+          <canvas id="enrollmentChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">Attendance Summary (Last 30 Days)</div>
+        <div class="card-body">
+          <canvas id="attendanceChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">Fee Status Breakdown</div>
+        <div class="card-body">
+          <canvas id="feeChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">Staff by Department</div>
+        <div class="card-body">
+          <canvas id="staffChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 function updateDateTime() {
   const now = new Date();
@@ -63,5 +99,59 @@ function updateDateTime() {
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
+
+// Fetch analytics data from backend
+fetch('/admin/analytics').then(res => res.json()).then(data => {
+  // Enrollment Chart
+  new Chart(document.getElementById('enrollmentChart'), {
+    type: 'line',
+    data: {
+      labels: data.enrollment.map(e => e[0]),
+      datasets: [{
+        label: 'Enrollments',
+        data: data.enrollment.map(e => e[1]),
+        borderColor: '#007bff',
+        backgroundColor: 'rgba(0,123,255,0.1)',
+        fill: true
+      }]
+    }
+  });
+  // Attendance Chart
+  new Chart(document.getElementById('attendanceChart'), {
+    type: 'doughnut',
+    data: {
+      labels: data.attendance.map(a => a[0]),
+      datasets: [{
+        label: 'Attendance',
+        data: data.attendance.map(a => a[1]),
+        backgroundColor: ['#28a745','#ffc107','#dc3545','#6c757d']
+      }]
+    }
+  });
+  // Fee Chart
+  new Chart(document.getElementById('feeChart'), {
+    type: 'pie',
+    data: {
+      labels: data.fees.map(f => f[0]),
+      datasets: [{
+        label: 'Fee Status',
+        data: data.fees.map(f => f[1]),
+        backgroundColor: ['#28a745','#ffc107','#dc3545']
+      }]
+    }
+  });
+  // Staff Chart
+  new Chart(document.getElementById('staffChart'), {
+    type: 'bar',
+    data: {
+      labels: data.staff.map(s => s[0]),
+      datasets: [{
+        label: 'Staff Count',
+        data: data.staff.map(s => s[1]),
+        backgroundColor: '#17a2b8'
+      }]
+    }
+  });
+});
 </script>
 {% endblock %}

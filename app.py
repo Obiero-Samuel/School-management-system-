@@ -1,3 +1,5 @@
+# ===================== STAFF DASHBOARD ROUTE =====================
+
 # ...existing code...
 # ------------------- TEACHER ENHANCEMENT ROUTES -------------------
 # (All teacher routes moved here, after app and decorators)
@@ -15,6 +17,7 @@ def parent_required(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
+# ...existing code...
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -268,7 +271,7 @@ def login():
                             except Exception:
                                 pass
                             session['full_name'] = f"{parent['first_name']} {parent['last_name']}" if parent else username
-                            return redirect(url_for('index'))  # Or parent dashboard if exists
+                            return redirect(url_for('parent_dashboard'))
                         else:
                             # fetch all results to clear buffer
                             try:
@@ -834,16 +837,16 @@ def admin_teacher_attendance_history():
 
 # ===================== STAFF ROUTES =====================
 
+
+# Staff dashboard route (for non-teaching staff)
 @app.route('/staff/dashboard')
 @staff_required
 def staff_dashboard():
-    department = session.get('department')
+    department = session.get('department', 'Unknown')
     current_datetime = datetime.now().strftime("%A, %B %d, %Y %I:%M %p")
-    
     # Route to specific department dashboard
     if department == 'Teaching':
         return redirect(url_for('teacher_dashboard'))
-    
     # For other departments, show basic dashboard
     return render_template('staff/dashboard.html', 
                          department=department,
@@ -855,6 +858,10 @@ def staff_dashboard():
 def staff_tasks():
     conn = get_db_connection()
     tasks = []
+@app.route('/parent/dashboard')
+@parent_required
+def parent_dashboard():
+    return render_template('parent/dashboard.html')
     if conn:
         cursor = conn.cursor(dictionary=True)
         cursor.execute("""
