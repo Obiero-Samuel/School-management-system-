@@ -1,5 +1,167 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- Top Bar: Notifications, Sibling Switcher, Dark Mode -->
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+  <div class="d-flex align-items-center gap-3">
+    <!-- Notifications Bell -->
+    <button class="btn btn-light position-relative" id="notifBell" title="Notifications">
+      <i class="fas fa-bell fa-lg"></i>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifBadge">3</span>
+    </button>
+    <!-- Sibling Switcher -->
+    {% if children|length > 1 %}
+    <select class="form-select" style="max-width:180px;" onchange="window.location.href='?child_index='+this.value">
+      {% for c in children %}
+      <option value="{{ loop.index0 }}" {% if child_index == loop.index0 %}selected{% endif %}>{{ c.first_name }} {{ c.last_name }}</option>
+      {% endfor %}
+    </select>
+    {% endif %}
+  </div>
+  <!-- Dark Mode Toggle -->
+  <button class="btn btn-dark" id="darkModeToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+</div>
+
+<!-- Quick Links -->
+<div class="d-flex flex-wrap gap-2 mb-3">
+  <a href="mailto:school@example.com" class="btn btn-outline-primary"><i class="fas fa-envelope"></i> Contact School</a>
+  <a href="/static/uploads/forms.zip" class="btn btn-outline-success"><i class="fas fa-download"></i> Download Forms</a>
+  <a href="/static/uploads/policies.pdf" class="btn btn-outline-info"><i class="fas fa-file-alt"></i> View School Policies</a>
+</div>
+
+<!-- Calendar Sync -->
+<div class="mb-3">
+  <button class="btn btn-outline-secondary" onclick="window.open('https://calendar.google.com/calendar/r?tab=mc', '_blank')"><i class="fas fa-calendar-plus"></i> Sync to Google Calendar</button>
+  <span class="text-muted ms-2">Add school events and assignments to your calendar.</span>
+</div>
+
+<script>
+  // Notifications bell demo
+  document.getElementById('notifBell').onclick = function() {
+    alert('You have unread notifications!');
+    document.getElementById('notifBadge').style.display = 'none';
+  };
+  // Dark mode toggle
+  document.getElementById('darkModeToggle').onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    this.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
+  };
+  // Mobile responsiveness tweaks
+  window.addEventListener('resize', function() {
+    if(window.innerWidth < 600) {
+      document.body.classList.add('mobile-dashboard');
+    } else {
+      document.body.classList.remove('mobile-dashboard');
+    }
+  });
+  if(window.innerWidth < 600) document.body.classList.add('mobile-dashboard');
+</script>
+<!-- Document Upload Section -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-upload text-info"></i> Upload Documents</h5>
+    <form id="docUploadForm" enctype="multipart/form-data">
+      <div class="mb-2">
+        <input type="file" name="document" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+    <div id="docUploadResult" class="mt-2" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- PDF Export Section -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-file-pdf text-danger"></i> Export Receipts/Reports</h5>
+    <button class="btn btn-outline-danger" onclick="window.open('/parent/export_pdf', '_blank')"><i class="fas fa-download"></i> Download PDF</button>
+    <div class="text-muted mt-2">Download your payment receipts or term reports as PDF files.</div>
+  </div>
+</div>
+
+<!-- Feedback/Rating Section -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-star text-warning"></i> Submit Feedback</h5>
+    <form id="feedbackForm">
+      <div class="mb-2">
+        <textarea class="form-control" name="feedback" rows="2" placeholder="Share your feedback or rate our service..."></textarea>
+      </div>
+      <div class="mb-2">
+        <label class="form-label">Rating:</label>
+        <select class="form-select" name="rating">
+          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+          <option value="4">⭐⭐⭐⭐ Good</option>
+          <option value="3">⭐⭐⭐ Average</option>
+          <option value="2">⭐⭐ Fair</option>
+          <option value="1">⭐ Poor</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+    <div id="feedbackResult" class="mt-2" style="display:none;"></div>
+  </div>
+</div>
+<!-- Live Chat Section -->
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h5 class="card-title"><i class="fas fa-comments text-primary"></i> Live Chat</h5>
+      <button class="btn btn-lg btn-success" onclick="document.getElementById('chatWindow').style.display='block';document.getElementById('chatInput').focus();"><i class="fas fa-comment-dots"></i> Chat with School</button>
+    </div>
+    <div id="chatWindow" class="chat-window mb-2" style="height:220px;overflow-y:auto;background:#e0f7fa;border-radius:8px;padding:12px;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div class="text-muted mb-2">Start a conversation with school staff or teachers here.</div>
+    </div>
+    <form id="chatForm" class="d-flex gap-2" style="display:none;">
+      <input type="text" id="chatInput" class="form-control" placeholder="Type your message..." autocomplete="off">
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </div>
+</div>
+<script>
+  // Show chat window and input when button is clicked
+  document.querySelector('.btn-success').onclick = function() {
+    document.getElementById('chatWindow').style.display = 'block';
+    document.getElementById('chatForm').style.display = 'flex';
+    document.getElementById('chatInput').focus();
+  };
+  // ...existing chat JS logic...
+</script>
+
+<!-- Push Notifications Section -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-bell text-warning"></i> Notifications</h5>
+    <ul id="notificationList" class="list-group list-group-flush">
+      {% for n in notifications %}
+      <li class="list-group-item"><i class="fas fa-info-circle text-info"></i> {{ n.title }} <span class="text-muted" style="font-size:0.9em;">{{ n.created_at }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+<script>
+  // Live chat frontend logic (demo, backend integration needed)
+  const chatWindow = document.getElementById('chatWindow');
+  const chatForm = document.getElementById('chatForm');
+  const chatInput = document.getElementById('chatInput');
+  chatForm.onsubmit = function(e) {
+    e.preventDefault();
+    if(chatInput.value.trim()) {
+      const msg = document.createElement('div');
+      msg.textContent = 'You: ' + chatInput.value;
+      msg.className = 'chat-msg my-1';
+      chatWindow.appendChild(msg);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+      chatInput.value = '';
+      // TODO: Send message to backend via Socket.IO
+    }
+  };
+  // TODO: Listen for incoming messages via Socket.IO and append to chatWindow
+
+  // Push notification demo (backend integration needed)
+  // TODO: Listen for real-time notifications via Socket.IO and update notificationList
+</script>
 <!-- Dashboard Header -->
 <div class="dashboard-header mb-4">
   <h2>Parent Dashboard</h2>
@@ -150,6 +312,248 @@
   {% endif %}
 </div>
 
+<!-- Fee Payment Section -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-money-check-alt text-success"></i> Fee Payment</h5>
+    <div class="mb-3">
+      <label class="form-label">Payment History:</label>
+      <div class="table-responsive">
+        {% if child_index is not none and children|length > 0 %}
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Year</th>
+              <th>Due (Ksh)</th>
+              <th>Paid (Ksh)</th>
+              <th>Status</th>
+              <th>Payment Date</th>
+              <th>Receipt</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for fee in fee_history[children[child_index].id] %}
+            <tr>
+              <td>{{ fee.term }}</td>
+              <td>{{ fee.academic_year }}</td>
+              <td>{{ fee.amount_due }}</td>
+              <td>{{ fee.amount_paid }}</td>
+              <td>
+                {% if fee.status == 'Paid' %}
+                  <span class="badge bg-success">Paid</span>
+                {% elif fee.status == 'Pending' %}
+                  <span class="badge bg-warning text-dark">Pending</span>
+                {% else %}
+                  <span class="badge bg-danger">Overdue</span>
+                {% endif %}
+              </td>
+              <td>{{ fee.payment_date or '-' }}</td>
+              <td>
+                {% if fee.status == 'Paid' %}
+                  <a href="{{ url_for('download_receipt', fee_id=fee.id) }}" class="btn btn-sm btn-outline-info">Download Receipt</a>
+                {% else %}
+                  <button class="btn btn-sm btn-success pay-btn" data-fee-id="{{ fee.id }}" data-amount="{{ fee.amount_due - fee.amount_paid }}" onclick="showPaymentModal({{ fee.amount_due - fee.amount_paid }})">Pay Fees</button>
+                  <button class="btn btn-sm btn-warning send-reminder-btn ms-2" data-student-id="{{ children[child_index].id }}">Send Reminder</button>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-info">No children or fee history available.</div>
+        {% endif %}
+      </div>
+    </div>
+    <div id="paymentModal" class="modal" tabindex="-1" style="display:none;">
+      <script>
+        // Show payment modal and set amount
+        function showPaymentModal(amount) {
+          document.getElementById('paymentModal').style.display = 'block';
+          document.getElementById('paymentAmount').value = amount;
+          document.getElementById('paymentResult').style.display = 'none';
+        }
+      </script>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Pay School Fees</h5>
+            <button type="button" class="btn-close" onclick="document.getElementById('paymentModal').style.display='none'"></button>
+          </div>
+          <div class="modal-body">
+            <form id="feePaymentForm">
+              <div class="mb-3">
+                <div class="fw-bold mb-2" style="font-size:1.05rem;">Select Payment Options</div>
+                <label class="form-label">Amount</label>
+                <div class="input-group mb-2">
+                  <input type="number" id="paymentAmount" class="form-control" required readonly>
+                  <select id="currencySelect" class="form-select" style="max-width:90px;">
+                    <option value="KES">KES</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+                </div>
+                <label class="form-label mt-2">Installment Payment</label>
+                <input type="number" id="installmentAmount" class="form-control mb-1" min="1" placeholder="Enter installment amount (optional)">
+                <small class="text-muted mb-2">Leave blank to pay full amount.</small>
+                <label class="form-label mt-2">Mode of Payment</label>
+                <div class="mb-3">
+                  <label class="form-label fw-bold" style="font-size:1.1rem;">Choose Payment Method</label>
+                  <select id="paymentMethod" class="form-select form-select-lg mb-2" style="font-size:1.1rem;">
+                    <option value="mpesa">🟢 MPESA (Mobile)</option>
+                    <option value="paypal">💳 PayPal</option>
+                    <option value="bank">🏦 Bank Transfer</option>
+                  </select>
+                </div>
+                <!-- MPESA Fields -->
+                <div id="mpesaFields" class="mb-2">
+                  <label class="form-label">MPESA Phone Number</label>
+                  <input type="text" id="mpesaPhone" class="form-control" placeholder="e.g. 07XXXXXXXX" maxlength="12">
+                  <small class="text-muted">You will receive a prompt on your phone to complete payment.</small>
+                </div>
+                <!-- PayPal Fields -->
+                <div id="paypalFields" class="mb-2" style="display:none;">
+                  <label class="form-label">PayPal Email</label>
+                  <input type="email" id="paypalEmail" class="form-control" placeholder="your@email.com">
+                  <small class="text-muted">You will be redirected to PayPal to complete payment.</small>
+                </div>
+                <!-- Bank Fields -->
+                <div id="bankFields" class="mb-2" style="display:none;">
+                  <div class="mb-2">
+                    <label class="form-label fw-bold" style="font-size:1.1rem;">Select Your Bank</label>
+                    <select id="bankSelect" class="form-select form-select-lg mb-2" style="font-size:1.1rem;">
+                      <option value="ncba">NCBA Bank - 1002003004</option>
+                      <option value="equity">Equity Bank - 9876543210</option>
+                      <option value="kcb">KCB Bank - 1234567890</option>
+                      <option value="coop">Cooperative Bank - 1122334455</option>
+                    </select>
+                  </div>
+                  <label class="form-label">Your Account/Reference</label>
+                  <input type="text" id="bankAccount" class="form-control" placeholder="Your Account/Reference">
+                  <small class="text-muted">Transfer to the selected bank account and enter your reference.</small>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 mt-2">Pay</button>
+            </form>
+            <script>
+              // Show/hide payment fields based on method
+              function updatePaymentFields() {
+                var method = document.getElementById('paymentMethod').value;
+                document.getElementById('mpesaFields').style.display = method === 'mpesa' ? 'block' : 'none';
+                document.getElementById('paypalFields').style.display = method === 'paypal' ? 'block' : 'none';
+                document.getElementById('bankFields').style.display = method === 'bank' ? 'block' : 'none';
+                // Always show bank dropdown when bank is selected
+                if(method === 'bank') {
+                  document.getElementById('bankSelect').selectedIndex = 0;
+                }
+              }
+              document.getElementById('paymentMethod').onchange = updatePaymentFields;
+              // Ensure correct fields are shown on modal open
+              document.addEventListener('DOMContentLoaded', function() {
+                updatePaymentFields();
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="paymentResult" class="mt-3" style="display:none;"></div>
+  </div>
+</div>
+<script>
+    // Send payment reminder AJAX
+    document.querySelectorAll('.send-reminder-btn').forEach(btn => {
+      btn.onclick = function() {
+        const studentId = this.dataset.studentId;
+        this.disabled = true;
+        this.textContent = 'Sending...';
+        fetch(`/parent/send_fee_reminder/${studentId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.status === 'success') {
+            this.textContent = 'Reminder Sent!';
+            this.classList.remove('btn-warning');
+            this.classList.add('btn-success');
+          } else {
+            this.textContent = 'Error';
+            this.classList.remove('btn-warning');
+            this.classList.add('btn-danger');
+          }
+          setTimeout(() => { this.disabled = false; this.textContent = 'Send Reminder'; this.classList.remove('btn-success', 'btn-danger'); this.classList.add('btn-warning'); }, 3000);
+        })
+        .catch(() => {
+          this.textContent = 'Error';
+          this.classList.remove('btn-warning');
+          this.classList.add('btn-danger');
+          setTimeout(() => { this.disabled = false; this.textContent = 'Send Reminder'; this.classList.remove('btn-success', 'btn-danger'); this.classList.add('btn-warning'); }, 3000);
+        });
+      };
+    });
+  // Show payment modal
+  document.querySelectorAll('.pay-btn').forEach(btn => {
+    btn.onclick = function() {
+      document.getElementById('paymentModal').style.display = 'block';
+      document.getElementById('paymentAmount').value = this.dataset.amount;
+      document.getElementById('paymentResult').style.display = 'none';
+    };
+  });
+  // Switch payment method fields
+  document.getElementById('paymentMethod').onchange = function() {
+    document.getElementById('mpesaFields').style.display = this.value === 'mpesa' ? 'block' : 'none';
+    document.getElementById('cardFields').style.display = this.value === 'card' ? 'block' : 'none';
+  };
+  // Handle payment form submit (AJAX integration)
+  document.getElementById('feePaymentForm').onsubmit = async function(e) {
+    e.preventDefault();
+    var method = document.getElementById('paymentMethod').value;
+    var amount = document.getElementById('paymentAmount').value;
+    var result = document.getElementById('paymentResult');
+    var childIndex = {{ child_index }};
+    var studentId = {{ children[child_index].id }};
+    var payBtn = document.querySelector('.pay-btn[data-amount="' + amount + '"]');
+    result.style.display = 'block';
+    let url, payload;
+    if(method === 'mpesa') {
+      var phone = document.getElementById('mpesaPhone').value;
+      url = '/pay/mpesa';
+      payload = { phone: phone, amount: amount, student_id: studentId };
+    } else {
+      var card = document.getElementById('cardNumber').value;
+      url = '/pay/mobile_bank';
+      payload = { bank: card, amount: amount, student_id: studentId };
+    }
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if(res.ok && data.status === 'success') {
+        result.innerHTML = `<b>${data.message}</b>`;
+        // Optionally, reload page or update fee status in UI
+        setTimeout(() => window.location.reload(), 1500);
+      } else {
+        result.innerHTML = `<b class='text-danger'>${data.message || 'Payment failed.'}</b>`;
+      }
+    } catch (err) {
+      result.innerHTML = `<b class='text-danger'>Payment error. Please try again.</b>`;
+    }
+    document.getElementById('paymentModal').style.display = 'none';
+  };
+  // Download receipt (demo)
+  document.querySelectorAll('.receipt-link').forEach(link => {
+    link.onclick = function(e) {
+      e.preventDefault();
+      alert('Receipt download (demo only)');
+    };
+  });
+</script>
+
 <!-- SocketIO JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
 <script>
@@ -181,18 +585,25 @@
 </script>
 
 <!-- Real-Time Notification Popup -->
-<div id="notification-popup" class="notification-popup" style="display:none;">
+<div id="notification-popup" class="notification-popup" style="display:none; position:fixed; top:20px; right:20px; z-index:9999; background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(99,102,241,0.18); padding:1rem; min-width:220px;">
   <span id="notification-message"></span>
-  <button class="btn btn-sm btn-light" onclick="document.getElementById('notification-popup').style.display='none'">Dismiss</button>
+  <button class="btn btn-sm btn-light mt-2" onclick="document.getElementById('notification-popup').style.display='none'">Dismiss</button>
 </div>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
 <script>
+  // Connect to Socket.IO server
+  var socket = io();
+  // Listen for real-time notifications
   socket.on('new_notification', function(data) {
     var popup = document.getElementById('notification-popup');
     var msg = document.getElementById('notification-message');
-    msg.innerHTML = `<b>${data.title}</b>: ${data.message}`;
+    msg.textContent = data.message;
     popup.style.display = 'block';
-    setTimeout(function(){ popup.style.display = 'none'; }, 8000);
   });
+  // Example: Simulate receiving notifications (remove in production)
+  setTimeout(function(){
+    socket.emit('new_notification', {message: 'New assignment posted!'});
+  }, 5000);
 </script>
 
 <!-- Font Awesome for icons -->
@@ -207,6 +618,10 @@
         <li class="list-group-item">
           <strong>{{ event.name }}</strong> <span class="badge bg-info">{{ event.date }}</span><br>
           <small>{{ event.description }}</small>
+          <div class="mt-2">
+            <button class="btn btn-sm btn-success rsvp-btn" data-event="{{ event.name }}" data-date="{{ event.date }}">RSVP</button>
+            <a href="#" class="btn btn-sm btn-outline-info ms-2 reminder-link" data-event="{{ event.name }}" data-date="{{ event.date }}">Set Reminder</a>
+          </div>
         </li>
         {% else %}
         <li class="list-group-item">No upcoming events.</li>
@@ -215,6 +630,36 @@
     </div>
   </div>
 </div>
+<script>
+  // RSVP button handler
+  document.querySelectorAll('.rsvp-btn').forEach(btn => {
+    btn.onclick = function() {
+      var popup = document.getElementById('notification-popup');
+      var msg = document.getElementById('notification-message');
+      msg.textContent = `RSVP confirmed for: ${this.dataset.event} (${this.dataset.date})`;
+      popup.style.display = 'block';
+    };
+  });
+  // Reminder link handler (downloads .ics for single event)
+  document.querySelectorAll('.reminder-link').forEach(link => {
+    link.onclick = function(e) {
+      e.preventDefault();
+      const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${this.dataset.event}\nDTSTART:${this.dataset.date.replace(/-/g, '')}T090000Z\nEND:VEVENT\nEND:VCALENDAR`;
+      const blob = new Blob([icsContent.replace(/\n/g, '\r\n')], { type: 'text/calendar' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${this.dataset.event}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      var popup = document.getElementById('notification-popup');
+      var msg = document.getElementById('notification-message');
+      msg.textContent = `Reminder set for: ${this.dataset.event} (${this.dataset.date})`;
+      popup.style.display = 'block';
+    };
+  });
+</script>
+
 <!-- Chat History and File Sharing UI -->
 <div class="card chat-history-card mb-4">
   <div class="card-body">
@@ -292,77 +737,153 @@
     data: marksData,
     options: {
       plugins: { legend: { display: false } },
-      scales: { y: { beginAtZero: true } }
-    }
-  });
-  // Attendance chart (demo)
-  const attendanceData = {
-    labels: [{% for att in children[0].attendance %}'{{ att.attendance_date }}',{% endfor %}],
-    datasets: [{
-      label: 'Attendance',
-      data: [{% for att in children[0].attendance %}{{ 1 if att.status == 'Present' else 0 }},{% endfor %}],
-      backgroundColor: 'rgba(67,233,123,0.2)',
-      borderColor: 'rgba(67,233,123,1)',
-      borderWidth: 2,
-      fill: true,
-      tension: 0.4
-    }]
-  };
-  const attendanceChart = new Chart(document.getElementById('attendanceChart').getContext('2d'), {
-    type: 'line',
-    data: attendanceData,
-    options: {
-      plugins: { legend: { display: false } },
-      scales: { y: { beginAtZero: true, max: 1, ticks: { stepSize: 1, callback: v => v ? 'Present' : 'Absent' } } }
-    }
-  });
-</script>
 
-<!-- Download Center Section -->
-<div class="card download-center-card mb-4">
-  <div class="card-body">
-    <h5 class="card-title"><i class="fas fa-download text-info"></i> Download Center</h5>
-    <ul class="list-group">
-      <li class="list-group-item"><a href="{{ url_for('static', filename='uploads/report_card_sample.pdf') }}" class="download-link" target="_blank">Term Report Card</a></li>
-      <li class="list-group-item"><a href="{{ url_for('static', filename='uploads/assignment_sheet_sample.pdf') }}" class="download-link" target="_blank">Assignment Sheet</a></li>
-      <li class="list-group-item"><a href="{{ url_for('static', filename='uploads/syllabus_sample.pdf') }}" class="download-link" target="_blank">Syllabus</a></li>
-      <li class="list-group-item"><a href="{{ url_for('static', filename='uploads/parent_form_sample.pdf') }}" class="download-link" target="_blank">Parent Form</a></li>
-      <li class="list-group-item"><a href="{{ url_for('static', filename='uploads/circular_sample.pdf') }}" class="download-link" target="_blank">School Circular</a></li>
-    </ul>
-  </div>
-</div>
+      <!-- Fee Analytics Section -->
+      <!-- Child Analytics Section -->
 
-<!-- Parent Polls/Surveys Section -->
-<div class="card polls-card mb-4">
-  <div class="card-body">
-    <h5 class="card-title"><i class="fas fa-poll text-warning"></i> Parent Polls & Surveys</h5>
-    <form id="poll-form">
-      <div class="mb-3">
-        <label class="form-label">Should the school introduce more after-school activities?</label>
-        <div>
-          <input type="radio" name="poll" value="Yes" id="pollYes"> <label for="pollYes">Yes</label>
-          <input type="radio" name="poll" value="No" id="pollNo" class="ms-3"> <label for="pollNo">No</label>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-chart-pie text-info"></i> Fee Breakdown & Analytics</h5>
+          <div class="row">
+            {% for child in children %}
+            <div class="col-md-6 mb-4">
+              <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">{{ child.first_name }} {{ child.last_name }} - Fee Status</div>
+                <div class="card-body">
+                  <canvas id="feeChart{{ child.id }}" height="180"></canvas>
+                  <script>
+                    const feeData{{ child.id }} = {
+                      labels: ['Total Due', 'Paid', 'Outstanding'],
+                      datasets: [{
+                        data: [
+                          {% set total_due = 0 %}{% set total_paid = 0 %}{% for fee in fee_history[child.id] %}{% set total_due = total_due + fee.amount_due %}{% set total_paid = total_paid + fee.amount_paid %}{% endfor %}
+                          {{ total_due }},
+                          {{ total_paid }},
+                          {{ total_due - total_paid }}
+                        ],
+                        backgroundColor: ['#ffc107','#28a745','#dc3545'],
+                        borderWidth: 2
+                      }]
+                    };
+                    new Chart(document.getElementById('feeChart{{ child.id }}').getContext('2d'), {
+                      type: 'doughnut',
+                      data: feeData{{ child.id }},
+                      options: {
+                        plugins: { legend: { display: true } },
+                        cutout: '70%',
+                        responsive: true,
+                        maintainAspectRatio: false
+                      }
+                    });
+                  </script>
+                  <div class="mt-3">
+                    <span class="badge bg-warning text-dark">Total Due: Ksh {{ total_due }}</span>
+                    <span class="badge bg-success ms-2">Paid: Ksh {{ total_paid }}</span>
+                    <span class="badge bg-danger ms-2">Outstanding: Ksh {{ total_due - total_paid }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Vote</button>
-    </form>
-    <div id="poll-result" class="mt-3" style="display:none;"></div>
-  </div>
-</div>
-<script>
-  document.getElementById('poll-form').onsubmit = function(e) {
-    e.preventDefault();
-    var val = document.querySelector('input[name="poll"]:checked');
-    if(val) {
-      document.getElementById('poll-result').style.display = 'block';
-      document.getElementById('poll-result').innerHTML = `<b>Thank you for voting: ${val.value}</b>`;
-    }
-  };
-</script>
 
-<!-- FAQ & Help Center Section -->
-<div class="card faq-card mb-4">
-  <div class="card-body">
+      <!-- Fee Payment Section (History & Actions) -->
+      <!-- Always-visible Pay Fees Button -->
+      <div class="d-flex justify-content-end mb-2">
+        <button class="btn btn-lg btn-primary" onclick="showPaymentModal(0)"><i class="fas fa-credit-card"></i> Pay Fees</button>
+      </div>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-money-check-alt text-success"></i> Fee Payment</h5>
+          <div class="mb-3">
+            <label class="form-label">Payment History:</label>
+            <div class="table-responsive">
+              {% if child_index is not none and children|length > 0 %}
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Term</th>
+                    <th>Year</th>
+                    <th>Due (Ksh)</th>
+                    <th>Paid (Ksh)</th>
+                    <th>Status</th>
+                    <th>Payment Date</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for fee in fee_history[children[child_index].id] %}
+                  <tr>
+                    <td>{{ fee.term }}</td>
+                    <td>{{ fee.academic_year }}</td>
+                    <td>{{ fee.amount_due }}</td>
+                    <td>{{ fee.amount_paid }}</td>
+                    <td>
+                      {% if fee.status == 'Paid' %}
+                        <span class="badge bg-success">Paid</span>
+                      {% elif fee.status == 'Pending' %}
+                        <span class="badge bg-warning text-dark">Pending</span>
+                      {% else %}
+                        <span class="badge bg-danger">Overdue</span>
+                      {% endif %}
+                    </td>
+                    <td>{{ fee.payment_date or '-' }}</td>
+                    <td>
+                      {% if fee.status == 'Paid' %}
+                        <a href="{{ url_for('download_receipt', fee_id=fee.id) }}" class="btn btn-sm btn-outline-info">Download Receipt</a>
+                      {% else %}
+                        <button class="btn btn-sm btn-success pay-btn" data-fee-id="{{ fee.id }}" data-amount="{{ fee.amount_due - fee.amount_paid }}">Pay Now</button>
+                        <button class="btn btn-sm btn-warning send-reminder-btn ms-2" data-student-id="{{ children[child_index].id }}">Send Reminder</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <div class="alert alert-info">No children or fee history available.</div>
+              {% endif %}
+            </div>
+          </div>
+          <div id="paymentModal" class="modal" tabindex="-1" style="display:none;">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Pay School Fees</h5>
+                  <button type="button" class="btn-close" onclick="document.getElementById('paymentModal').style.display='none'"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="feePaymentForm">
+                    <div class="mb-3">
+                      <label class="form-label">Amount (Ksh)</label>
+                      <input type="number" id="paymentAmount" class="form-control" required readonly>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Payment Method</label>
+                      <select id="paymentMethod" class="form-select">
+                        <option value="mpesa">MPESA</option>
+                        <option value="card">Bank/Card</option>
+                      </select>
+                    </div>
+                    <div id="mpesaFields" class="mb-3">
+                      <label class="form-label">MPESA Phone Number</label>
+                      <input type="text" id="mpesaPhone" class="form-control" placeholder="e.g. 07XXXXXXXX" maxlength="12">
+                    </div>
+                    <div id="cardFields" class="mb-3" style="display:none;">
+                      <label class="form-label">Card/Bank Details</label>
+                      <input type="text" id="cardNumber" class="form-control" placeholder="Card/Account Number">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="paymentResult" class="mt-3" style="display:none;"></div>
+        </div>
+      </div>
     <h5 class="card-title"><i class="fas fa-question-circle text-primary"></i> FAQ & Help Center</h5>
     <div class="accordion" id="faqAccordion">
       <div class="accordion-item">
@@ -408,27 +929,86 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Multi-language Support Dropdown -->
-<div class="mb-3 text-end">
-  <select id="language-select" class="form-select form-select-sm" style="max-width:180px; display:inline-block;">
+<div class="mb-4 text-end">
+  <select id="languageSwitcher" class="form-select form-select-sm" style="width:180px; display:inline-block;">
     <option value="en">English</option>
-    <option value="es">Español</option>
-    <option value="fr">Français</option>
     <option value="sw">Kiswahili</option>
   </select>
 </div>
 <script>
-  // Simple demo: change dashboard headings based on language
+  // Simple translation dictionary
   const translations = {
-    en: { dashboard: 'Parent Dashboard', children: 'Your Children', assignments: 'Recent Assignments', marks: 'Recent Marks/Grades', attendance: 'Recent Attendance', download: 'Download Center', polls: 'Parent Polls & Surveys', faq: 'FAQ & Help Center', feedback: 'Send Feedback', events: 'Upcoming Events', profile: 'Edit Profile' },
-    es: { dashboard: 'Panel de Padres', children: 'Tus Hijos', assignments: 'Tareas Recientes', marks: 'Notas/Calificaciones Recientes', attendance: 'Asistencia Reciente', download: 'Centro de Descargas', polls: 'Encuestas de Padres', faq: 'Centro de Ayuda', feedback: 'Enviar Comentarios', events: 'Próximos Eventos', profile: 'Editar Perfil' },
-    fr: { dashboard: 'Tableau de Bord Parent', children: 'Vos Enfants', assignments: 'Devoirs Récents', marks: 'Notes/Résultats Récents', attendance: 'Présence Récente', download: 'Centre de Téléchargement', polls: 'Sondages Parents', faq: 'Centre d’Aide', feedback: 'Envoyer des Commentaires', events: 'Événements à Venir', profile: 'Modifier le Profil' },
-    sw: { dashboard: 'Dashibodi ya Mzazi', children: 'Watoto Wako', assignments: 'Majukumu ya Hivi Karibuni', marks: 'Alama/Madaraja ya Hivi Karibuni', attendance: 'Mahudhurio ya Hivi Karibuni', download: 'Kituo cha Upakuaji', polls: 'Uchaguzi wa Wazazi', faq: 'Kituo cha Msaada', feedback: 'Tuma Maoni', events: 'Matukio Yanayokuja', profile: 'Hariri Wasifu' }
+    en: {
+      'Welcome! Here you can view your children\'s academic progress, assignments, marks, and attendance at a glance.': 'Welcome! Here you can view your children\'s academic progress, assignments, marks, and attendance at a glance.',
+      'Student Progress': 'Student Progress',
+      'Download Center': 'Download Center',
+      'Parent Polls & Surveys': 'Parent Polls & Surveys',
+      'Upcoming Events': 'Upcoming Events',
+      'FAQ & Help Center': 'FAQ & Help Center',
+      'Should the school introduce more after-school activities?': 'Should the school introduce more after-school activities?',
+      'Are you satisfied with the current communication from the school?': 'Are you satisfied with the current communication from the school?',
+      'Would you like more digital resources for your child?': 'Would you like more digital resources for your child?',
+      'Submit Feedback': 'Submit Feedback',
+      'Vote': 'Vote',
+      'Marks': 'Marks',
+      'Attendance': 'Attendance',
+      'Term Report Card': 'Term Report Card',
+      'Assignment Sheet': 'Assignment Sheet',
+      'Syllabus': 'Syllabus',
+      'Parent Form': 'Parent Form',
+      'School Circular': 'School Circular',
+      'RSVP': 'RSVP',
+      'Set Reminder': 'Set Reminder',
+      'Yes': 'Yes',
+      'No': 'No'
+    },
+    sw: {
+      'Welcome! Here you can view your children\'s academic progress, assignments, marks, and attendance at a glance.': 'Karibu! Hapa unaweza kuona maendeleo ya watoto wako, kazi za nyumbani, alama, na mahudhurio kwa urahisi.',
+      'Student Progress': 'Maendeleo ya Mwanafunzi',
+      'Download Center': 'Kituo cha Upakuaji',
+      'Parent Polls & Surveys': 'Uchunguzi wa Wazazi',
+      'Upcoming Events': 'Matukio Yanayokuja',
+      'FAQ & Help Center': 'Maswali Yanayoulizwa Mara kwa Mara & Kituo cha Usaidizi',
+      'Should the school introduce more after-school activities?': 'Je, shule ianzishe shughuli zaidi baada ya masomo?',
+      'Are you satisfied with the current communication from the school?': 'Je, unaridhika na mawasiliano ya sasa kutoka shuleni?',
+      'Would you like more digital resources for your child?': 'Je, ungependa rasilimali zaidi za kidijitali kwa mtoto wako?',
+      'Submit Feedback': 'Tuma Maoni',
+      'Vote': 'Piga Kura',
+      'Marks': 'Alama',
+      'Attendance': 'Mahudhurio',
+      'Term Report Card': 'Ripoti ya Muhula',
+      'Assignment Sheet': 'Karatasi ya Kazi ya Nyumbani',
+      'Syllabus': 'Mtaala',
+      'Parent Form': 'Fomu ya Mzazi',
+      'School Circular': 'Waraka wa Shule',
+      'RSVP': 'Thibitisha Ushiriki',
+      'Set Reminder': 'Weka Kumbusho',
+      'Yes': 'Ndiyo',
+      'No': 'Hapana'
+    }
   };
-  document.getElementById('language-select').onchange = function() {
-    const lang = this.value;
-    document.querySelector('h2').textContent = translations[lang].dashboard;
-    // Add more translations as needed for demo
+  function translateUI(lang) {
+    document.querySelectorAll('[data-translate]').forEach(el => {
+      const key = el.getAttribute('data-translate');
+      if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+    // Translate poll radio labels
+    document.querySelectorAll('label[for^="poll"]').forEach(label => {
+      const val = label.textContent.trim();
+      if(translations[lang][val]) label.textContent = translations[lang][val];
+    });
+  }
+  document.getElementById('languageSwitcher').onchange = function() {
+    translateUI(this.value);
   };
+  // Mark translatable elements
+  window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-title, .form-label, .download-link, .badge, .btn, .accordion-button').forEach(el => {
+      if(el.textContent.trim() && !el.hasAttribute('data-translate')) {
+        el.setAttribute('data-translate', el.textContent.trim());
+      }
+    });
+  });
 </script>
 
 <!-- Calendar Sync for Events -->

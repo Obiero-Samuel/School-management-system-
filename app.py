@@ -1,3 +1,171 @@
+# ===================== IMPORTS & APP SETUP =====================
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, send_file
+from flask_mail import Mail, Message
+from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
+import mysql.connector
+from mysql.connector import Error
+from datetime import datetime, timedelta
+from functools import wraps
+import os
+from flask_socketio import SocketIO, emit, join_room, leave_room
+import random
+
+app = Flask(__name__)
+app.secret_key = 'your_secret_key_here_change_in_production'
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+
+# Email Configuration (Configure these later)
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your-email@gmail.com'  # Change this
+app.config['MAIL_PASSWORD'] = 'your-app-password'      # Change this
+app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+
+mail = Mail(app)
+
+# Database Configuration
+DB_CONFIG = {
+    'host': 'localhost',
+    'user': 'root',           # Change this
+    'password': '1234',           # Change this
+    'database': 'school_management'
+}
+
+# Parent required decorator
+def parent_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session or session.get('user_type') != 'parent':
+            flash('Parent access required.', 'danger')
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# ===================== PAYMENT REMINDER ENDPOINT =====================
+@app.route('/parent/send_fee_reminder/<int:student_id>', methods=['POST'])
+@parent_required
+def send_fee_reminder(student_id):
+    conn = get_db_connection()
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        # Get parent email and phone
+        cursor.execute("SELECT p.email, p.phone, p.first_name, p.last_name FROM parents p JOIN student_parents sp ON p.id = sp.parent_id WHERE sp.student_id = %s", (student_id,))
+        parent = cursor.fetchone()
+        # Get overdue/pending fees
+        cursor.execute("SELECT term, academic_year, amount_due, amount_paid, due_date FROM fees WHERE student_id = %s AND status != 'Paid'", (student_id,))
+        fees = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        if parent and fees:
+            # Compose reminder message
+            fee_lines = [f"Term: {f['term']}, Year: {f['academic_year']}, Due: Ksh {f['amount_due']}, Paid: Ksh {f['amount_paid']}, Due Date: {f['due_date']}" for f in fees]
+            message_body = f"Dear {parent['first_name']} {parent['last_name']},\n\nYou have outstanding school fees for your child.\n" + "\n".join(fee_lines) + "\n\nPlease clear the dues at your earliest convenience."
+            # Send email
+            try:
+                msg = Message('School Fee Payment Reminder', recipients=[parent['email']])
+                msg.body = message_body
+                mail.send(msg)
+                # Placeholder for SMS integration
+                # send_sms(parent['phone'], message_body)
+                return jsonify({'status': 'success', 'message': 'Reminder sent via email.'})
+            except Exception as e:
+                return jsonify({'status': 'error', 'message': f'Failed to send reminder: {str(e)}'}), 500
+        else:
+            return jsonify({'status': 'error', 'message': 'No overdue fees or parent contact found.'}), 404
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, send_file
+from flask_mail import Mail, Message
+from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
+import mysql.connector
+from mysql.connector import Error
+from datetime import datetime, timedelta
+from functools import wraps
+import os
+from flask_socketio import SocketIO, emit, join_room, leave_room
+import random
+
+app = Flask(__name__)
+app.secret_key = 'your_secret_key_here_change_in_production'
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+
+# Email Configuration (Configure these later)
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your-email@gmail.com'  # Change this
+app.config['MAIL_PASSWORD'] = 'your-app-password'      # Change this
+app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+
+mail = Mail(app)
+
+# Database Configuration
+DB_CONFIG = {
+    'host': 'localhost',
+    'user': 'root',           # Change this
+    'password': '1234',           # Change this
+    'database': 'school_management'
+}
+
+# Parent required decorator
+def parent_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session or session.get('user_type') != 'parent':
+            flash('Parent access required.', 'danger')
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# ===================== FEE PAYMENT ENDPOINTS =====================
+# MPESA payment initiation (demo)
+@app.route('/pay/mpesa', methods=['POST'])
+@parent_required
+def pay_mpesa():
+    data = request.get_json()
+    phone = data.get('phone')
+    amount = data.get('amount')
+    student_id = data.get('student_id')
+    # Simulate MPESA payment (replace with real API integration)
+    success = random.choice([True, False])
+    if success:
+        # Update fee status in DB (demo)
+        conn = get_db_connection()
+        if conn:
+            cursor = conn.cursor()
+            cursor.execute("UPDATE fees SET amount_paid = amount_due, status = 'paid' WHERE student_id = %s AND status != 'paid'", (student_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+        return jsonify({'status': 'success', 'message': 'MPESA payment successful!'})
+    else:
+        return jsonify({'status': 'error', 'message': 'MPESA payment failed. Please try again.'}), 400
+
+# Mobile banking payment initiation (demo)
+@app.route('/pay/mobile_bank', methods=['POST'])
+@parent_required
+def pay_mobile_bank():
+    data = request.get_json()
+    bank = data.get('bank')
+    amount = data.get('amount')
+    student_id = data.get('student_id')
+    # Simulate mobile banking payment (replace with real API integration)
+    success = random.choice([True, False])
+    if success:
+        # Update fee status in DB (demo)
+        conn = get_db_connection()
+        if conn:
+            cursor = conn.cursor()
+            cursor.execute("UPDATE fees SET amount_paid = amount_due, status = 'paid' WHERE student_id = %s AND status != 'paid'", (student_id,))
+            conn.commit()
+            cursor.close()
+            conn.close()
+        return jsonify({'status': 'success', 'message': 'Mobile banking payment successful!'})
+    else:
+        return jsonify({'status': 'error', 'message': 'Mobile banking payment failed. Please try again.'}), 400
 # ===================== STAFF DASHBOARD ROUTE =====================
 
 # ...existing code...
@@ -869,6 +1037,11 @@ def parent_dashboard():
     school_events = []
     parent_profile = {}
     notifications = []
+    # Get child_index from query params, default to 0
+    try:
+        child_index = int(request.args.get('child_index', 0))
+    except (TypeError, ValueError):
+        child_index = 0
     if conn:
         cursor = conn.cursor(dictionary=True)
         # Get parent ID from session user_id
@@ -879,103 +1052,94 @@ def parent_dashboard():
         parent_id = parent_row['id'] if parent_row else None
         if parent_id:
             # Get children info with fee status and assignments
-            fee_history = {}
-            downloadable_reports = []
-            school_events = []
-            parent_profile = {}
-            if conn:
-                cursor = conn.cursor(dictionary=True)
-                # Get parent ID from session user_id
-                cursor.execute("SELECT id, first_name, last_name, phone, address, occupation, profile_picture FROM parents WHERE user_id = %s", (session['user_id'],))
-                parent_row = cursor.fetchone()
-                parent_id = parent_row['id'] if parent_row else None
-                if parent_row:
-                    parent_profile = parent_row
-                if parent_id:
-                    # Get children info with fee status and assignments
-                    cursor.execute(
-                        "SELECT s.id, s.first_name, s.last_name, c.name as class_name, s.fee_status "
-                        "FROM students s "
-                        "JOIN student_parents sp ON s.id = sp.student_id "
-                        "LEFT JOIN classes c ON s.class_id = c.id "
-                        "WHERE sp.parent_id = %s",
-                        (parent_id,)
-                    )
-                    children_raw = cursor.fetchall()
-                    children = []
-                    for child in children_raw:
-                        # Get recent assignments for this child
-                        cursor.execute(
-                            "SELECT a.title, a.due_date, a.description "
-                            "FROM assignments a "
-                            "WHERE a.class_id = (SELECT class_id FROM students WHERE id = %s) "
-                            "ORDER BY a.due_date DESC "
-                            "LIMIT 3",
-                            (child['id'],)
-                        )
-                        assignments = cursor.fetchall()
-                        child['assignments'] = assignments
-
-                        # Get recent marks/grades for this child
-                        cursor.execute(
-                            "SELECT subject, exam_type, marks_obtained, total_marks, term, academic_year, created_at "
-                            "FROM marks "
-                            "WHERE student_id = %s "
-                            "ORDER BY created_at DESC "
-                            "LIMIT 5",
-                            (child['id'],)
-                        )
-                        marks = cursor.fetchall()
-                        child['marks'] = marks
-
-                        # Get recent attendance for this child
-                        cursor.execute(
-                            "SELECT attendance_date, status, remarks "
-                            "FROM student_attendance "
-                            "WHERE student_id = %s "
-                            "ORDER BY attendance_date DESC "
-                            "LIMIT 7",
-                            (child['id'],)
-                        )
-                        attendance = cursor.fetchall()
-                        child['attendance'] = attendance
-
-                        # Get fee payment history for this child
-                        cursor.execute(
-                            "SELECT term, academic_year, amount_due, amount_paid, payment_date, status, due_date "
-                            "FROM fees "
-                            "WHERE student_id = %s "
-                            "ORDER BY payment_date DESC, due_date DESC "
-                            "LIMIT 5",
-                            (child['id'],)
-                        )
-                        fee_history[child['id']] = cursor.fetchall()
-
-                        children.append(child)
-                # Get notifications for this parent (by user_id)
+            cursor.execute(
+                "SELECT s.id, s.first_name, s.last_name, c.name as class_name, s.fee_status "
+                "FROM students s "
+                "JOIN student_parents sp ON s.id = sp.student_id "
+                "LEFT JOIN classes c ON s.class_id = c.id "
+                "WHERE sp.parent_id = %s",
+                (parent_id,)
+            )
+            children_raw = cursor.fetchall()
+            for child in children_raw:
+                # Get recent assignments for this child
                 cursor.execute(
-                    "SELECT type, title, message, created_at FROM notifications WHERE user_id = %s ORDER BY created_at DESC LIMIT 10",
-                    (session['user_id'],)
+                    "SELECT a.title, a.due_date, a.description "
+                    "FROM assignments a "
+                    "WHERE a.class_id = (SELECT class_id FROM students WHERE id = %s) "
+                    "ORDER BY a.due_date DESC "
+                    "LIMIT 3",
+                    (child['id'],)
                 )
-                notifications = cursor.fetchall()
-                # Get downloadable reports (simulate with static links for now)
-                downloadable_reports = [
-                    {'name': 'Term Report Card', 'url': url_for('static', filename='uploads/report_card_sample.pdf')},
-                    {'name': 'Assignment Sheet', 'url': url_for('static', filename='uploads/assignment_sheet_sample.pdf')}
-                ]
-                # Get upcoming school events
-                cursor.execute("SELECT name, date, location, description FROM events WHERE date >= CURDATE() ORDER BY date ASC LIMIT 5")
-                school_events = cursor.fetchall()
-                cursor.close()
-                conn.close()
-            return render_template('parent/dashboard.html', children=children, notifications=notifications, fee_history=fee_history, downloadable_reports=downloadable_reports, school_events=school_events, parent_profile=parent_profile)
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute(
-            "SELECT t.*, a.first_name AS assigned_by_name FROM tasks t JOIN admins a ON t.assigned_by = a.id WHERE t.assigned_to = %s ORDER BY t.due_date ASC",
-            (session['staff_id'],)
+                assignments = cursor.fetchall()
+                child['assignments'] = assignments
+
+                # Get recent marks/grades for this child
+                cursor.execute(
+                    "SELECT subject, exam_type, marks_obtained, total_marks, term, academic_year, created_at "
+                    "FROM marks "
+                    "WHERE student_id = %s "
+                    "ORDER BY created_at DESC "
+                    "LIMIT 5",
+                    (child['id'],)
+                )
+                marks = cursor.fetchall()
+                child['marks'] = marks
+
+                # Get recent attendance for this child
+                cursor.execute(
+                    "SELECT attendance_date, status, remarks "
+                    "FROM student_attendance "
+                    "WHERE student_id = %s "
+                    "ORDER BY attendance_date DESC "
+                    "LIMIT 7",
+                    (child['id'],)
+                )
+                attendance = cursor.fetchall()
+                child['attendance'] = attendance
+
+                # Get full fee payment history for this child
+                cursor.execute(
+                    "SELECT id, term, academic_year, amount_due, amount_paid, payment_date, status, due_date "
+                    "FROM fees "
+                    "WHERE student_id = %s "
+                    "ORDER BY payment_date DESC, due_date DESC",
+                    (child['id'],)
+                )
+                fee_history[child['id']] = cursor.fetchall()
+
+                children.append(child)
+            # Get notifications for this parent (by user_id)
+            cursor.execute(
+                "SELECT type, title, message, created_at FROM notifications WHERE user_id = %s ORDER BY created_at DESC LIMIT 10",
+                (session['user_id'],)
+            )
+            notifications = cursor.fetchall()
+            # Get downloadable reports (simulate with static links for now)
+            downloadable_reports = [
+                {'name': 'Term Report Card', 'url': url_for('static', filename='uploads/report_card_sample.pdf')},
+                {'name': 'Assignment Sheet', 'url': url_for('static', filename='uploads/assignment_sheet_sample.pdf')}
+            ]
+            # Get upcoming school events
+            cursor.execute("SELECT name, date, location, description FROM events WHERE date >= CURDATE() ORDER BY date ASC LIMIT 5")
+            school_events = cursor.fetchall()
+            cursor.close()
+            conn.close()
+        # Ensure child_index is in range and handle empty children
+        if len(children) == 0:
+            child_index = None
+        elif child_index < 0 or child_index >= len(children):
+            child_index = 0
+        return render_template(
+            'parent/dashboard.html',
+            children=children,
+            notifications=notifications,
+            fee_history=fee_history,
+            downloadable_reports=downloadable_reports,
+            school_events=school_events,
+            parent_profile=parent_profile,
+            child_index=child_index
         )
-        tasks = cursor.fetchall()
-        cursor.close()
         conn.close()
     analytics = {
         'completed': sum(1 for t in tasks if t['status'] == 'completed'),

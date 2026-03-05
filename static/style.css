@@ -1,3 +1,48 @@
+/* Dark Mode Styles */
+.dark-mode {
+  background: #18181b !important;
+  color: #e5e7eb !important;
+}
+.dark-mode .card {
+  background: #23232a !important;
+  color: #e5e7eb !important;
+  border-color: #333;
+}
+.dark-mode .btn {
+  background: #312e81 !important;
+  color: #e5e7eb !important;
+  border-color: #444 !important;
+}
+.dark-mode .btn-outline-primary,
+.dark-mode .btn-outline-success,
+.dark-mode .btn-outline-info,
+.dark-mode .btn-outline-danger {
+  background: transparent !important;
+  color: #e5e7eb !important;
+  border-color: #444 !important;
+}
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background: #23232a !important;
+  color: #e5e7eb !important;
+  border-color: #444 !important;
+}
+.dark-mode .table {
+  background: #23232a !important;
+  color: #e5e7eb !important;
+}
+.dark-mode .section-header,
+.dark-mode .dashboard-header {
+  color: #e5e7eb !important;
+}
+.dark-mode .chat-window {
+  background: #23232a !important;
+  color: #e5e7eb !important;
+}
+.dark-mode .modal-content {
+  background: #23232a !important;
+  color: #e5e7eb !important;
+}
 @media (max-width: 768px) {
   .parent-dashboard, .quick-stat-card, .event-calendar-card, .download-center-card, .polls-card, .faq-card, .progress-graphs-card, .chat-history-card {
     padding: 1rem;
