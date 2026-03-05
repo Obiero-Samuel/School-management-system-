@@ -203,9 +203,9 @@
     <h5 class="card-title"><i class="fas fa-calendar-alt text-info"></i> Upcoming Events</h5>
     <div id="calendar-preview">
       <ul class="list-group">
-        {% for event in events %}
+        {% for event in school_events %}
         <li class="list-group-item">
-          <strong>{{ event.title }}</strong> <span class="badge bg-info">{{ event.date }}</span><br>
+          <strong>{{ event.name }}</strong> <span class="badge bg-info">{{ event.date }}</span><br>
           <small>{{ event.description }}</small>
         </li>
         {% else %}
@@ -439,13 +439,29 @@
 </div>
 <script>
   document.getElementById('addToCalendarBtn').onclick = function() {
-    {% for event in events %}
-    const link = document.createElement('a');
-    link.href = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:{{ event.title }}%0ADESCRIPTION:{{ event.description }}%0ADTSTART:{{ event.date|replace('-', '') }}T090000Z%0AEND:VEVENT%0AEND:VCALENDAR`;
-    link.download = '{{ event.title }}.ics';
-    link.click();
+    // Build ICS file for all events
+    let icsContent = 'BEGIN:VCALENDAR\nVERSION:2.0';
+    {% for event in school_events %}
+    icsContent += '\nBEGIN:VEVENT';
+    icsContent += '\nSUMMARY:{{ event.name|escape }}';
+    icsContent += '\nDESCRIPTION:{{ event.description|escape }}';
+    icsContent += '\nDTSTART:{{ event.date|replace('-', '') }}T090000Z';
+    icsContent += '\nEND:VEVENT';
     {% endfor %}
-    alert('Events added to your calendar!');
+    icsContent += '\nEND:VCALENDAR';
+    // Download as .ics
+    const blob = new Blob([icsContent.replace(/\n/g, '\r\n')], { type: 'text/calendar' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'school_events.ics';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    // Show notification
+    var popup = document.getElementById('notification-popup');
+    var msg = document.getElementById('notification-message');
+    msg.textContent = 'Events added to your calendar!';
+    popup.style.display = 'block';
   };
 </script>
 {% endblock %}
