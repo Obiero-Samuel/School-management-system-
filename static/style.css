@@ -1153,3 +1153,40 @@ h2 {
   z-index: 2;
 
 }
+
+/* --- Subtle Color Accents & Enhanced Interactivity --- */
+.parent-dashboard .card, .parent-dashboard .quick-stat-card, .child-card {
+  background: linear-gradient(120deg, #fff 80%, #e0eafc 100%);
+  transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
+}
+.parent-dashboard .card:hover, .parent-dashboard .quick-stat-card:hover, .child-card:hover {
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.18);
+  transform: scale(1.03);
+  background: linear-gradient(120deg, #e0eafc 0%, #43e97b 100%);
+}
+.parent-dashboard .btn-primary {
+  background: linear-gradient(90deg, #43e97b 0%, #2575fc 100%);
+  color: #fff;
+  transition: background 0.3s, box-shadow 0.2s, transform 0.2s;
+}
+.parent-dashboard .btn-primary:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #43e97b 100%);
+  box-shadow: 0 4px 16px rgba(99,102,241,0.16);
+  transform: scale(1.06);
+}
+.section-header h4 {
+  color: #2575fc;
+  text-shadow: 0 2px 8px rgba(37,117,252,0.08);
+}
+.section-header .view-all {
+  color: #43e97b;
+}
+.section-header .view-all:hover {
+  color: #2575fc;
+}
+.activity-card:hover {
+  border-left: 4px solid #43e97b;
+  box-shadow: 0 10px 30px rgba(67,233,123,0.12);
+  background: linear-gradient(120deg, #e0eafc 0%, #43e97b 100%);
+}
+/* --- End Accents --- */
