@@ -27,6 +27,7 @@ from mysql.connector import Error
 from datetime import datetime, timedelta
 from functools import wraps
 import os
+from flask_socketio import SocketIO, emit, join_room, leave_room
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here_change_in_production'
@@ -1454,7 +1455,24 @@ def teacher_class_register():
     flash('Database connection error.', 'danger')
     return redirect(url_for('teacher_classes'))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    # Enable Flask debug mode for detailed error pages
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    socketio = SocketIO(app)
+
+    # Example chat event handlers
+    @socketio.on('send_message')
+    def handle_send_message(data):
+        # data: {'room': room_id, 'user': username, 'message': text}
+        emit('receive_message', data, room=data['room'])
+
+    @socketio.on('join')
+    def handle_join(data):
+        join_room(data['room'])
+        emit('status', {'msg': f"{data['user']} has entered the chat."}, room=data['room'])
+
+    @socketio.on('leave')
+    def handle_leave(data):
+        leave_room(data['room'])
+        emit('status', {'msg': f"{data['user']} has left the chat."}, room=data['room'])
+
+    socketio.run(app, debug=True)
